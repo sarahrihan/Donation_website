@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Donor Login</title>
+    <title>Organization Registration</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -44,34 +44,87 @@
                         <h2 class="text-light text-center">Donor Login</h2>
                     </div>
                     <div class="card-body">
-                        <form id="donorLoginForm">
+                        <form id="organizationLoginForm">
                             <div class="form-group">
-                                <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" required>
+                                <label for="donorEmail">Email:</label>
+                                <input type="email" id="donorEmail" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
+                                <label for="donorPassword">Password:</label>
+                                <input type="password" id="donorPassword" class="form-control" required>
                             </div>
-                            <button type="submit" class="btn btn-primary">Login</button>
-
-                            <button type="button" class="btn btn-secondary ml-2" onclick="location.href='registration.html';">Register</button>
+                            <div class="text-center">
+                                <br>
+                                <button type="submit" class="btn btn-primary" id="loginBtn" disabled>Login</button>
+                                <br>
+                                <p>Don't Have an Account? <a href="DonReg.html">Register Now!</a></p>
+                            </div>
                         </form>
-                        <div id="errorMessage" class="mt-3 text-danger d-none">Incorrect username or password.</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailInput = document.getElementById('donorEmail');
+            const passwordInput = document.getElementById('donorPassword');
+            const loginBtn = document.getElementById('loginBtn');
+    
+            function checkFields() {
+                if (emailInput.value.trim() !== '' && passwordInput.value.trim() !== '') {
+                    loginBtn.disabled = false;
+                } else {
+                    loginBtn.disabled = true;
+                }
+            }
+    
+            function redirectToDashboard(userType) {
+                switch (userType) {
+                    case 'will.smith@gmail.com':
+                        window.location.href = "doctorDashboard.html";
+                        break;
+                    case 'tom.cruise@gmail.com':
+                        window.location.href = "teacherDashboard.html";
+                        break;
+                    case 'julia.roberts@gmail.com':
+                        window.location.href = "regDonorDashboard.html";
+                        break;
+                    default:
+                        alert("Incorrect email or password. Please try again.");
+                        break;
+                }
+            }
+    
+            emailInput.addEventListener('input', checkFields);
+            passwordInput.addEventListener('input', checkFields);
+    
+            // Add event listener to the form submission
+            document.getElementById('organizationLoginForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+                const email = emailInput.value.trim();
+                const password = passwordInput.value.trim();
+                if (email === 'will.smith@gmail.com' && password === 'rana') {
+                    redirectToDashboard(email);
+                } else if (email === 'tom.cruise@gmail.com' && password === 'rana') {
+                    redirectToDashboard(email);
+                } else if (email === 'julia.roberts@gmail.com' && password === 'rana') {
+                    redirectToDashboard(email);
+                } else {
+                    alert("Incorrect email or password. Please try again.");
+                }
+            });
+        });
+    </script>
+    
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 justify-content-center">
+    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
         <div class="container py-5">
             <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5) ;">
                 <div class="row g-4">
                     <div class="col-lg-3">
                         <a href="#">
-                            <h1 class="text-secondary mb-0">Generous Hearts</h1>
+                            <h1 class="text-secondary mb-0">Generous hearts</h1>
                             <p class="text-secondary mb-0">Give Hope. Give Today.</p>
                         </a>
                     </div>
@@ -79,6 +132,14 @@
                         <div class="position-relative mx-auto">
                             <input class="form-control border-0 w-100 py-3 px-4 rounded-pill" type="number" placeholder="Your Email">
                             <button type="submit" class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Subscribe Now</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="d-flex justify-content-end pt-3">
+                            <a class="btn  btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-secondary btn-md-square rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
@@ -90,10 +151,31 @@
                         <p class="mb-4">
                             Unite with passionate volunteers! Find your cause and empower others with your kindness.
                         </p>
-                        <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Read More</a>
+                        <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-secondary">Read More</a>
                     </div>
                 </div>
-
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex flex-column text-start footer-item">
+                        <h4 class="text-light mb-3">Shop Info</h4>
+                        <a class="btn-link" href="">About Us</a>
+                        <a class="btn-link" href="">Contact Us</a>
+                        <a class="btn-link" href="">Privacy Policy</a>
+                        <a class="btn-link" href="">Terms & Condition</a>
+                        <a class="btn-link" href="">Return Policy</a>
+                        <a class="btn-link" href="">FAQs & Help</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex flex-column text-start footer-item">
+                        <h4 class="text-light mb-3">Account</h4>
+                        <a class="btn-link" href="">My Account</a>
+                        <a class="btn-link" href="">Shop details</a>
+                        <a class="btn-link" href="">Shopping Cart</a>
+                        <a class="btn-link" href="">Wishlist</a>
+                        <a class="btn-link" href="">Order History</a>
+                        <a class="btn-link" href="">International Orders</a>
+                    </div>
+                </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-item">
                         <h4 class="text-light mb-3">Contact</h4>
@@ -107,34 +189,32 @@
             </div>
         </div>
     </div>
-    <!-- Footer End -->
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
+    <script>
+        document.getElementById("organizationRegistrationForm").addEventListener("submit", function (event) {
+            event.preventDefault();
 
+            // Get organization details
+            var orgName = document.getElementById("orgName").value;
+            var orgEmail = document.getElementById("orgEmail").value;
+            var orgProfession = document.getElementById("orgProfession").value;
 
-<script>
-    document.getElementById("donorLoginForm").addEventListener("submit", function (event) {
-        event.preventDefault();
+            // Simulate sending data to admin for review
+            // In a real scenario, you would send an AJAX request to your backend to handle organization registration
+            console.log("Organization Name:", orgName);
+            console.log("Organization Email:", orgEmail);
+            console.log("Organization Profession:", orgProfession);
 
-        // Retrieve username and password entered by the user
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
-
-        // Hardcoded admin credentials
-        var donorUsername = 'SE';
-        var donorPassword = 'S24';
-
-        // Check if username and password match the hardcoded admin credentials
-        if (username === donorUsername && password === donorPassword) {
-            // Redirect to admin dashboard or desired page
-            window.location.href = 'DonorDashboard.html';
-        } else {
-            // Display error message
-            document.getElementById('errorMessage').classList.remove('d-none');
+            // Reset form after successful registration
+            document.getElementById("organizationRegistrationForm").reset();
+            alert("Organization registered successfully. It will be reviewed by the admin.");
+        });
+    </script>
+    <script>
+        function redirectToHomepage() {
+            window.location.href = "DonorDashboard.html";
         }
-    });
-</script>
+    </script>
 </body>
 
 </html>

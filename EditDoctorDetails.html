@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Edit Donor Acct Details</title>
+    <title>Are You Sure?</title>
+    <title>Pop Up Example</title>
+    <style>
+        #popup {
+            display: none; /* Hide the popup initially */
+            position: fixed; /* Stay in place when scrolling */
+            z-index: 1; /* Sit on top of other content */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgba(0,0,0,0.4); /* Transparent background */
+        }
+
+        #popup-content {
+            background-color: #c42614;
+            margin: 15% auto; /* Center the content */
+            padding: 20px;
+            border: 1px solid #888;
+            color: white;
+            width: 80%;
+            border-radius: 20px;
+        }
+
+        .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #fff;
+            font: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-light">
+                        <h2 class="mb-0 text-light text-center">Edit Organization Account Details</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="orgAccountDetailsForm">
+                            <div class="form-group">
+                                <label for="selectField">Select Field to Edit:</label>
+                                <select id="selectField" class="form-control" required>
+                                    <option value="" disabled selected>Select Field</option>
+                                    <option value="firstName">First Name</option>
+                                    <option value="lastName">Last Name</option>
+                                    <option value="gender">Gender</option>
+                                    <option value="email">Email</option>
+                                    <option value="contactNumber">Contact Number</option>
+                                    <option value="patientCapacity">Patient Capacity</option>
+                                </select>
+                            </div>
+                            <div id="fieldInput" class="form-group">
+                                <!-- This div will be dynamically populated based on the selected field -->
+                            </div>
+                            <div class="text-center">
+                                <br>
+                                <button type="submit" class="btn btn-primary" id="saveChangesBtn" disabled>Save Changes</button>
+                                <br><br>
+                                <p> <a href="DonorDashboard.html">Return to Homepage</a></p>
+
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-light">
+                        <h2 class="mb-0 text-light text-center">Change Password</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="changePasswordForm">
+                            <div class="form-group">
+                                <label for="oldPassword">Old Password:</label>
+                                <input type="password" id="oldPassword" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">New Password:</label>
+                                <input type="password" id="newPassword" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm New Password:</label>
+                                <input type="password" id="confirmPassword" class="form-control" required>
+                            </div>
+                            <div class="text-center">
+                                <br>
+                                <button type="submit" class="btn btn-primary" id="changePasswordBtn" disabled>Change Password</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid contact py-5">
+                <div class="container py-5">
+                    <div class="p-5 bg-light rounded">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="text-center mx-auto" style="max-width: 700px;">
+                                    <h1 class="text-primary">Change Clinic Location</h1>
+                                    <p class="mb-4">Swipe to move the pin on the map below and zoom-in on your location.
+                                </div>
+                            </div>
+                                 <div class="col-lg-12">
+                                <div class="h-100 rounded">
+                                    <iframe class="rounded w-100" 
+                                    style="height: 400px;" 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1381512.0122505315!2d31.215635699999998!3d30.0444203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458387abc621333%3A0x7554dd21959b7aae!2sCairo%2C%20Egypt!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                                </div>  
+                            </div>
+            
+        </div>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="card">
+                       
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-danger btn-lg" id="deleteAccountBtn">Delete Account</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+               
+            
+    <script>
+        // Function to handle form submission for changing password
+        document.getElementById('changePasswordForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Retrieve values from input fields
+            const oldPassword = document.getElementById('oldPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Check if all fields are filled
+            if (oldPassword !== '' && newPassword !== '' && confirmPassword !== '') {
+                // Validate old password
+                if (oldPassword !== 'rana') {
+                    alert('Incorrect old password!');
+                    return;
+                }
+
+                // Validate new password and confirm new password
+                if (newPassword !== confirmPassword) {
+                    alert('New password and confirm new password do not match!');
+                    return;
+                }
+
+                // Display success message if password changed successfully
+                alert("Password changed successfully!");
+
+                // Clear input fields
+                document.getElementById('oldPassword').value = '';
+                document.getElementById('newPassword').value = '';
+                document.getElementById('confirmPassword').value = '';
+            } else {
+                alert('Please fill in all password fields.');
+            }
+        });
+
+        // Function to enable/disable the "Change Password" button based on input fields
+        function toggleChangePasswordButton() {
+            const oldPassword = document.getElementById('oldPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Enable the button if all fields are filled
+            if (oldPassword !== '' && newPassword !== '' && confirmPassword !== '') {
+                document.getElementById('changePasswordBtn').disabled = false;
+            } else {
+                // Disable the button if any field is empty
+                document.getElementById('changePasswordBtn').disabled = true;
+            }
+        }
+
+        // Call the function when any of the password fields change
+        document.getElementById('oldPassword').addEventListener('input', toggleChangePasswordButton);
+        document.getElementById('newPassword').addEventListener('input', toggleChangePasswordButton);
+        document.getElementById('confirmPassword').addEventListener('input', toggleChangePasswordButton);
+    </script>
+    <script>
+        let isFormModified = false; // Flag to track if form fields are modified
+
+        // Function to set the form modification flag to true
+        function setFormModified() {
+            isFormModified = true;
+            document.getElementById('saveChangesBtn').disabled = false; // Enable the button
+        }
+
+        // Function to handle form submission
+        document.getElementById('orgAccountDetailsForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Display success message if form is modified
+            if (isFormModified) {
+                alert("Account Information Updated Successfully!");
+                isFormModified = false; // Reset the form modification flag
+                document.getElementById('saveChangesBtn').disabled = true; // Disable the button
+            }
+        });
+
+        // Function to dynamically populate input fields based on the selected option
+        document.getElementById('selectField').addEventListener('change', function () {
+            const selectedField = this.value;
+            const fieldInputDiv = document.getElementById('fieldInput');
+            fieldInputDiv.innerHTML = ''; // Clear previous content
+
+            switch (selectedField) {
+                case 'firstName':
+                case 'lastName':
+                case 'email':
+                case 'contactNumber':
+                case 'orgName':
+                case 'orgDetails':
+                    fieldInputDiv.innerHTML = `
+                            <label for="${selectedField}">${selectedField.charAt(0).toUpperCase() + selectedField.slice(1)}:</label>
+                            <input type="text" id="${selectedField}" class="form-control" required onchange="setFormModified()">
+                        `;
+                    break;
+                case 'gender':
+                    fieldInputDiv.innerHTML = `
+                            <label>Gender:</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="male" value="male" onchange="setFormModified()">
+                                <label class="form-check-label" for="male">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="female" value="female" onchange="setFormModified()">
+                                <label class="form-check-label" for="female">Female</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="other" value="other" onchange="setFormModified()">
+                                <label class="form-check-label" for="other">Prefer not to specify</label>
+                            </div>
+                        `;
+                    break;
+
+                case 'orgType':
+                    fieldInputDiv.innerHTML = `
+                            <label for="orgType">Organization Type:</label>
+                            <select id="orgTypeDropdown" class="form-control" required onchange="setFormModified()">
+                                <option value="" disabled selected>Select Organization Type</option>
+                                <option value="hospital">Hospital</option>
+                                <option value="orphanage">Orphanage</option>
+                                <option value="mosque">Mosque</option>
+                                <option value="church">Church</option>
+                                <option value="publicSchool">Public School</option>
+                                <option value="generalNonprofit">General Nonprofit</option>
+                            </select>
+                        `;
+                    break;
+                    case 'patientCapacity':
+        fieldInputDiv.innerHTML = `
+            <label for="patientCapacity">Patient Capacity:</label>
+            <input type="number" id="studentCapacity" class="form-control" required onchange="setFormModified()">
+        `;
+        break;
+                default:
+                    break;
+            }
+        });
+
+
+    </script>
+
+
+    <!--Popup start-->
+    <div id="popup">
+        <div id="popup-content">
+            <span class="closebtn" onclick="hidePopUp()">&times;</span>
+            <p>Are You Sure You Want to Delete Your Account?</p>
+            <button onclick="redirectToGoodbyePage()" class="btn btn-danger">Yes</button>
+            <button onclick="hidePopUp()" class="btn btn-secondary">No</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to display the popup
+        function showPopUp() {
+            document.getElementById("popup").style.display = "block";
+        }
+
+        // Function to hide the popup
+        function hidePopUp() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        // Function to redirect to the Goodbye page
+        function redirectToGoodbyePage() {
+            window.location.href = "Goodbye.html";
+        }
+
+        // Event listener for the "Delete Account" button
+        document.getElementById('deleteAccountBtn').addEventListener('click', function () {
+            // Display the popup
+            showPopUp();
+        });
+    </script>
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 justify-content-center">
+        <div class="container py-5">
+            <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5) ;">
+                <div class="row g-4">
+                    <div class="col-lg-3">
+                        <a href="#">
+                            <h1 class="text-secondary mb-0">Generous Hearts</h1>
+                            <p class="text-secondary mb-0">Give Hope. Give Today.</p>
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="position-relative mx-auto">
+                            <input class="form-control border-0 w-100 py-3 px-4 rounded-pill" type="number" placeholder="Your Email">
+                            <button type="submit" class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Subscribe Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-item">
+                        <h4 class="text-light mb-3">Why People Like us!</h4>
+                        <p class="mb-4">
+                            Unite with passionate volunteers! Find your cause and empower others with your kindness.
+                        </p>
+                        <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Read More</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-item">
+                        <h4 class="text-light mb-3">Contact</h4>
+                        <p>Address: 1429 Netus Rd, NY 48247</p>
+                        <p>Email: Example@gmail.com</p>
+                        <p>Phone: +0123 4567 8910</p>
+                        <p>Payment Accepted</p>
+                        <img src="img/payment.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
