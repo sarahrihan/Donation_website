@@ -4,194 +4,1037 @@
     <meta charset="utf-8" />
     <title></title>
     <style type="text/css">
-*,*::before,*::after{box-sizing:border-box}
+        *, *::before, *::after {
+            box-sizing: border-box
+        }
 
- #spinner.show {
-     transition: opacity .8s ease-out, visibility 0s linear .0s;
-     visibility: visible;
-     opacity: 1;
- }
+        #spinner.show {
+            transition: opacity .8s ease-out, visibility 0s linear .0s;
+            visibility: visible;
+            opacity: 1;
+        }
 
- #spinner {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .8s ease-out, visibility 0s linear .5s;
-    z-index: 99999;
- }
+        #spinner {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .8s ease-out, visibility 0s linear .5s;
+            z-index: 99999;
+        }
 
- .bg-white{background-color:#fff !important}.align-items-center{align-items:center !important}.justify-content-center{justify-content:center !important}.vh-100{height:100vh !important}.w-100{width:100% !important}.translate-middle{transform:translate(-50%, -50%) !important}.start-50{left:50% !important}.top-50{top:50% !important}.position-fixed{position:fixed !important}.d-flex{display:flex !important}
-.text-primary {
-    color: #59981A!important
-}
-.spinner-border,.spinner-grow{animation-duration:1.5s}.spinner-grow{display:inline-block;width:2rem;height:2rem;vertical-align:-0.125em;background-color:currentColor;border-radius:50%;opacity:0;animation:.75s linear infinite spinner-grow}
-.fixed-top {
-    transition: 0.5s;
-    background: var(--bs-white);
-    border: 0;
-}
+        .bg-white {
+            background-color: #fff !important
+        }
 
-.fixed-top{position:fixed;top:0;right:0;left:0;z-index:1030}.container,.container-fluid,.container-xxl,.container-xl,.container-lg,.container-md,.container-sm{width:100%;padding-right:var(--bs-gutter-x, 0.75rem);padding-left:var(--bs-gutter-x, 0.75rem);margin-right:auto;margin-left:auto}
+        .align-items-center {
+            align-items: center !important
+        }
 
-.topbar {
-    padding: 20px;
-    border-radius: 230px 100px;
-}
+        .justify-content-center {
+            justify-content: center !important
+        }
 
-.d-lg-block{display:block !important}.bg-primary{background-color:#2F4A60  !important}.d-none{display:none !important}.container-xxl,.container-xl,.container-lg,.container-md,.container-sm,.container{max-width:1320px}.container-xl,.container-lg,.container-md,.container-sm,.container{max-width:1140px}.container-lg,.container-md,.container-sm,.container{max-width:960px}.container-md,.container-sm,.container{max-width:720px}.container-sm,.container{max-width:540px}.justify-content-between{justify-content:space-between !important}
+        .vh-100 {
+            height: 100vh !important
+        }
 
-.topbar .top-info {
-    font-size: 15px;
-    line-height: 0;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-}
+        .w-100 {
+            width: 100% !important
+        }
 
-.ps-2{padding-left:.5rem !important}.me-3{margin-right:1rem !important}small,.small{font-size:0.875em}
-.text-secondary {
-    color: #BAD3E4 !important
-}.me-2{margin-right:.5rem !important}.fa,.fas{font-weight:900}.fa,.far,.fas{font-family:"Font Awesome 5 Free"}
-.fa,.fab,.fad,.fal,.far,.fas{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;text-rendering:auto;line-height:1}.text-white{color:#fff !important}a{color:#2F4A60 ;text-decoration:none}
+        .translate-middle {
+            transform: translate(-50%, -50%) !important
+        }
 
-.topbar .top-link {
-    font-size: 15px;
-    line-height: 0;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-}
+        .start-50 {
+            left: 50% !important
+        }
 
-.pe-2{padding-right:.5rem !important}
+        .top-50 {
+            top: 50% !important
+        }
 
-.topbar .top-link a {
-    letter-spacing: 1px;
-}
+        .position-fixed {
+            position: fixed !important
+        }
 
-.mx-2{margin-right:.5rem !important;margin-left:.5rem !important}.px-0{padding-right:0 !important;padding-left:0 !important}
+        .d-flex {
+            display: flex !important
+        }
 
-.navbar {
-    height: 100px;
-    border-bottom: 1px solid rgba(255, 255, 255, .1);
-}
+        .text-primary {
+            color: #59981A !important
+        }
 
-.navbar-expand-xl{flex-wrap:nowrap;justify-content:flex-start}.navbar{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding-top:.5rem;padding-bottom:.5rem}.navbar-light .navbar-brand{color:rgba(0,0,0,.9)}.navbar-brand{padding-top:.3125rem;padding-bottom:.3125rem;margin-right:1rem;font-size:1.25rem;white-space:nowrap}.display-6{font-size:2.5rem}.display-6{font-size:calc(1.375rem + 1.5vw);font-weight:800;line-height:1.2}h1,.h1{font-size:2.5rem}h1,.h1{font-size:calc(1.375rem + 1.5vw)}h6,.h6,h5,.h5,h4,.h4,h3,.h3,h2,.h2,h1,.h1{margin-top:0;margin-bottom:.5rem;font-family:"Raleway",sans-serif;font-weight:600;line-height:1.2;color:#45595b}.navbar-light .navbar-toggler{color:rgba(0,0,0,.55);border-color:rgba(0,0,0,.1)}.navbar-expand-xl .navbar-toggler{display:none}.py-2{padding-top:.5rem !important;padding-bottom:.5rem !important}.px-3{padding-right:1rem !important;padding-left:1rem !important}.navbar-toggler{transition:none}.navbar-toggler{padding:.25rem .75rem;font-size:1.25rem;line-height:1;background-color:rgba(0,0,0,0);border:1px solid rgba(0,0,0,0);border-radius:10px;transition:box-shadow .15s ease-in-out}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button}button,select{text-transform:none}input,button,select,optgroup,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button{border-radius:0}.navbar-expand-xl .navbar-collapse{display:flex !important;flex-basis:auto}.navbar-collapse{flex-basis:100%;flex-grow:1;align-items:center}.navbar-expand-xl .navbar-nav{flex-direction:row}.mx-auto{margin-right:auto !important;margin-left:auto !important}.navbar-nav{display:flex;flex-direction:column;padding-left:0;margin-bottom:0;list-style:none}
-.navbar .navbar-nav .nav-link {
-    padding: 10px 15px;
-    font-size: 16px;
-    transition: .5s;
-}
+        .spinner-border, .spinner-grow {
+            animation-duration: 1.5s
+        }
 
-.navbar-light .navbar-nav .nav-link{color:rgba(0,0,0,.55)}.navbar-expand-xl .navbar-nav .nav-link{padding-right:.5rem;padding-left:.5rem}.navbar-nav .nav-link{padding-right:0;padding-left:0}.nav-link{transition:none}.nav-link{display:block;padding:.5rem 1rem;color:#2F4A60 ;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out}
+        .spinner-grow {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            vertical-align: -0.125em;
+            background-color: currentColor;
+            border-radius: 50%;
+            opacity: 0;
+            animation: .75s linear infinite spinner-grow
+        }
 
-.navbar .navbar-nav .nav-link:hover,
-.navbar .navbar-nav .nav-link.active,
-.fixed-top.bg-white .navbar .navbar-nav .nav-link:hover,
-.fixed-top.bg-white .navbar .navbar-nav .nav-link.active {
-    color: var(--bs-primary);
-}
+        .fixed-top {
+            transition: 0.5s;
+            background: var(--bs-white);
+            border: 0;
+        }
 
-.navbar-light .navbar-nav .show>.nav-link,.navbar-light .navbar-nav .nav-link.active{color:rgba(0,0,0,.9)}.dropup,.dropend,.dropdown,.dropstart{position:relative}.dropdown-toggle{white-space:nowrap}
-    .navbar .nav-item .dropdown-menu {
-        display: block;
-        visibility: hidden;
-        top: 100%;
-        transform: rotateX(-75deg);
-        transform-origin: 0% 0%;
-        border: 0;
-        transition: .5s;
-        opacity: 0;
-    }
-.navbar-expand-xl .navbar-nav .dropdown-menu{position:absolute}.navbar-nav .dropdown-menu{position:static}.rounded-0{border-radius:0 !important}.bg-secondary{background-color:#BAD3E4 !important}.m-0{margin:0 !important}.dropdown-menu{position:absolute;z-index:1000;display:none;min-width:10rem;padding:.5rem 0;margin:0;font-size:1rem;color:#747d88;text-align:left;list-style:none;background-color:#fff;background-clip:padding-box;border:1px solid rgba(0,0,0,.15);border-radius:10px}.dropdown-item{display:block;width:100%;padding:.25rem 1rem;clear:both;font-weight:400;color:#212529;text-align:inherit;white-space:nowrap;background-color:rgba(0,0,0,0);border:0}.me-0{margin-right:0 !important}
+        .fixed-top {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1030
+        }
 
-.btn.border-secondary {
-    transition: 0.5s;
-}
+        .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+            width: 100%;
+            padding-right: var(--bs-gutter-x, 0.75rem);
+            padding-left: var(--bs-gutter-x, 0.75rem);
+            margin-right: auto;
+            margin-left: auto
+        }
 
-.btn-square,
-.btn-sm-square,
-.btn-md-square,
-.btn-lg-square {
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: normal;
-}
+        .topbar {
+            padding: 20px;
+            border-radius: 230px 100px;
+        }
 
-.btn-md-square {
-    width: 44px;
-    height: 44px;
-}
+        .d-lg-block {
+            display: block !important
+        }
 
-.btn {
-    font-weight: 600;
-    transition: .5s;
-}
+        .bg-primary {
+            background-color: #2F4A60 !important
+        }
 
-.rounded-circle{border-radius:50% !important}.me-4{margin-right:1.5rem !important}.border-secondary{border-color:#BAD3E4 !important}.border{border:1px solid #dee2e6 !important}.btn{transition:none}.btn{display:inline-block;font-weight:400;line-height:1.5;color:#747d88;text-align:center;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;user-select:none;background-color:rgba(0,0,0,0);border:1px solid rgba(0,0,0,0);padding:.375rem .75rem;font-size:1rem;border-radius:10px;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}.my-auto{margin-top:auto !important;margin-bottom:auto !important}.position-relative{position:relative !important}.fa-2x{font-size:2em}.text-dark{color:#45595b !important}.px-1{padding-right:.25rem !important;padding-left:.25rem !important}.position-absolute{position:absolute !important}.modal{position:fixed;top:0;left:0;z-index:1060;display:none;width:100%;height:100%;overflow:hidden;outline:0}.fade{transition:none}.fade{transition:opacity .15s linear}.modal.fade .modal-dialog{transition:none}.modal.fade .modal-dialog{transition:transform .3s ease-out;transform:translate(0, -50px)}.modal-fullscreen{width:100vw;max-width:none;height:100%;margin:0}.modal-dialog{max-width:500px;margin:1.75rem auto}.modal-dialog{position:relative;width:auto;margin:.5rem;pointer-events:none}.modal-fullscreen .modal-content{height:100%;border:0;border-radius:0}.modal-content{position:relative;display:flex;flex-direction:column;width:100%;pointer-events:auto;background-color:#fff;background-clip:padding-box;border:1px solid rgba(0,0,0,.2);border-radius:10px;outline:0}.modal-fullscreen .modal-header{border-radius:0}.modal-header{display:flex;flex-shrink:0;align-items:center;justify-content:space-between;padding:1rem 1rem;border-bottom:1px solid #dee2e6;border-top-left-radius:9px;border-top-right-radius:9px}.modal-title{margin-bottom:0;line-height:1.5}h5,.h5{font-size:1.25rem}.btn-close{box-sizing:content-box;width:1em;height:1em;padding:.25em .25em;color:#000;background:rgba(0,0,0,0) url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;border:0;border-radius:10px;opacity:.5}.modal-fullscreen .modal-body{overflow-y:auto}.modal-body{position:relative;flex:1 1 auto;padding:1rem}.w-75{width:75% !important}.input-group{position:relative;display:flex;flex-wrap:wrap;align-items:stretch;width:100%}.input-group>.form-control,.input-group>.form-select{position:relative;flex:1 1 auto;width:1%;min-width:0}.form-control{transition:none}.form-control{display:block;width:100%;padding:.375rem .75rem;font-size:1rem;font-weight:400;line-height:1.5;color:#747d88;background-color:#fff;background-clip:padding-box;border:1px solid #ced4da;-webkit-appearance:none;-moz-appearance:none;appearance:none;border-radius:10px;transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out}[type=search]{outline-offset:-2px;-webkit-appearance:textfield}.input-group-text{display:flex;align-items:center;padding:.375rem .75rem;font-size:1rem;font-weight:400;line-height:1.5;color:#747d88;text-align:center;white-space:nowrap;background-color:#e9ecef;border:1px solid #ced4da;border-radius:10px}
-    .hero-header,
-    .page-header {
-        margin-top: 97px !important;
-    }
-    .hero-header,
-    .page-header {
-        margin-top: 152px !important;
-    }
+        .d-none {
+            display: none !important
+        }
 
-.page-header {
-    position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/home.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+        .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+            max-width: 1320px
+        }
 
-.py-5{padding-top:3rem !important;padding-bottom:3rem !important}.text-center{text-align:center !important}.mb-0{margin-bottom:0 !important}.breadcrumb{display:flex;flex-wrap:wrap;padding:0 0;margin-bottom:1rem;list-style:none}ol,ul,dl{margin-top:0;margin-bottom:1rem}ol,ul{padding-left:2rem}.breadcrumb-item+.breadcrumb-item{padding-left:.5rem}.breadcrumb-item.active{color:#6c757d}.mb-4{margin-bottom:1.5rem !important}.g-4,.gy-4{--bs-gutter-y: 1.5rem}.g-4,.gx-4{--bs-gutter-x: 1.5rem}.row{--bs-gutter-x: 1.5rem;--bs-gutter-y: 0;display:flex;flex-wrap:wrap;margin-top:calc(var(--bs-gutter-y)*-1);margin-right:calc(var(--bs-gutter-x)/-2);margin-left:calc(var(--bs-gutter-x)/-2)}.col-lg-12{flex:0 0 auto;width:100%}.row>*{flex-shrink:0;width:100%;max-width:100%;padding-right:calc(var(--bs-gutter-x)/2);padding-left:calc(var(--bs-gutter-x)/2);margin-top:var(--bs-gutter-y)}.col-lg-3{flex:0 0 auto;width:25%}.mb-3{margin-bottom:1rem !important}h4,.h4{font-size:1.5rem}h4,.h4{font-size:calc(1.275rem + 0.3vw)}.list-unstyled{padding-left:0;list-style:none}
+        .container-xl, .container-lg, .container-md, .container-sm, .container {
+            max-width: 1140px
+        }
 
-.fruite .fruite-categorie .fruite-name {
-    line-height: 40px;
-}
+        .container-lg, .container-md, .container-sm, .container {
+            max-width: 960px
+        }
 
-label{display:inline-block}select{word-wrap:normal}.col-lg-9{flex:0 0 auto;width:75%}
-.bg-dark {
-    background-color: #2F4A60 !important
-}.text-white-50{color:rgba(255,255,255,.5) !important}.pt-5{padding-top:3rem !important}.mt-5{margin-top:3rem !important}.pb-4{padding-bottom:1.5rem !important}p{margin-top:0;margin-bottom:1rem}.col-lg-6{flex:0 0 auto;width:50%}.rounded-pill{border-radius:50rem !important}.py-3{padding-top:1rem !important;padding-bottom:1rem !important}.px-4{padding-right:1.5rem !important;padding-left:1.5rem !important}.border-0{border:0 !important}
-.btn-primary {
-    color: #FFFFFF;
-    background-color: #59981A;
-    border-color: #59981A
-}
-    .pt-3{padding-top:1rem !important}.justify-content-end{justify-content:flex-end !important}.btn-outline-secondary{color:#BAD3E4;border-color:#BAD3E4}.fab,.far{font-weight:400}.fab{font-family:"Font Awesome 5 Brands"}.g-5,.gy-5{--bs-gutter-y: 3rem}.g-5,.gx-5{--bs-gutter-x: 3rem}.col-md-6{flex:0 0 auto;width:50%}.text-light{color:#f4f6f8 !important}
+        .container-md, .container-sm, .container {
+            max-width: 720px
+        }
 
-.footer .footer-item p.mb-4 {
-    line-height: 35px;
-}
-.text-start{text-align:left !important}.flex-column{flex-direction:column !important}
-.footer .footer-item .btn-link {
-    line-height: 35px;
-    color: rgba(255, 255, 255, .5);
-    transition: 0.5s;
-}
+        .container-sm, .container {
+            max-width: 540px
+        }
 
-.btn-link{font-weight:400;color:#2F4A60 ;text-decoration:none}.py-4{padding-top:1.5rem !important;padding-bottom:1.5rem !important}.text-md-start{text-align:left !important}.mb-md-0{margin-bottom:0 !important}.text-md-end{text-align:right !important}.border-bottom{border-bottom:1px solid #dee2e6 !important}
+        .justify-content-between {
+            justify-content: space-between !important
+        }
 
- .back-to-top {
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    display: flex;
-    width: 45px;
-    height: 45px;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s;
-    z-index: 99;
-}
-.border-3{border-width:3px !important}.border-primary{border-color:#2F4A60  !important}</style>
+        .topbar .top-info {
+            font-size: 15px;
+            line-height: 0;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .ps-2 {
+            padding-left: .5rem !important
+        }
+
+        .me-3 {
+            margin-right: 1rem !important
+        }
+
+        small, .small {
+            font-size: 0.875em
+        }
+
+        .text-secondary {
+            color: #BAD3E4 !important
+        }
+
+        .me-2 {
+            margin-right: .5rem !important
+        }
+
+        .fa, .fas {
+            font-weight: 900
+        }
+
+        .fa, .far, .fas {
+            font-family: "Font Awesome 5 Free"
+        }
+
+        .fa, .fab, .fad, .fal, .far, .fas {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1
+        }
+
+        .text-white {
+            color: #fff !important
+        }
+
+        a {
+            color: #2F4A60;
+            text-decoration: none
+        }
+
+        .topbar .top-link {
+            font-size: 15px;
+            line-height: 0;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .pe-2 {
+            padding-right: .5rem !important
+        }
+
+        .topbar .top-link a {
+            letter-spacing: 1px;
+        }
+
+        .mx-2 {
+            margin-right: .5rem !important;
+            margin-left: .5rem !important
+        }
+
+        .px-0 {
+            padding-right: 0 !important;
+            padding-left: 0 !important
+        }
+
+        .navbar {
+            height: 100px;
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+        }
+
+        .navbar-expand-xl {
+            flex-wrap: nowrap;
+            justify-content: flex-start
+        }
+
+        .navbar {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: .5rem;
+            padding-bottom: .5rem
+        }
+
+        .navbar-light .navbar-brand {
+            color: rgba(0,0,0,.9)
+        }
+
+        .navbar-brand {
+            padding-top: .3125rem;
+            padding-bottom: .3125rem;
+            margin-right: 1rem;
+            font-size: 1.25rem;
+            white-space: nowrap
+        }
+
+        .display-6 {
+            font-size: 2.5rem
+        }
+
+        .display-6 {
+            font-size: calc(1.375rem + 1.5vw);
+            font-weight: 800;
+            line-height: 1.2
+        }
+
+        h1, .h1 {
+            font-size: 2.5rem
+        }
+
+        h1, .h1 {
+            font-size: calc(1.375rem + 1.5vw)
+        }
+
+        h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+            margin-top: 0;
+            margin-bottom: .5rem;
+            font-family: "Raleway",sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #45595b
+        }
+
+        .navbar-light .navbar-toggler {
+            color: rgba(0,0,0,.55);
+            border-color: rgba(0,0,0,.1)
+        }
+
+        .navbar-expand-xl .navbar-toggler {
+            display: none
+        }
+
+        .py-2 {
+            padding-top: .5rem !important;
+            padding-bottom: .5rem !important
+        }
+
+        .px-3 {
+            padding-right: 1rem !important;
+            padding-left: 1rem !important
+        }
+
+        .navbar-toggler {
+            transition: none
+        }
+
+        .navbar-toggler {
+            padding: .25rem .75rem;
+            font-size: 1.25rem;
+            line-height: 1;
+            background-color: rgba(0,0,0,0);
+            border: 1px solid rgba(0,0,0,0);
+            border-radius: 10px;
+            transition: box-shadow .15s ease-in-out
+        }
+
+        button, [type=button], [type=reset], [type=submit] {
+            -webkit-appearance: button
+        }
+
+        button, select {
+            text-transform: none
+        }
+
+        input, button, select, optgroup, textarea {
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit
+        }
+
+        button {
+            border-radius: 0
+        }
+
+        .navbar-expand-xl .navbar-collapse {
+            display: flex !important;
+            flex-basis: auto
+        }
+
+        .navbar-collapse {
+            flex-basis: 100%;
+            flex-grow: 1;
+            align-items: center
+        }
+
+        .navbar-expand-xl .navbar-nav {
+            flex-direction: row
+        }
+
+        .mx-auto {
+            margin-right: auto !important;
+            margin-left: auto !important
+        }
+
+        .navbar-nav {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none
+        }
+
+        .navbar .navbar-nav .nav-link {
+            padding: 10px 15px;
+            font-size: 16px;
+            transition: .5s;
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: rgba(0,0,0,.55)
+        }
+
+        .navbar-expand-xl .navbar-nav .nav-link {
+            padding-right: .5rem;
+            padding-left: .5rem
+        }
+
+        .navbar-nav .nav-link {
+            padding-right: 0;
+            padding-left: 0
+        }
+
+        .nav-link {
+            transition: none
+        }
+
+        .nav-link {
+            display: block;
+            padding: .5rem 1rem;
+            color: #2F4A60;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out
+        }
+
+        .navbar .navbar-nav .nav-link:hover,
+        .navbar .navbar-nav .nav-link.active,
+        .fixed-top.bg-white .navbar .navbar-nav .nav-link:hover,
+        .fixed-top.bg-white .navbar .navbar-nav .nav-link.active {
+            color: var(--bs-primary);
+        }
+
+        .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .nav-link.active {
+            color: rgba(0,0,0,.9)
+        }
+
+        .dropup, .dropend, .dropdown, .dropstart {
+            position: relative
+        }
+
+        .dropdown-toggle {
+            white-space: nowrap
+        }
+
+        .navbar .nav-item .dropdown-menu {
+            display: block;
+            visibility: hidden;
+            top: 100%;
+            transform: rotateX(-75deg);
+            transform-origin: 0% 0%;
+            border: 0;
+            transition: .5s;
+            opacity: 0;
+        }
+
+        .navbar-expand-xl .navbar-nav .dropdown-menu {
+            position: absolute
+        }
+
+        .navbar-nav .dropdown-menu {
+            position: static
+        }
+
+        .rounded-0 {
+            border-radius: 0 !important
+        }
+
+        .bg-secondary {
+            background-color: #BAD3E4 !important
+        }
+
+        .m-0 {
+            margin: 0 !important
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            z-index: 1000;
+            display: none;
+            min-width: 10rem;
+            padding: .5rem 0;
+            margin: 0;
+            font-size: 1rem;
+            color: #747d88;
+            text-align: left;
+            list-style: none;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid rgba(0,0,0,.15);
+            border-radius: 10px
+        }
+
+        .dropdown-item {
+            display: block;
+            width: 100%;
+            padding: .25rem 1rem;
+            clear: both;
+            font-weight: 400;
+            color: #212529;
+            text-align: inherit;
+            white-space: nowrap;
+            background-color: rgba(0,0,0,0);
+            border: 0
+        }
+
+        .me-0 {
+            margin-right: 0 !important
+        }
+
+        .btn.border-secondary {
+            transition: 0.5s;
+        }
+
+        .btn-square,
+        .btn-sm-square,
+        .btn-md-square,
+        .btn-lg-square {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: normal;
+        }
+
+        .btn-md-square {
+            width: 44px;
+            height: 44px;
+        }
+
+        .btn {
+            font-weight: 600;
+            transition: .5s;
+        }
+
+        .rounded-circle {
+            border-radius: 50% !important
+        }
+
+        .me-4 {
+            margin-right: 1.5rem !important
+        }
+
+        .border-secondary {
+            border-color: #BAD3E4 !important
+        }
+
+        .border {
+            border: 1px solid #dee2e6 !important
+        }
+
+        .btn {
+            transition: none
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #747d88;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            background-color: rgba(0,0,0,0);
+            border: 1px solid rgba(0,0,0,0);
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            border-radius: 10px;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+        }
+
+        .my-auto {
+            margin-top: auto !important;
+            margin-bottom: auto !important
+        }
+
+        .position-relative {
+            position: relative !important
+        }
+
+        .fa-2x {
+            font-size: 2em
+        }
+
+        .text-dark {
+            color: #45595b !important
+        }
+
+        .px-1 {
+            padding-right: .25rem !important;
+            padding-left: .25rem !important
+        }
+
+        .position-absolute {
+            position: absolute !important
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1060;
+            display: none;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            outline: 0
+        }
+
+        .fade {
+            transition: none
+        }
+
+        .fade {
+            transition: opacity .15s linear
+        }
+
+        .modal.fade .modal-dialog {
+            transition: none
+        }
+
+        .modal.fade .modal-dialog {
+            transition: transform .3s ease-out;
+            transform: translate(0, -50px)
+        }
+
+        .modal-fullscreen {
+            width: 100vw;
+            max-width: none;
+            height: 100%;
+            margin: 0
+        }
+
+        .modal-dialog {
+            max-width: 500px;
+            margin: 1.75rem auto
+        }
+
+        .modal-dialog {
+            position: relative;
+            width: auto;
+            margin: .5rem;
+            pointer-events: none
+        }
+
+        .modal-fullscreen .modal-content {
+            height: 100%;
+            border: 0;
+            border-radius: 0
+        }
+
+        .modal-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            pointer-events: auto;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid rgba(0,0,0,.2);
+            border-radius: 10px;
+            outline: 0
+        }
+
+        .modal-fullscreen .modal-header {
+            border-radius: 0
+        }
+
+        .modal-header {
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1rem;
+            border-bottom: 1px solid #dee2e6;
+            border-top-left-radius: 9px;
+            border-top-right-radius: 9px
+        }
+
+        .modal-title {
+            margin-bottom: 0;
+            line-height: 1.5
+        }
+
+        h5, .h5 {
+            font-size: 1.25rem
+        }
+
+        .btn-close {
+            box-sizing: content-box;
+            width: 1em;
+            height: 1em;
+            padding: .25em .25em;
+            color: #000;
+            background: rgba(0,0,0,0) url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+            border: 0;
+            border-radius: 10px;
+            opacity: .5
+        }
+
+        .modal-fullscreen .modal-body {
+            overflow-y: auto
+        }
+
+        .modal-body {
+            position: relative;
+            flex: 1 1 auto;
+            padding: 1rem
+        }
+
+        .w-75 {
+            width: 75% !important
+        }
+
+        .input-group {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            width: 100%
+        }
+
+            .input-group > .form-control, .input-group > .form-select {
+                position: relative;
+                flex: 1 1 auto;
+                width: 1%;
+                min-width: 0
+            }
+
+        .form-control {
+            transition: none
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #747d88;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 10px;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
+        }
+
+        [type=search] {
+            outline-offset: -2px;
+            -webkit-appearance: textfield
+        }
+
+        .input-group-text {
+            display: flex;
+            align-items: center;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #747d88;
+            text-align: center;
+            white-space: nowrap;
+            background-color: #e9ecef;
+            border: 1px solid #ced4da;
+            border-radius: 10px
+        }
+
+        .hero-header,
+        .page-header {
+            margin-top: 97px !important;
+        }
+
+        .hero-header,
+        .page-header {
+            margin-top: 152px !important;
+        }
+
+        .page-header {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/home.jpg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .py-5 {
+            padding-top: 3rem !important;
+            padding-bottom: 3rem !important
+        }
+
+        .text-center {
+            text-align: center !important
+        }
+
+        .mb-0 {
+            margin-bottom: 0 !important
+        }
+
+        .breadcrumb {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 0;
+            margin-bottom: 1rem;
+            list-style: none
+        }
+
+        ol, ul, dl {
+            margin-top: 0;
+            margin-bottom: 1rem
+        }
+
+        ol, ul {
+            padding-left: 2rem
+        }
+
+        .breadcrumb-item + .breadcrumb-item {
+            padding-left: .5rem
+        }
+
+        .breadcrumb-item.active {
+            color: #6c757d
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem !important
+        }
+
+        .g-4, .gy-4 {
+            --bs-gutter-y: 1.5rem
+        }
+
+        .g-4, .gx-4 {
+            --bs-gutter-x: 1.5rem
+        }
+
+        .row {
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: calc(var(--bs-gutter-y)*-1);
+            margin-right: calc(var(--bs-gutter-x)/-2);
+            margin-left: calc(var(--bs-gutter-x)/-2)
+        }
+
+        .col-lg-12 {
+            flex: 0 0 auto;
+            width: 100%
+        }
+
+        .row > * {
+            flex-shrink: 0;
+            width: 100%;
+            max-width: 100%;
+            padding-right: calc(var(--bs-gutter-x)/2);
+            padding-left: calc(var(--bs-gutter-x)/2);
+            margin-top: var(--bs-gutter-y)
+        }
+
+        .col-lg-3 {
+            flex: 0 0 auto;
+            width: 25%
+        }
+
+        .mb-3 {
+            margin-bottom: 1rem !important
+        }
+
+        h4, .h4 {
+            font-size: 1.5rem
+        }
+
+        h4, .h4 {
+            font-size: calc(1.275rem + 0.3vw)
+        }
+
+        .list-unstyled {
+            padding-left: 0;
+            list-style: none
+        }
+
+        .fruite .fruite-categorie .fruite-name {
+            line-height: 40px;
+        }
+
+        label {
+            display: inline-block
+        }
+
+        select {
+            word-wrap: normal
+        }
+
+        .col-lg-9 {
+            flex: 0 0 auto;
+            width: 75%
+        }
+
+        .bg-dark {
+            background-color: #2F4A60 !important
+        }
+
+        .text-white-50 {
+            color: rgba(255,255,255,.5) !important
+        }
+
+        .pt-5 {
+            padding-top: 3rem !important
+        }
+
+        .mt-5 {
+            margin-top: 3rem !important
+        }
+
+        .pb-4 {
+            padding-bottom: 1.5rem !important
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem
+        }
+
+        .col-lg-6 {
+            flex: 0 0 auto;
+            width: 50%
+        }
+
+        .rounded-pill {
+            border-radius: 50rem !important
+        }
+
+        .py-3 {
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important
+        }
+
+        .px-4 {
+            padding-right: 1.5rem !important;
+            padding-left: 1.5rem !important
+        }
+
+        .border-0 {
+            border: 0 !important
+        }
+
+        .btn-primary {
+            color: #FFFFFF;
+            background-color: #59981A;
+            border-color: #59981A
+        }
+
+        .pt-3 {
+            padding-top: 1rem !important
+        }
+
+        .justify-content-end {
+            justify-content: flex-end !important
+        }
+
+        .btn-outline-secondary {
+            color: #BAD3E4;
+            border-color: #BAD3E4
+        }
+
+        .fab, .far {
+            font-weight: 400
+        }
+
+        .fab {
+            font-family: "Font Awesome 5 Brands"
+        }
+
+        .g-5, .gy-5 {
+            --bs-gutter-y: 3rem
+        }
+
+        .g-5, .gx-5 {
+            --bs-gutter-x: 3rem
+        }
+
+        .col-md-6 {
+            flex: 0 0 auto;
+            width: 50%
+        }
+
+        .text-light {
+            color: #f4f6f8 !important
+        }
+
+        .footer .footer-item p.mb-4 {
+            line-height: 35px;
+        }
+
+        .text-start {
+            text-align: left !important
+        }
+
+        .flex-column {
+            flex-direction: column !important
+        }
+
+        .footer .footer-item .btn-link {
+            line-height: 35px;
+            color: rgba(255, 255, 255, .5);
+            transition: 0.5s;
+        }
+
+        .btn-link {
+            font-weight: 400;
+            color: #2F4A60;
+            text-decoration: none
+        }
+
+        .py-4 {
+            padding-top: 1.5rem !important;
+            padding-bottom: 1.5rem !important
+        }
+
+        .text-md-start {
+            text-align: left !important
+        }
+
+        .mb-md-0 {
+            margin-bottom: 0 !important
+        }
+
+        .text-md-end {
+            text-align: right !important
+        }
+
+        .border-bottom {
+            border-bottom: 1px solid #dee2e6 !important
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            display: flex;
+            width: 45px;
+            height: 45px;
+            align-items: center;
+            justify-content: center;
+            transition: 0.5s;
+            z-index: 99;
+        }
+
+        .border-3 {
+            border-width: 3px !important
+        }
+
+        .border-primary {
+            border-color: #2F4A60 !important
+        }
+    </style>
 </head>
 <body>
 
-<!DOCTYPE html>
+    <!DOCTYPE html>
     <meta charset="utf-8" />
     <title>Generous Hearts - Vegetable Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -233,14 +1076,14 @@ label{display:inline-block}select{word-wrap:normal}.col-lg-9{flex:0 0 auto;width
                 </div>
                 <div class="top-link pe-2">
                     <a class="text-white" href="#"><small class="text-white mx-2">Privacy Policy</small>/</a> <a class="text-white" href="#"><small class="text-white mx-2">Terms of Use</small></a>
-                   <!-- <a href="#" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>-->
+                    <!-- <a href="#" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>-->
                 </div>
             </div>
         </div>
         <div class="container px-0">
             <nav class="navbar navbar-light bg-white navbar-expand-xl">
                 <a class="navbar-brand" href="index.html">
-                <h1 class="text-primary display-6">Generous Hearts</h1>
+                    <h1 class="text-primary display-6">Generous Hearts</h1>
                 </a>
                 <button class="navbar-toggler py-2 px-3" data-bs-target="#navbarCollapse" data-bs-toggle="collapse" type="button">
                     <span class="fa fa-bars text-primary"></span>
@@ -269,96 +1112,101 @@ label{display:inline-block}select{word-wrap:normal}.col-lg-9{flex:0 0 auto;width
     <!-- Navbar End -->
     <style>
 
-  /* Add your CSS styles here */
-  .error-message {
-    color: red;
-    text-align: center;
-}
-  .shaded {
-    background-color: rgba(128, 128, 128, 0.5); /* Darker gray with some transparency */
-    pointer-events: none;
-}
-    filters label {
-    display: block;
-    margin-bottom: 5px;
-  }
-    .toy-item {
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-  }
-  .toy-item img {
-    max-width: 100px;
-    margin-right: 20px;
-  }
-  .toy-details {
-    flex-grow: 1;
-  }
-  .view-details {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
-</style>
-<!-- Search Modal -->
-<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="searchModalLabel">Search by blood type</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <input type="text" class="form-control search-input" id="searchQuery" placeholder="Enter blood type (e.g., A+, AB-, O)">
-                <ul id="searchResults"></ul>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="searchBtn">Search</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        /* Add your CSS styles here */
+        .error-message {
+            color: red;
+            text-align: center;
+        }
+
+        .shaded {
+            background-color: rgba(128, 128, 128, 0.5); /* Darker gray with some transparency */
+            pointer-events: none;
+        }
+
+        filters label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .toy-item {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+            .toy-item img {
+                max-width: 100px;
+                margin-right: 20px;
+            }
+
+        .toy-details {
+            flex-grow: 1;
+        }
+
+        .view-details {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">Search by blood type</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control search-input" id="searchQuery" placeholder="Enter blood type (e.g., A+, AB-, O)">
+                    <ul id="searchResults"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="searchBtn">Search</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- End of Search Modal -->
+    <!-- End of Search Modal -->
+    <!-- Custom JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Custom JavaScript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+        $(document).ready(function () {
+            $("#searchBtn").click(function () {
+                var searchQuery = $("#searchQuery").val().trim().toUpperCase();
+                var searchResults = $("#searchResults");
+                searchResults.empty(); // Clear previous results
 
-<!-- Custom JavaScript -->
-<script>
-    $(document).ready(function () {
-        $("#searchBtn").click(function () {
-            var searchQuery = $("#searchQuery").val().trim().toUpperCase();
-            var searchResults = $("#searchResults");
-            searchResults.empty(); // Clear previous results
+                // Check if the search query matches any of the blood types
+                var resultFound = false;
+                toyRequests.forEach(function (toy) {
+                    if (toy.name.toUpperCase() === searchQuery) {
+                        // Display the matched result
+                        resultFound = true;
+                        window.location.href = toy.details; // Redirect to the blood type details page
+                    }
+                });
 
-            // Check if the search query matches any of the blood types
-            var resultFound = false;
-            toyRequests.forEach(function (toy) {
-                if (toy.name.toUpperCase() === searchQuery) {
-                    // Display the matched result
-                    resultFound = true;
-                    window.location.href = toy.details; // Redirect to the blood type details page
+                if (!resultFound) {
+                    // Display message for not found
+                    searchResults.append("<li>No result found for: " + searchQuery + "</li>");
                 }
             });
-
-            if (!resultFound) {
-                // Display message for not found
-                searchResults.append("<li>No result found for: " + searchQuery + "</li>");
-            }
         });
-    });
-</script>
+    </script>
 
     <!-- Single Page Header start -->
     <div class="container-fluid page-header py-5">
@@ -383,46 +1231,46 @@ label{display:inline-block}select{word-wrap:normal}.col-lg-9{flex:0 0 auto;width
                                     <div class="mb-3">
                                         <div id="filters">
                                             <h4>Filters</h4>
-                                            
- <ul class="list-unstyled fruite-categorie">
-     <li>
-         <div class="d-flex justify-content-between fruite-name">
-             <label for="Hospital">Hospital:</label>
-                 <select id="Hospital">
-                     <option value="">All</option>
-                     <option value="Dar Al Fouad Hospital">Dar Al Fouad Hospital</option>
-                     <option value="57357">57357</option>
-                     <option value="Ahl Misr Hospital">Ahl Misr Hospital</option>
-                 </select>
-            
-         </div>
-     </li>
-     <li>
-         <div class="d-flex justify-content-between fruite-name">
-             <label for="Governrate">Governrate:</label>
-                 <select id="Governrate">
-                   <option value="">All</option>
-                   <option value="Cairo">Cairo</option>
-                   <option value="Alexandria">Alexandria</option>
-                 </select>
-             
-         </div>
-     </li>
-     
-     <li>
-         <div class="d-flex justify-content-between fruite-name">
-             <label for="Area">Area:</label>
-                 <select id="Area">
-                   <option value="">All</option>
-             
-                   <option value="6th Of October">6th Of October</option>
-                   <option value="El Saida Zainab">El Saida Zainab</option>
-                   <option value="New Cairo">New Cairo</option>
-                   
-                 </select>
-            
-         </div>
-     </li>
+
+                                            <ul class="list-unstyled fruite-categorie">
+                                                <li>
+                                                    <div class="d-flex justify-content-between fruite-name">
+                                                        <label for="Hospital">Hospital:</label>
+                                                        <select id="Hospital">
+                                                            <option value="">All</option>
+                                                            <option value="Dar Al Fouad Hospital">Dar Al Fouad Hospital</option>
+                                                            <option value="57357">57357</option>
+                                                            <option value="Ahl Misr Hospital">Ahl Misr Hospital</option>
+                                                        </select>
+
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="d-flex justify-content-between fruite-name">
+                                                        <label for="Governrate">Governrate:</label>
+                                                        <select id="Governrate">
+                                                            <option value="">All</option>
+                                                            <option value="Cairo">Cairo</option>
+                                                            <option value="Alexandria">Alexandria</option>
+                                                        </select>
+
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="d-flex justify-content-between fruite-name">
+                                                        <label for="Area">Area:</label>
+                                                        <select id="Area">
+                                                            <option value="">All</option>
+
+                                                            <option value="6th Of October">6th Of October</option>
+                                                            <option value="El Saida Zainab">El Saida Zainab</option>
+                                                            <option value="New Cairo">New Cairo</option>
+
+                                                        </select>
+
+                                                    </div>
+                                                </li>
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
                                                     </div>
@@ -437,116 +1285,116 @@ label{display:inline-block}select{word-wrap:normal}.col-lg-9{flex:0 0 auto;width
                                         </div>
                                         <div id="toyList">
                                             <!-- Toy donation requests will be dynamically added here based on filters -->
-                                          </div>
+                                        </div>
 
-                                          <script>
+                                        <script>
 
-                                              function filterToys() {
-                                                  document.getElementById('applyFiltersBtn').classList.add('shaded');
+                                            function filterToys() {
+                                                document.getElementById('applyFiltersBtn').classList.add('shaded');
 
-                                                  var Hospital = document.getElementById('Hospital').value;
-                                                  var Governrate = document.getElementById('Governrate').value;
-                                                  var Area = document.getElementById('Area').value;
+                                                var Hospital = document.getElementById('Hospital').value;
+                                                var Governrate = document.getElementById('Governrate').value;
+                                                var Area = document.getElementById('Area').value;
 
-                                                  var filteredToys = toyRequests.filter(function (toy) {
-                                                      return (Hospital === '' || toy.Hospital === Hospital) &&
-                                                          (Governrate === '' || toy.Governrate === Governrate) &&
-                                                          (Area === '' || toy.Area === Area);
-                                                  });
+                                                var filteredToys = toyRequests.filter(function (toy) {
+                                                    return (Hospital === '' || toy.Hospital === Hospital) &&
+                                                        (Governrate === '' || toy.Governrate === Governrate) &&
+                                                        (Area === '' || toy.Area === Area);
+                                                });
 
-                                                  displayToys(filteredToys);
-                                                  setTimeout(function () {
-                                                      document.getElementById('applyFiltersBtn').classList.remove('shaded');
-                                                  }, 150);
+                                                displayToys(filteredToys);
+                                                setTimeout(function () {
+                                                    document.getElementById('applyFiltersBtn').classList.remove('shaded');
+                                                }, 150);
 
-                                              }
-                                              function resetFilters() {
-                                                  document.getElementById('applyFiltersBtn2').classList.add('shaded');
-                                                  document.getElementById('Hospital').selectedIndex = 0;
-                                                  document.getElementById('Governrate').selectedIndex = 0;
-                                                  document.getElementById('Area').selectedIndex = 0;
-                                                  displayToys(toyRequests); // Reset to display all toys
-                                                  setTimeout(function () {
-                                                      document.getElementById('applyFiltersBtn2').classList.remove('shaded');
-                                                  }, 150);
-                                              }
-                                          </script>
-                                        
+                                            }
+                                            function resetFilters() {
+                                                document.getElementById('applyFiltersBtn2').classList.add('shaded');
+                                                document.getElementById('Hospital').selectedIndex = 0;
+                                                document.getElementById('Governrate').selectedIndex = 0;
+                                                document.getElementById('Area').selectedIndex = 0;
+                                                displayToys(toyRequests); // Reset to display all toys
+                                                setTimeout(function () {
+                                                    document.getElementById('applyFiltersBtn2').classList.remove('shaded');
+                                                }, 150);
+                                            }
+                                        </script>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-9">
                             <div class="row g-4 justify-content-center">
-                               <script>
-                                   var toyRequests = [
-                                       { name: 'A positive (A+)', Hospital: 'Dar Al Fouad Hospital', Hospital: '57357', Governrate: 'Cairo', Area: '6th Of October', Area: 'El Saida Zainab', image: 'img/A.jpg', details: 'A_BT.html' },
-                                       { name: 'AB positive (AB+)', Hospital: 'Dar Al Fouad Hospital', Hospital: '57357', Governrate: 'Cairo', Area: 'El Saida Zainab', Area: '6th Of October', image: 'img/AB.jpg', details: 'AB_BT.html' },
-                                      { name: 'AB negative (AB-)', Hospital: '57357', Hospital: 'Ahl Misr Hospital', Governrate: 'Cairo', Area: 'New Cairo', Area: 'El Saida Zainab', image: 'img/ABB.jpg', details: 'ABB_BT.html' },
-                                      // { name: 'O positive (O+)', Hospital: 'Ahl Misr Hospital', Hospital: '57357', Governrate: 'Cairo', Area: 'New Cairo', Area: 'El Saida Zainab', image: 'img/O.jpg', details: 'otherdevices.html' },
-                                       { name: 'O negative (O-)', Hospital: 'Ahl Misr Hospital', Hospital: '57357', Governrate: 'Cairo', Area: 'New Cairo', Area: 'El Saida Zainab', image: 'img/OO.jpg', details: 'O_BT.html' },
-                      
-                                   ];
+                                <script>
+                                    var toyRequests = [
+                                        { name: 'A positive (A+)', Hospital: 'Dar Al Fouad Hospital', Hospital: '57357', Governrate: 'Cairo', Area: '6th Of October', Area: 'El Saida Zainab', image: 'img/A.jpg', details: 'A_BT.html' },
+                                        { name: 'AB positive (AB+)', Hospital: 'Dar Al Fouad Hospital', Hospital: '57357', Governrate: 'Cairo', Area: 'El Saida Zainab', Area: '6th Of October', image: 'img/AB.jpg', details: 'AB_BT.html' },
+                                        { name: 'AB negative (AB-)', Hospital: '57357', Hospital: 'Ahl Misr Hospital', Governrate: 'Cairo', Area: 'New Cairo', Area: 'El Saida Zainab', image: 'img/ABB.jpg', details: 'ABB_BT.html' },
+                                        // { name: 'O positive (O+)', Hospital: 'Ahl Misr Hospital', Hospital: '57357', Governrate: 'Cairo', Area: 'New Cairo', Area: 'El Saida Zainab', image: 'img/O.jpg', details: 'otherdevices.html' },
+                                        { name: 'O negative (O-)', Hospital: 'Ahl Misr Hospital', Hospital: '57357', Governrate: 'Cairo', Area: 'New Cairo', Area: 'El Saida Zainab', image: 'img/OO.jpg', details: 'O_BT.html' },
 
-                                   // Function to display toys
-                                   function displayToys(toyRequests) {
-                                       var toyList = document.querySelector('.row.g-4.justify-content-center');
-                                       toyList.innerHTML = ''; // Clear previous results
-                                       if (toyRequests.length === 0) {
-                                           // If there are no results, display an error message
-                                           var errorMessage = document.createElement('div');
-                                           errorMessage.textContent = 'No Blood donation requests match the selected filters.';
-                                           errorMessage.classList.add('error-message');
-                                           errorMessage.style.color = 'red'; // Set text color to red
-                                           errorMessage.style.textAlign = 'center'; // Align text to center
-                                           toyList.appendChild(errorMessage);
-                                       }
+                                    ];
 
-                                       toyRequests.forEach(function (toy) {
-                                           var toyColumn = document.createElement('div');
-                                           toyColumn.classList.add('col-md-6', 'col-lg-6', 'col-xl-4');
+                                    // Function to display toys
+                                    function displayToys(toyRequests) {
+                                        var toyList = document.querySelector('.row.g-4.justify-content-center');
+                                        toyList.innerHTML = ''; // Clear previous results
+                                        if (toyRequests.length === 0) {
+                                            // If there are no results, display an error message
+                                            var errorMessage = document.createElement('div');
+                                            errorMessage.textContent = 'No Blood donation requests match the selected filters.';
+                                            errorMessage.classList.add('error-message');
+                                            errorMessage.style.color = 'red'; // Set text color to red
+                                            errorMessage.style.textAlign = 'center'; // Align text to center
+                                            toyList.appendChild(errorMessage);
+                                        }
 
-                                           var toyItem = document.createElement('div');
-                                           toyItem.classList.add('rounded', 'position-relative', 'fruite-item');
+                                        toyRequests.forEach(function (toy) {
+                                            var toyColumn = document.createElement('div');
+                                            toyColumn.classList.add('col-md-6', 'col-lg-6', 'col-xl-4');
 
-                                           var img = document.createElement('img');
-                                           img.src = toy.image;
-                                           img.classList.add('img-fluid', 'w-100', 'rounded-top');
-                                           toyItem.appendChild(img);
+                                            var toyItem = document.createElement('div');
+                                            toyItem.classList.add('rounded', 'position-relative', 'fruite-item');
 
-                                           var detailsDiv = document.createElement('div');
-                                           detailsDiv.classList.add('p-4', 'border', 'border-secondary', 'border-top-0', 'rounded-bottom');
+                                            var img = document.createElement('img');
+                                            img.src = toy.image;
+                                            img.classList.add('img-fluid', 'w-100', 'rounded-top');
+                                            toyItem.appendChild(img);
 
-                                           var name = document.createElement('h4');
-                                           name.textContent = toy.name;
-                                           detailsDiv.appendChild(name);
+                                            var detailsDiv = document.createElement('div');
+                                            detailsDiv.classList.add('p-4', 'border', 'border-secondary', 'border-top-0', 'rounded-bottom');
 
-                                           var description = document.createElement('p');
-                                           description.textContent = 'Donation Needed.'; // Modify as needed
-                                           detailsDiv.appendChild(description);
+                                            var name = document.createElement('h4');
+                                            name.textContent = toy.name;
+                                            detailsDiv.appendChild(name);
 
-                                           var btnDiv = document.createElement('div');
-                                           btnDiv.classList.add('d-flex', 'justify-content-between', 'flex-lg-wrap');
+                                            var description = document.createElement('p');
+                                            description.textContent = 'Donation Needed.'; // Modify as needed
+                                            detailsDiv.appendChild(description);
 
-                                           var viewDetailsBtn = document.createElement('a');
-                                           viewDetailsBtn.href = toy.details;
-                                           viewDetailsBtn.classList.add('btn', 'border', 'border-secondary', 'rounded-pill', 'px-3', 'text-primary');
-                                           viewDetailsBtn.textContent = 'More Information';
-                                           btnDiv.appendChild(viewDetailsBtn);
+                                            var btnDiv = document.createElement('div');
+                                            btnDiv.classList.add('d-flex', 'justify-content-between', 'flex-lg-wrap');
 
-                                           detailsDiv.appendChild(btnDiv);
+                                            var viewDetailsBtn = document.createElement('a');
+                                            viewDetailsBtn.href = toy.details;
+                                            viewDetailsBtn.classList.add('btn', 'border', 'border-secondary', 'rounded-pill', 'px-3', 'text-primary');
+                                            viewDetailsBtn.textContent = 'More Information';
+                                            btnDiv.appendChild(viewDetailsBtn);
 
-                                           toyItem.appendChild(detailsDiv);
+                                            detailsDiv.appendChild(btnDiv);
 
-                                           toyColumn.appendChild(toyItem);
+                                            toyItem.appendChild(detailsDiv);
 
-                                           toyList.appendChild(toyColumn);
-                                       });
-                                   }
+                                            toyColumn.appendChild(toyItem);
 
-                                   // Display initial toy donation requests
-                                   displayToys(toyRequests);
-                               </script>
+                                            toyList.appendChild(toyColumn);
+                                        });
+                                    }
+
+                                    // Display initial toy donation requests
+                                    displayToys(toyRequests);
+                                </script>
 
                             </div>
                         </div>
@@ -557,28 +1405,20 @@ label{display:inline-block}select{word-wrap:normal}.col-lg-9{flex:0 0 auto;width
     </div>
     <!-- Fruits Shop End-->
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
+    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 justify-content-center">
         <div class="container py-5">
             <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5) ;">
                 <div class="row g-4">
                     <div class="col-lg-3">
                         <a href="#">
-                        <h1 class="text-secondary mb-0">Generous Hearts</h1>
-                        <p class="text-secondary mb-0">
-                            Give Hope. Give Today.</p>
+                            <h1 class="text-secondary mb-0">Generous Hearts</h1>
+                            <p class="text-secondary mb-0">Give Hope. Give Today.</p>
                         </a>
                     </div>
                     <div class="col-lg-6">
                         <div class="position-relative mx-auto">
-                            <input class="form-control border-0 w-100 py-3 px-4 rounded-pill" placeholder="Your Email" type="number" />
-                            <button class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;" type="submit">
-                                Subscribe Now
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="d-flex justify-content-end pt-3">
-                            <a class="btn  btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-twitter"></i></a><a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-facebook-f"></i><i class="fab fa-youtube"></i></a><a class="btn btn-outline-secondary btn-md-square rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
+                            <input class="form-control border-0 w-100 py-3 px-4 rounded-pill" type="number" placeholder="Your Email">
+                            <button type="submit" class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Subscribe Now</button>
                         </div>
                     </div>
                 </div>
@@ -590,55 +1430,26 @@ label{display:inline-block}select{word-wrap:normal}.col-lg-9{flex:0 0 auto;width
                         <p class="mb-4">
                             Unite with passionate volunteers! Find your cause and empower others with your kindness.
                         </p>
-                        <a class="btn border-secondary py-2 px-4 rounded-pill text-primary" href="">Read More</a>
+                        <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Read More</a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="d-flex flex-column text-start footer-item">
-                        <h4 class="text-light mb-3">Shop Info</h4>
-                        <a class="btn-link" href="">About Us</a> <a class="btn-link" href="">Contact Us</a> <a class="btn-link" href="">Privacy Policy</a> <a class="btn-link" href="">Terms &amp; Condition</a> <a class="btn-link" href="">Return Policy</a> <a class="btn-link" href="">FAQs &amp; Help</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="d-flex flex-column text-start footer-item">
-                        <h4 class="text-light mb-3">Account</h4>
-                        <a class="btn-link" href="">My Account</a> <a class="btn-link" href="">Shop details</a> <a class="btn-link" href="">Shopping Cart</a> <a class="btn-link" href="">Wishlist</a> <a class="btn-link" href="">Order History</a> <a class="btn-link" href="">International Orders</a>
-                    </div>
-                </div>
+
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-item">
                         <h4 class="text-light mb-3">Contact</h4>
-                        <p>
-                            Address: 1429 Netus Rd, NY 48247</p>
-                        <p>
-                            Email: Example@gmail.com</p>
-                        <p>
-                            Phone: +0123 4567 8910</p>
+                        <p>Address: 1429 Netus Rd, NY 48247</p>
+                        <p>Email: Example@gmail.com</p>
+                        <p>Phone: +0123 4567 8910</p>
+                        <p>Payment Accepted</p>
+                        <img src="img/payment.png" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Footer End -->
-    <!-- Copyright Start -->
-    <div class="container-fluid copyright bg-dark py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
-                </div>
-                <div class="col-md-6 my-auto text-center text-md-end text-white">
-                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Copyright End -->
     <!-- Back to Top -->
-    <a class="btn btn-primary border-3 border-primary rounded-circle back-to-top" href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
 
     <!-- JavaScript Libraries -->
@@ -651,6 +1462,6 @@ label{display:inline-block}select{word-wrap:normal}.col-lg-9{flex:0 0 auto;width
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
 </body>
+
 </html>

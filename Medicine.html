@@ -47,7 +47,7 @@
                 <div class="top-link pe-2">
                     <a href="#" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
                     <a href="#" class="text-white"><small class="text-white mx-2">Terms of Use</small></a>
-                   <!-- <a href="#" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>-->
+                    <!-- <a href="#" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>-->
                 </div>
             </div>
         </div>
@@ -89,103 +89,108 @@
     </div>
     <!-- Navbar End -->
     <style>
-  /* Add your CSS styles here */
-  .error-message {
-    color: red;
-    text-align: center;
-}
-  .shaded {
-    background-color: rgba(128, 128, 128, 0.5); /* Darker gray with some transparency */
-    pointer-events: none;
-}
-    filters label {
-    display: block;
-    margin-bottom: 5px;
-  }
-    .toy-item {
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-  }
-  .toy-item img {
-    max-width: 100px;
-    margin-right: 20px;
-  }
-  .toy-details {
-    flex-grow: 1;
-  }
-  .view-details {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
-</style>
-      <!-- Search Modal -->
-<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="searchModalLabel">Search by Medicine</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <input type="text" class="form-control search-input" id="searchQuery" placeholder="Enter Medicine name">
-                <ul id="searchResults"></ul>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="searchBtn">Search</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        /* Add your CSS styles here */
+        .error-message {
+            color: red;
+            text-align: center;
+        }
+
+        .shaded {
+            background-color: rgba(128, 128, 128, 0.5); /* Darker gray with some transparency */
+            pointer-events: none;
+        }
+
+        filters label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .toy-item {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+            .toy-item img {
+                max-width: 100px;
+                margin-right: 20px;
+            }
+
+        .toy-details {
+            flex-grow: 1;
+        }
+
+        .view-details {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">Search by Medicine</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control search-input" id="searchQuery" placeholder="Enter Medicine name">
+                    <ul id="searchResults"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="searchBtn">Search</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- End of Search Modal -->
+    <!-- End of Search Modal -->
+    <!-- Custom JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Custom JavaScript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+        $(document).ready(function () {
+            $("#searchBtn").click(function () {
+                var searchQuery = $("#searchQuery").val().trim().toUpperCase();
+                var searchResults = $("#searchResults");
+                searchResults.empty(); // Clear previous results
 
-<!-- Custom JavaScript -->
-<script>
-    $(document).ready(function () {
-        $("#searchBtn").click(function () {
-            var searchQuery = $("#searchQuery").val().trim().toUpperCase();
-            var searchResults = $("#searchResults");
-            searchResults.empty(); // Clear previous results
+                // Array of medicines and their details
+                var toyRequests = [
+                    { name: 'Panadol', category: 'Analgesic and Fever control', details: 'Panadol.html' },
+                    { name: 'Centrum', category: 'Vitamins', details: 'Centrum.html' },
+                    { name: 'Aspirin', category: 'Heart', details: 'Aspirin.html' }
+                ];
 
-            // Array of medicines and their details
-            var toyRequests = [
-                { name: 'Panadol', category: 'Analgesic and Fever control', details: 'Panadol.html' },
-                { name: 'Centrum', category: 'Vitamins', details: 'Centrum.html' },
-                { name: 'Aspirin', category: 'Heart', details: 'Aspirin.html' }
-            ];
+                // Check if the search query matches any of the medicines
+                var resultFound = false;
+                toyRequests.forEach(function (toy) {
+                    if (toy.name.toUpperCase() === searchQuery) {
+                        // Display the matched result
+                        resultFound = true;
+                        window.location.href = toy.details; // Redirect to the medicine details page
+                    }
+                });
 
-            // Check if the search query matches any of the medicines
-            var resultFound = false;
-            toyRequests.forEach(function (toy) {
-                if (toy.name.toUpperCase() === searchQuery) {
-                    // Display the matched result
-                    resultFound = true;
-                    window.location.href = toy.details; // Redirect to the medicine details page
+                if (!resultFound) {
+                    // Display message for not found
+                    searchResults.append("<li>No result found for: " + searchQuery + "</li>");
                 }
             });
-
-            if (!resultFound) {
-                // Display message for not found
-                searchResults.append("<li>No result found for: " + searchQuery + "</li>");
-            }
         });
-    });
-</script>
+    </script>
     <!-- Single Page Header start -->
     <div class="container-fluid page-header py-5">
         <h1 class="text-center text-white display-6">Donate</h1>
@@ -208,141 +213,141 @@
                                 <div class="col-lg-12">
                                     <div class="mb-3">
                                         <div id="filters">
-                                        <h4>Filters</h4>
-                                        <ul class="list-unstyled fruite-categorie">
-                                         
-                                            
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    <label for="category">Category:</label>
-                                                        <select id="category">
-                                                          <option value="">All</option>
-                                                          <option value="Heart">Heart</option>
-                                                          <option value="Analgesic and Fever control">Analgesic & Fever control</option>
-                                                          <option value="Vitamins">Vitamins</option>
-                                                          
-                                                        </select>
-                                                   
-                                                </div>
-                                            </li>
+                                            <h4>Filters</h4>
+                                            <ul class="list-unstyled fruite-categorie">
 
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    
-                                                </div>
-                                            </li>
-                                        </ul>
+
+                                                <li>
+                                                    <div class="d-flex justify-content-between fruite-name">
+                                                        <label for="category">Category:</label>
+                                                        <select id="category">
+                                                            <option value="">All</option>
+                                                            <option value="Heart">Heart</option>
+                                                            <option value="Analgesic and Fever control">Analgesic & Fever control</option>
+                                                            <option value="Vitamins">Vitamins</option>
+
+                                                        </select>
+
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="d-flex justify-content-between fruite-name">
+
+                                                    </div>
+                                                </li>
+                                            </ul>
 
                                             <button id="applyFiltersBtn" onclick="filterToys()">Apply Filters</button>
-                                            <button id="applyFiltersBtn2"onclick="resetFilters()">Reset Filters</button>
-                                          </div>
+                                            <button id="applyFiltersBtn2" onclick="resetFilters()">Reset Filters</button>
+                                        </div>
                                         <div id="toyList">
                                             <!-- Toy donation requests will be dynamically added here based on filters -->
-                                          </div>
+                                        </div>
 
-                                          <script>
+                                        <script>
 
-                                              function filterToys() {
-                                                  document.getElementById('applyFiltersBtn').classList.add('shaded');
-                                               
-                                                  var category = document.getElementById('category').value;
+                                            function filterToys() {
+                                                document.getElementById('applyFiltersBtn').classList.add('shaded');
 
-                                                  var filteredToys = toyRequests.filter(function (toy) {
-                                                      return   (category === '' || toy.category === category);
-                                                  });
+                                                var category = document.getElementById('category').value;
 
-                                                  displayToys(filteredToys);
-                                                  setTimeout(function () {
-                                                      document.getElementById('applyFiltersBtn').classList.remove('shaded');
-                                                  }, 150);
+                                                var filteredToys = toyRequests.filter(function (toy) {
+                                                    return (category === '' || toy.category === category);
+                                                });
 
-                                              }
-                                              function resetFilters() {
-                                                  document.getElementById('applyFiltersBtn2').classList.add('shaded');
-                                                  
-                                                  document.getElementById('category').selectedIndex = 0;
-                                                  displayToys(toyRequests); // Reset to display all toys
-                                                  setTimeout(function () {
-                                                      document.getElementById('applyFiltersBtn2').classList.remove('shaded');
-                                                  }, 150);
-                                              }
-                                          </script>
-                                        
+                                                displayToys(filteredToys);
+                                                setTimeout(function () {
+                                                    document.getElementById('applyFiltersBtn').classList.remove('shaded');
+                                                }, 150);
+
+                                            }
+                                            function resetFilters() {
+                                                document.getElementById('applyFiltersBtn2').classList.add('shaded');
+
+                                                document.getElementById('category').selectedIndex = 0;
+                                                displayToys(toyRequests); // Reset to display all toys
+                                                setTimeout(function () {
+                                                    document.getElementById('applyFiltersBtn2').classList.remove('shaded');
+                                                }, 150);
+                                            }
+                                        </script>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-9">
-                            
-                         
+
+
                             <div class="row g-4 justify-content-center">
-                               <script>
-                                   var toyRequests = [
-                                       { name: 'Panadol ', category: 'Analgesic and Fever control', image: 'img/Panadol.jpeg', details: 'Panadol.html' },
-                                       { name: 'Centrum', category: 'Vitamins', image: 'img/Centrum.jpg', details: 'Centrum.html' },
-                                       { name: 'Aspirin', category: 'Heart', image: 'img/Aspirin.jpeg', details: 'Aspirin.html' }, 
-                                       
-                                   ];
+                                <script>
+                                    var toyRequests = [
+                                        { name: 'Panadol ', category: 'Analgesic and Fever control', image: 'img/Panadol.jpeg', details: 'Panadol.html' },
+                                        { name: 'Centrum', category: 'Vitamins', image: 'img/Centrum.jpg', details: 'Centrum.html' },
+                                        { name: 'Aspirin', category: 'Heart', image: 'img/Aspirin.jpeg', details: 'Aspirin.html' },
 
-                                   // Function to display toys
-                                   function displayToys(toyRequests) {
-                                       var toyList = document.querySelector('.row.g-4.justify-content-center');
-                                       toyList.innerHTML = ''; // Clear previous results
-                                       if (toyRequests.length === 0) {
-                                           // If there are no results, display an error message
-                                           var errorMessage = document.createElement('div');
-                                           errorMessage.textContent = 'No Medicine matches the selected filters.';
-                                           errorMessage.classList.add('error-message');
-                                           errorMessage.style.color = 'red'; // Set text color to red
-                                           errorMessage.style.textAlign = 'center'; // Align text to center
-                                           toyList.appendChild(errorMessage);
-                                       }
+                                    ];
 
-                                       toyRequests.forEach(function (toy) {
-                                           var toyColumn = document.createElement('div');
-                                           toyColumn.classList.add('col-md-6', 'col-lg-6', 'col-xl-4');
+                                    // Function to display toys
+                                    function displayToys(toyRequests) {
+                                        var toyList = document.querySelector('.row.g-4.justify-content-center');
+                                        toyList.innerHTML = ''; // Clear previous results
+                                        if (toyRequests.length === 0) {
+                                            // If there are no results, display an error message
+                                            var errorMessage = document.createElement('div');
+                                            errorMessage.textContent = 'No Medicine matches the selected filters.';
+                                            errorMessage.classList.add('error-message');
+                                            errorMessage.style.color = 'red'; // Set text color to red
+                                            errorMessage.style.textAlign = 'center'; // Align text to center
+                                            toyList.appendChild(errorMessage);
+                                        }
 
-                                           var toyItem = document.createElement('div');
-                                           toyItem.classList.add('rounded', 'position-relative', 'fruite-item');
+                                        toyRequests.forEach(function (toy) {
+                                            var toyColumn = document.createElement('div');
+                                            toyColumn.classList.add('col-md-6', 'col-lg-6', 'col-xl-4');
 
-                                           var img = document.createElement('img');
-                                           img.src = toy.image;
-                                           img.classList.add('img-fluid', 'w-100', 'rounded-top');
-                                           toyItem.appendChild(img);
+                                            var toyItem = document.createElement('div');
+                                            toyItem.classList.add('rounded', 'position-relative', 'fruite-item');
 
-                                           var detailsDiv = document.createElement('div');
-                                           detailsDiv.classList.add('p-4', 'border', 'border-secondary', 'border-top-0', 'rounded-bottom');
+                                            var img = document.createElement('img');
+                                            img.src = toy.image;
+                                            img.classList.add('img-fluid', 'w-100', 'rounded-top');
+                                            toyItem.appendChild(img);
 
-                                           var name = document.createElement('h4');
-                                           name.textContent = toy.name;
-                                           detailsDiv.appendChild(name);
+                                            var detailsDiv = document.createElement('div');
+                                            detailsDiv.classList.add('p-4', 'border', 'border-secondary', 'border-top-0', 'rounded-bottom');
 
-                                           var description = document.createElement('p');
-                                           description.textContent = 'Donation Needed.'; // Modify as needed
-                                           detailsDiv.appendChild(description);
+                                            var name = document.createElement('h4');
+                                            name.textContent = toy.name;
+                                            detailsDiv.appendChild(name);
 
-                                           var btnDiv = document.createElement('div');
-                                           btnDiv.classList.add('d-flex', 'justify-content-between', 'flex-lg-wrap');
+                                            var description = document.createElement('p');
+                                            description.textContent = 'Donation Needed.'; // Modify as needed
+                                            detailsDiv.appendChild(description);
 
-                                           var viewDetailsBtn = document.createElement('a');
-                                           viewDetailsBtn.href = toy.details;
-                                           viewDetailsBtn.classList.add('btn', 'border', 'border-secondary', 'rounded-pill', 'px-3', 'text-primary');
-                                           viewDetailsBtn.textContent = 'More Information';
-                                           btnDiv.appendChild(viewDetailsBtn);
+                                            var btnDiv = document.createElement('div');
+                                            btnDiv.classList.add('d-flex', 'justify-content-between', 'flex-lg-wrap');
 
-                                           detailsDiv.appendChild(btnDiv);
+                                            var viewDetailsBtn = document.createElement('a');
+                                            viewDetailsBtn.href = toy.details;
+                                            viewDetailsBtn.classList.add('btn', 'border', 'border-secondary', 'rounded-pill', 'px-3', 'text-primary');
+                                            viewDetailsBtn.textContent = 'More Information';
+                                            btnDiv.appendChild(viewDetailsBtn);
 
-                                           toyItem.appendChild(detailsDiv);
+                                            detailsDiv.appendChild(btnDiv);
 
-                                           toyColumn.appendChild(toyItem);
+                                            toyItem.appendChild(detailsDiv);
 
-                                           toyList.appendChild(toyColumn);
-                                       });
-                                   }
+                                            toyColumn.appendChild(toyItem);
 
-                                   // Display initial toy donation requests
-                                   displayToys(toyRequests);
-                               </script>
+                                            toyList.appendChild(toyColumn);
+                                        });
+                                    }
+
+                                    // Display initial toy donation requests
+                                    displayToys(toyRequests);
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -352,7 +357,7 @@
     </div>
     <!-- Fruits Shop End-->
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
+    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 justify-content-center">
         <div class="container py-5">
             <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5) ;">
                 <div class="row g-4">
@@ -368,14 +373,6 @@
                             <button type="submit" class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Subscribe Now</button>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="d-flex justify-content-end pt-3">
-                            <a class="btn  btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-secondary btn-md-square rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="row g-5">
@@ -388,58 +385,21 @@
                         <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Read More</a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="d-flex flex-column text-start footer-item">
-                        <h4 class="text-light mb-3">Shop Info</h4>
-                        <a class="btn-link" href="">About Us</a>
-                        <a class="btn-link" href="">Contact Us</a>
-                        <a class="btn-link" href="">Privacy Policy</a>
-                        <a class="btn-link" href="">Terms & Condition</a>
-                        <a class="btn-link" href="">Return Policy</a>
-                        <a class="btn-link" href="">FAQs & Help</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="d-flex flex-column text-start footer-item">
-                        <h4 class="text-light mb-3">Account</h4>
-                        <a class="btn-link" href="">My Account</a>
-                        <a class="btn-link" href="">Shop details</a>
-                        <a class="btn-link" href="">Shopping Cart</a>
-                        <a class="btn-link" href="">Wishlist</a>
-                        <a class="btn-link" href="">Order History</a>
-                        <a class="btn-link" href="">International Orders</a>
-                    </div>
-                </div>
+
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-item">
                         <h4 class="text-light mb-3">Contact</h4>
                         <p>Address: 1429 Netus Rd, NY 48247</p>
                         <p>Email: Example@gmail.com</p>
                         <p>Phone: +0123 4567 8910</p>
-                        
+                        <p>Payment Accepted</p>
+                        <img src="img/payment.png" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Footer End -->
-    <!-- Copyright Start -->
-    <div class="container-fluid copyright bg-dark py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
-                </div>
-                <div class="col-md-6 my-auto text-center text-md-end text-white">
-                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Copyright End -->
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
