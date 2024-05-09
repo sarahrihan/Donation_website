@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Account Created Successfully (Donor)</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Account Created Successfully!</a>
+        </div>
+    </nav>
+
+    <!-- Donor Details Section -->
+    <div class="container">
+        <!-- Donor Details Card -->
+        <div class="card">
+            <div class="card-header">
+               Donor Details
+            </div>
+            <div class="card-body">
+                <p><strong>Name:</strong> Rokaya Elkomy</p>
+                <p><strong>Email:</strong> rokaya.elkomy@gmail.com</p>
+                <p><strong>Contact Number:</strong> 010012345678</p>
+                <p><strong>Address:</strong> 77 Fake Address-Fake Street</p>
+                <p><strong>Area:</strong>Mohandeseen</p>
+                <p><strong>Governorater:</strong> Giza</p>
+            </div>
+            
+        
+            
+        </div>
+
+       
+
+        <!-- Button to Redirect to Login Page -->
+        <!-- adjust this to farah's code -->
+        <div class="text-center mt-3">
+            <a href="request_management.html" class="btn btn-primary">Login Now!</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function acceptSubmission() {
+            if (confirm("Are you sure you want to accept this submission?")) {
+                alert("Submission accepted successfully.");
+                // Perform further actions here, such as updating the database or UI
+            }
+        }
+
+        function rejectSubmission() {
+            if (confirm("Are you sure you want to reject this submission?")) {
+                alert("Submission rejected successfully.");
+                // Perform further actions here, such as updating the database or UI
+            }
+        }
+    </script>
+</body>
+
+</html>
