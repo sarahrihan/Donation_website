@@ -89,46 +89,52 @@
     </div>
     <!-- Navbar End -->
     <style>
-  /* Add your CSS styles here */
-  .error-message {
-    color: red;
-    text-align: center;
-}
-  .shaded {
-    background-color: rgba(128, 128, 128, 0.5); /* Darker gray with some transparency */
-    pointer-events: none;
-}
-    filters label {
-    display: block;
-    margin-bottom: 5px;
-  }
-    .cloth-item {
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-  }
-  .cloth-item img {
-    max-width: 100px;
-    margin-right: 20px;
-  }
-  .cloth-details {
-    flex-grow: 1;
-  }
-  .view-details {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
-</style>
+        /* Add your CSS styles here */
+        .error-message {
+            color: red;
+            text-align: center;
+        }
+
+        .shaded {
+            background-color: rgba(128, 128, 128, 0.5); /* Darker gray with some transparency */
+            pointer-events: none;
+        }
+
+        filters label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .cloth-item {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+            .cloth-item img {
+                max-width: 100px;
+                margin-right: 20px;
+            }
+
+        .cloth-details {
+            flex-grow: 1;
+        }
+
+        .view-details {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
     <!-- Modal Search Start -->
     <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
@@ -169,11 +175,11 @@
                                 <div class="col-lg-12">
                                     <div class="mb-3">
                                         <div id="filters">
-                                        <h4>Filters</h4>
-                                        <ul class="list-unstyled fruite-categorie">
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    <label for="age">Age:</label>
+                                            <h4>Filters</h4>
+                                            <ul class="list-unstyled fruite-categorie">
+                                                <li>
+                                                    <div class="d-flex justify-content-between fruite-name">
+                                                        <label for="age">Age:</label>
                                                         <select id="age">
                                                             <option value="">All</option>
                                                             <option value="0-2">0-2</option>
@@ -182,160 +188,160 @@
                                                             <option value="13-16">12-16</option>
                                                             <option value="17+">17+</option>
                                                         </select>
-                                                   
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    <label for="gender">Gender:</label>
-                                                        <select id="gender">
-                                                          <option value="both">Both</option>
-                                                          <option value="male">Male</option>
-                                                          <option value="female">Female</option>
-                                                        </select>
-                                                    
-                                                </div>
-                                            </li>
-                                            
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    <label for="season">Season:</label>
-                                                    <select id="season">
-                                                        <option value="">All</option>
-                                                        <option value="summer">Summer</option>
-                                                        <option value="summer">Sprint</option>
-                                                        <option value="winter">Winter</option>
-                                                        <option value="fall">Fall</option>
-                                                    </select>
-                                                   
-                                                </div>
-                                            </li>
 
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    
-                                                </div>
-                                            </li>
-                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="d-flex justify-content-between fruite-name">
+                                                        <label for="gender">Gender:</label>
+                                                        <select id="gender">
+                                                            <option value="both">Both</option>
+                                                            <option value="male">Male</option>
+                                                            <option value="female">Female</option>
+                                                        </select>
+
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="d-flex justify-content-between fruite-name">
+                                                        <label for="season">Season:</label>
+                                                        <select id="season">
+                                                            <option value="">All</option>
+                                                            <option value="summer">Summer</option>
+                                                            <option value="summer">Sprint</option>
+                                                            <option value="winter">Winter</option>
+                                                            <option value="fall">Fall</option>
+                                                        </select>
+
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="d-flex justify-content-between fruite-name">
+
+                                                    </div>
+                                                </li>
+                                            </ul>
                                             <button id="applyFiltersBtn" onclick="filterClothes()">Apply Filters</button>
-                                            <button id="applyFiltersBtn2"onclick="resetFilters()">Reset Filters</button>
-                                          </div>
+                                            <button id="applyFiltersBtn2" onclick="resetFilters()">Reset Filters</button>
+                                        </div>
                                         <div id="clothList">
                                             <!-- Cloth donation requests will be dynamically added here based on filters -->
-                                          </div>
+                                        </div>
 
-                                          <script>
+                                        <script>
 
-                                              function filterClothes() {
-                                                  document.getElementById('applyFiltersBtn').classList.add('shaded');
-                                                  var age = document.getElementById('age').value;
-                                                  var gender = document.getElementById('gender').value;
-                                                  var season = document.getElementById('season').value;
+                                            function filterClothes() {
+                                                document.getElementById('applyFiltersBtn').classList.add('shaded');
+                                                var age = document.getElementById('age').value;
+                                                var gender = document.getElementById('gender').value;
+                                                var season = document.getElementById('season').value;
 
-                                                  // Filter the clothes array based on selected criteria
-                                                  var filteredClothes = clothesRequests.filter(function (cloth) {
-                                                      return (age === '' || cloth.age === age) &&
-                                                          (gender === 'both' || cloth.gender === gender) &&
-                                                          (season === '' || cloth.season === season);
-                                                  });
+                                                // Filter the clothes array based on selected criteria
+                                                var filteredClothes = clothesRequests.filter(function (cloth) {
+                                                    return (age === '' || cloth.age === age) &&
+                                                        (gender === 'both' || cloth.gender === gender) &&
+                                                        (season === '' || cloth.season === season);
+                                                });
 
-                                                  // Pass the filtered array to the displayClothes function
-                                                  displayClothes(filteredClothes);
-                                                  setTimeout(function () {
-                                                      document.getElementById('applyFiltersBtn').classList.remove('shaded');
-                                                  }, 150);
-                                              }
+                                                // Pass the filtered array to the displayClothes function
+                                                displayClothes(filteredClothes);
+                                                setTimeout(function () {
+                                                    document.getElementById('applyFiltersBtn').classList.remove('shaded');
+                                                }, 150);
+                                            }
 
-                                              function resetFilters() {
-                                                  document.getElementById('applyFiltersBtn2').classList.add('shaded');
-                                                  document.getElementById('age').selectedIndex = 0;
-                                                  document.getElementById('gender').selectedIndex = 0;
-                                                  document.getElementById('season').selectedIndex = 0;
-                                                  displayClothes(clothesRequests); // Reset to display all clothes
-                                                  setTimeout(function () {
-                                                      document.getElementById('applyFiltersBtn2').classList.remove('shaded');
-                                                  }, 150);
-                                              }
-                                          </script>
-                                        
+                                            function resetFilters() {
+                                                document.getElementById('applyFiltersBtn2').classList.add('shaded');
+                                                document.getElementById('age').selectedIndex = 0;
+                                                document.getElementById('gender').selectedIndex = 0;
+                                                document.getElementById('season').selectedIndex = 0;
+                                                displayClothes(clothesRequests); // Reset to display all clothes
+                                                setTimeout(function () {
+                                                    document.getElementById('applyFiltersBtn2').classList.remove('shaded');
+                                                }, 150);
+                                            }
+                                        </script>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-9">
-                            
-                         
+
+
                             <div class="row g-4 justify-content-center">
-                               <script>
-                                   var clothesRequests = [
-                                       { name: 'Fall Hoodie', age: '17+', gender: 'both', season: 'fall', image: 'img/fall_hoodie.jpg', details: 'ClothesFallHoodieDetails.html' },
-                                       { name: 'Fall Sweater', age: '12+', gender: 'both', season: 'fall', image: 'img/fall_sweater.jpg', details: 'ClothesFallSweaterDetails.html' },
-                                       { name: 'Spring Skirt', age: '7-12', gender: 'female', season: 'spring', image: 'img/spring_skirt.jpg', details: 'ClothesSpringSkirtDetails.html' },
-                                       { name: 'Summer Dress', age: '4-6', gender: 'female', season: 'summer', image: 'img/summer_dress.jpg', details: 'ClothesSummerDressDetails.html' },
-                                       { name: 'Swimsuit', age: '4-6', gender: 'female', season: 'summer', image: 'img/swimsuit.jpg', details: 'ClothesSwimsuitDetails.html' },
-                                       { name: 'Winter Boots', age: '12+', gender: 'both', season: 'winter', image: 'img/winter_boots.jpg', details: 'ClothesWinterBootsDetails.html' },
-                                       { name: 'Winter Jacket', age: '12+', gender: 'both', season: 'winter', image: 'img/winter_jacket.jpg', details: 'ClothesWinterJacketDetails.html' }
-                                   ];
+                                <script>
+                                    var clothesRequests = [
+                                        { name: 'Fall Hoodie', age: '17+', gender: 'both', season: 'fall', image: 'img/fall_hoodie.jpg', details: 'ClothesFallHoodieDetails.html' },
+                                        { name: 'Fall Sweater', age: '12+', gender: 'both', season: 'fall', image: 'img/fall_sweater.jpg', details: 'ClothesFallSweaterDetails.html' },
+                                        { name: 'Spring Skirt', age: '7-12', gender: 'female', season: 'spring', image: 'img/spring_skirt.jpg', details: 'ClothesSpringSkirtDetails.html' },
+                                        { name: 'Summer Dress', age: '4-6', gender: 'female', season: 'summer', image: 'img/summer_dress.jpg', details: 'ClothesSummerDressDetails.html' },
+                                        { name: 'Swimsuit', age: '4-6', gender: 'female', season: 'summer', image: 'img/swimsuit.jpg', details: 'ClothesSwimsuitDetails.html' },
+                                        { name: 'Winter Boots', age: '12+', gender: 'both', season: 'winter', image: 'img/winter_boots.jpg', details: 'ClothesWinterBootsDetails.html' },
+                                        { name: 'Winter Jacket', age: '12+', gender: 'both', season: 'winter', image: 'img/winter_jacket.jpg', details: 'ClothesWinterJacketDetails.html' }
+                                    ];
 
                                     // Function to display clothes
-                                   function displayClothes(clothesRequests) {
-                                       var clothList = document.querySelector('.row.g-4.justify-content-center');
-                                       clothList.innerHTML = ''; // Clear previous results
-                                       if (clothesRequests.length === 0) {
-                                           // If there are no results, display an error message
-                                           var errorMessage = document.createElement('div');
-                                           errorMessage.textContent = 'No Clothes  match the selected filters.';
-                                           errorMessage.classList.add('error-message');
-                                           errorMessage.style.color = 'red'; // Set text color to red
-                                           errorMessage.style.textAlign = 'center'; // Align text to center
-                                           clothList.appendChild(errorMessage);
-                                       }
+                                    function displayClothes(clothesRequests) {
+                                        var clothList = document.querySelector('.row.g-4.justify-content-center');
+                                        clothList.innerHTML = ''; // Clear previous results
+                                        if (clothesRequests.length === 0) {
+                                            // If there are no results, display an error message
+                                            var errorMessage = document.createElement('div');
+                                            errorMessage.textContent = 'No Clothes  match the selected filters.';
+                                            errorMessage.classList.add('error-message');
+                                            errorMessage.style.color = 'red'; // Set text color to red
+                                            errorMessage.style.textAlign = 'center'; // Align text to center
+                                            clothList.appendChild(errorMessage);
+                                        }
 
-                                       clothesRequests.forEach(function (cloth) {
-                                           var clothColumn = document.createElement('div');
-                                           clothColumn.classList.add('col-md-6', 'col-lg-6', 'col-xl-4');
+                                        clothesRequests.forEach(function (cloth) {
+                                            var clothColumn = document.createElement('div');
+                                            clothColumn.classList.add('col-md-6', 'col-lg-6', 'col-xl-4');
 
-                                           var clothItem = document.createElement('div');
-                                           clothItem.classList.add('rounded', 'position-relative', 'fruite-item');
+                                            var clothItem = document.createElement('div');
+                                            clothItem.classList.add('rounded', 'position-relative', 'fruite-item');
 
-                                           var img = document.createElement('img');
-                                           img.src = cloth.image;
-                                           img.classList.add('img-fluid', 'w-100', 'rounded-top');
-                                           clothItem.appendChild(img);
+                                            var img = document.createElement('img');
+                                            img.src = cloth.image;
+                                            img.classList.add('img-fluid', 'w-100', 'rounded-top');
+                                            clothItem.appendChild(img);
 
-                                           var detailsDiv = document.createElement('div');
-                                           detailsDiv.classList.add('p-4', 'border', 'border-secondary', 'border-top-0', 'rounded-bottom');
+                                            var detailsDiv = document.createElement('div');
+                                            detailsDiv.classList.add('p-4', 'border', 'border-secondary', 'border-top-0', 'rounded-bottom');
 
-                                           var name = document.createElement('h4');
-                                           name.textContent = cloth.name;
-                                           detailsDiv.appendChild(name);
+                                            var name = document.createElement('h4');
+                                            name.textContent = cloth.name;
+                                            detailsDiv.appendChild(name);
 
-                                           var description = document.createElement('p');
-                                           description.textContent = 'Clothing needed for donation.'; // Modify as needed
-                                           detailsDiv.appendChild(description);
+                                            var description = document.createElement('p');
+                                            description.textContent = 'Clothing needed for donation.'; // Modify as needed
+                                            detailsDiv.appendChild(description);
 
-                                           var btnDiv = document.createElement('div');
-                                           btnDiv.classList.add('d-flex', 'justify-content-between', 'flex-lg-wrap');
+                                            var btnDiv = document.createElement('div');
+                                            btnDiv.classList.add('d-flex', 'justify-content-between', 'flex-lg-wrap');
 
-                                           var viewDetailsBtn = document.createElement('a');
-                                           viewDetailsBtn.href = cloth.details;
-                                           viewDetailsBtn.classList.add('btn', 'border', 'border-secondary', 'rounded-pill', 'px-3', 'text-primary');
-                                           viewDetailsBtn.textContent = 'More Information';
-                                           btnDiv.appendChild(viewDetailsBtn);
+                                            var viewDetailsBtn = document.createElement('a');
+                                            viewDetailsBtn.href = cloth.details;
+                                            viewDetailsBtn.classList.add('btn', 'border', 'border-secondary', 'rounded-pill', 'px-3', 'text-primary');
+                                            viewDetailsBtn.textContent = 'More Information';
+                                            btnDiv.appendChild(viewDetailsBtn);
 
-                                           detailsDiv.appendChild(btnDiv);
+                                            detailsDiv.appendChild(btnDiv);
 
-                                           clothItem.appendChild(detailsDiv);
+                                            clothItem.appendChild(detailsDiv);
 
-                                           clothColumn.appendChild(clothItem);
+                                            clothColumn.appendChild(clothItem);
 
-                                           clothList.appendChild(clothColumn);
-                                       });
-                                   }
+                                            clothList.appendChild(clothColumn);
+                                        });
+                                    }
 
-                                   // Display initial cloth donation requests
-                                   displayClothes(clothesRequests);
-                               </script>
+                                    // Display initial cloth donation requests
+                                    displayClothes(clothesRequests);
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -347,93 +353,43 @@
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
         <div class="container py-5">
-            <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5) ;">
+            <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5);">
                 <div class="row g-4">
-                    <div class="col-lg-3">
+                    <div class="col-lg-6">
                         <a href="#">
                             <h1 class="text-secondary mb-0">Generous Hearts</h1>
                             <p class="text-secondary mb-0">Give Hope. Give Today.</p>
                         </a>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 text-lg-end">
                         <div class="position-relative mx-auto">
-                            <input class="form-control border-0 w-100 py-3 px-4 rounded-pill" type="number" placeholder="Your Email">
-                            <button type="submit" class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Subscribe Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="d-flex justify-content-end pt-3">
-                            <a class="btn  btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-secondary btn-md-square rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-6 col-md-6">
                     <div class="footer-item">
                         <h4 class="text-light mb-3">Why People Like us!</h4>
                         <p class="mb-4">
                             Unite with passionate volunteers! Find your cause and empower others with your kindness.
                         </p>
-                        <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Read More</a>
+
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="d-flex flex-column text-start footer-item">
-                        <h4 class="text-light mb-3">Shop Info</h4>
-                        <a class="btn-link" href="">About Us</a>
-                        <a class="btn-link" href="">Contact Us</a>
-                        <a class="btn-link" href="">Privacy Policy</a>
-                        <a class="btn-link" href="">Terms & Condition</a>
-                        <a class="btn-link" href="">Return Policy</a>
-                        <a class="btn-link" href="">FAQs & Help</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="d-flex flex-column text-start footer-item">
-                        <h4 class="text-light mb-3">Account</h4>
-                        <a class="btn-link" href="">My Account</a>
-                        <a class="btn-link" href="">Shop details</a>
-                        <a class="btn-link" href="">Shopping Cart</a>
-                        <a class="btn-link" href="">Wishlist</a>
-                        <a class="btn-link" href="">Order History</a>
-                        <a class="btn-link" href="">International Orders</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
+
+                <div class="col-lg-6 col-md-6">
                     <div class="footer-item">
                         <h4 class="text-light mb-3">Contact</h4>
                         <p>Address: 1429 Netus Rd, NY 48247</p>
                         <p>Email: Example@gmail.com</p>
                         <p>Phone: +0123 4567 8910</p>
-                        <p>Payment Accepted</p>
-                        <img src="img/payment.png" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Footer End -->
-    <!-- Copyright Start -->
-    <div class="container-fluid copyright bg-dark py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
-                </div>
-                <div class="col-md-6 my-auto text-center text-md-end text-white">
-                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Copyright End -->
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 

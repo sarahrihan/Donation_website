@@ -256,43 +256,39 @@
     </section>
     <!-- Donor Homepage Section End -->
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 justify-content-center">
+    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
         <div class="container py-5">
-            <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5) ;">
+            <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5);">
                 <div class="row g-4">
-                    <div class="col-lg-3">
+                    <div class="col-lg-6">
                         <a href="#">
                             <h1 class="text-secondary mb-0">Generous Hearts</h1>
                             <p class="text-secondary mb-0">Give Hope. Give Today.</p>
                         </a>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 text-lg-end">
                         <div class="position-relative mx-auto">
-                            <input class="form-control border-0 w-100 py-3 px-4 rounded-pill" type="number" placeholder="Your Email">
-                            <button type="submit" class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Subscribe Now</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-6 col-md-6">
                     <div class="footer-item">
                         <h4 class="text-light mb-3">Why People Like us!</h4>
                         <p class="mb-4">
                             Unite with passionate volunteers! Find your cause and empower others with your kindness.
                         </p>
-                        <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Read More</a>
+
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-6 col-md-6">
                     <div class="footer-item">
                         <h4 class="text-light mb-3">Contact</h4>
                         <p>Address: 1429 Netus Rd, NY 48247</p>
                         <p>Email: Example@gmail.com</p>
                         <p>Phone: +0123 4567 8910</p>
-                        <p>Payment Accepted</p>
-                        <img src="img/payment.png" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
@@ -314,100 +310,100 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
-<script>
-    $(document).ready(function () {
-        // Search button functionality
-        $('#search-button').click(function () {
-            var searchText = $('#search-input').val().toLowerCase();
+    <script>
+        $(document).ready(function () {
+            // Search button functionality
+            $('#search-button').click(function () {
+                var searchText = $('#search-input').val().toLowerCase();
 
-            // Loop through each table row
-            $('tbody tr').each(function () {
-                var organizationName = $(this).find('td:first').text().toLowerCase();
+                // Loop through each table row
+                $('tbody tr').each(function () {
+                    var organizationName = $(this).find('td:first').text().toLowerCase();
 
-                // Check if organization name contains the search text
-                if (organizationName.includes(searchText)) {
-                    $(this).show();
+                    // Check if organization name contains the search text
+                    if (organizationName.includes(searchText)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+
+                // Check if any rows are visible after filtering
+                if ($('tbody tr:visible').length === 0) {
+                    $('#error-message').text('No results found.');
+                    $('#error-message').show();
                 } else {
-                    $(this).hide();
+                    $('#error-message').hide();
                 }
             });
 
-            // Check if any rows are visible after filtering
-            if ($('tbody tr:visible').length === 0) {
-                $('#error-message').text('No results found.');
-                $('#error-message').show();
-            } else {
+            // Reset button functionality
+            $('#reset-filters').click(function () {
+                // Show all table rows
+                $('tbody tr').show();
+                // Clear search input
+                $('#search-input').val('');
+                // Reset filter dropdowns
+                $('#area-filter').val('');
+                $('#governorate-filter').val('');
+                $('#organization-type-filter').val('');
+                // Hide error message
                 $('#error-message').hide();
-            }
-        });
-
-        // Reset button functionality
-        $('#reset-filters').click(function () {
-            // Show all table rows
-            $('tbody tr').show();
-            // Clear search input
-            $('#search-input').val('');
-            // Reset filter dropdowns
-            $('#area-filter').val('');
-            $('#governorate-filter').val('');
-            $('#organization-type-filter').val('');
-            // Hide error message
-            $('#error-message').hide();
-        });
-
-        // Apply filters button functionality
-        $('#apply-filters').click(function () {
-            var areaFilter = $('#area-filter').val();
-            var governorateFilter = $('#governorate-filter').val();
-            var organizationTypeFilter = $('#organization-type-filter').val();
-
-            // Loop through each table row
-            $('tbody tr').each(function () {
-                var organizationArea = $(this).find('.organization-area').text().trim().toLowerCase();
-                var organizationGovernorate = $(this).find('.organization-governorate').text().trim().toLowerCase();
-                var organizationType = $(this).find('.organization-type').text().trim().toLowerCase();
-
-                // Check if organization matches filter criteria
-                var showRow = true;
-
-                // Apply area filter
-                if (areaFilter && organizationArea !== areaFilter) {
-                    showRow = false;
-                }
-
-                // Apply governorate filter
-                if (governorateFilter && organizationGovernorate !== governorateFilter) {
-                    showRow = false;
-                }
-
-                // Apply organization type filter
-                if (organizationTypeFilter && organizationType !== organizationTypeFilter) {
-                    showRow = false;
-                }
-
-                // Show or hide the row based on filter criteria
-                if (showRow) {
-                    $(this).show();
-                } else {
-                    $(this).hide();
-                }
             });
 
-            // Check if any rows are visible after filtering
-            if ($('tbody tr:visible').length === 0) {
-                $('#error-message').text('No results found.');
-                $('#error-message').show();
-            } else {
-                $('#error-message').hide();
-            }
+            // Apply filters button functionality
+            $('#apply-filters').click(function () {
+                var areaFilter = $('#area-filter').val();
+                var governorateFilter = $('#governorate-filter').val();
+                var organizationTypeFilter = $('#organization-type-filter').val();
+
+                // Loop through each table row
+                $('tbody tr').each(function () {
+                    var organizationArea = $(this).find('.organization-area').text().trim().toLowerCase();
+                    var organizationGovernorate = $(this).find('.organization-governorate').text().trim().toLowerCase();
+                    var organizationType = $(this).find('.organization-type').text().trim().toLowerCase();
+
+                    // Check if organization matches filter criteria
+                    var showRow = true;
+
+                    // Apply area filter
+                    if (areaFilter && organizationArea !== areaFilter) {
+                        showRow = false;
+                    }
+
+                    // Apply governorate filter
+                    if (governorateFilter && organizationGovernorate !== governorateFilter) {
+                        showRow = false;
+                    }
+
+                    // Apply organization type filter
+                    if (organizationTypeFilter && organizationType !== organizationTypeFilter) {
+                        showRow = false;
+                    }
+
+                    // Show or hide the row based on filter criteria
+                    if (showRow) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+
+                // Check if any rows are visible after filtering
+                if ($('tbody tr:visible').length === 0) {
+                    $('#error-message').text('No results found.');
+                    $('#error-message').show();
+                } else {
+                    $('#error-message').hide();
+                }
+            });
         });
-    });
 
-</script>
+    </script>
 
 
-<!-- Template Javascript -->
-<script src="js/main.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>
