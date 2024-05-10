@@ -156,7 +156,7 @@
                                     <p class="mb-0">Amount Needed</p>
                                 </div>
                                 <div class="col-6">
-                                    <p class="mb-0">133</p>
+                                    <p class="mb-0">10</p>
                                 </div>
                             </div>
                             <div class="row text-center align-items-center justify-content-center py-2">
@@ -164,7 +164,7 @@
                                     <p class="mb-0">Сolor</p>
                                 </div>
                                 <div class="col-6">
-                                    <p class="mb-0">Not specified</p>
+                                    <p class="mb-0">Red</p>
                                 </div>
                             </div>
                             <div class="row bg-light text-center align-items-center justify-content-center py-2">
@@ -340,6 +340,46 @@
     <script src="js/main.js"></script>
 
     <script>
+        document.getElementById("updateButton").addEventListener("click", function () {
+            // Show the update modal
+            $('#updateModal').modal('show');
+
+            // Get the current details
+            var amountRequested = document.getElementById("amountRequested").textContent;
+            var amountFulfilled = document.getElementById("amountFulfilled").textContent;
+            var amountNeeded = document.getElementById("amountNeeded").textContent;
+            var color = document.getElementById("color").textContent;
+            var type = document.getElementById("type").textContent;
+
+            // Set the current details in the modal inputs
+            document.getElementById("updateAmountRequested").value = amountRequested;
+            document.getElementById("updateAmountFulfilled").value = amountFulfilled;
+            document.getElementById("updateAmountNeeded").value = amountNeeded;
+            document.getElementById("updateColor").value = color;
+            document.getElementById("updateType").value = type;
+        });
+
+        document.getElementById("saveChangesBtn").addEventListener("click", function () {
+            // Get updated details from modal inputs
+            var updatedAmountRequested = document.getElementById("updateAmountRequested").value;
+            var updatedAmountFulfilled = document.getElementById("updateAmountFulfilled").value;
+            var updatedAmountNeeded = document.getElementById("updateAmountNeeded").value;
+            var updatedColor = document.getElementById("updateColor").value;
+            var updatedType = document.getElementById("updateType").value;
+
+            // Update the details in the main content
+            document.getElementById("amountRequested").textContent = updatedAmountRequested;
+            document.getElementById("amountFulfilled").textContent = updatedAmountFulfilled;
+            document.getElementById("amountNeeded").textContent = updatedAmountNeeded;
+            document.getElementById("color").textContent = updatedColor;
+            document.getElementById("type").textContent = updatedType;
+
+            // Close the modal
+            $('#updateModal').modal('hide');
+        });
+    </script>
+
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Disable the Save Changes button by default
             document.getElementById("saveChangesBtn").disabled = true;
@@ -354,45 +394,24 @@
                 });
             });
 
-            // Update Button Functionality
-            document.getElementById("updateButton").addEventListener("click", function () {
-                // Show the update modal
-                $('#updateModal').modal('show');
-
-                // Get the current details
-                var amountRequested = document.getElementById("amountRequested").textContent;
-                var amountFulfilled = document.getElementById("amountFulfilled").textContent;
-                var amountNeeded = document.getElementById("amountNeeded").textContent;
-                var color = document.getElementById("color").textContent;
-                var type = document.getElementById("type").textContent;
-
-                // Set the current details in the modal inputs
-                document.getElementById("updateAmountRequested").value = amountRequested;
-                document.getElementById("updateAmountFulfilled").value = amountFulfilled;
-                document.getElementById("updateAmountNeeded").value = amountNeeded;
-                document.getElementById("updateColor").value = color;
-                document.getElementById("updateType").value = type;
-            });
-
             // Save Changes button functionality
             document.getElementById("saveChangesBtn").addEventListener("click", function () {
                 // Perform the update operation here
-                // For demonstration, alert a success message, close the modal, and redirect to another page
+                // For demonstration, alert a success message and close the modal
                 alert("Changes saved successfully!");
                 $('#updateModal').modal('hide');
-                window.location.href = "redirectDetails1Org.html";
-            });
-
-            // Delete Button Functionality
-            document.getElementById("deleteButton").addEventListener("click", function () {
-                var confirmation = confirm("Are you sure you want to delete this donation post?");
-                if (confirmation) {
-                    alert("Donation post deleted successfully!");
-                }
             });
         });
-    </script>
 
+        // Delete Button Functionality
+        document.getElementById("deleteButton").addEventListener("click", function () {
+            var confirmation = confirm("Are you sure you want to delete this donation post?");
+            if (confirmation) {
+                alert("Donation post deleted successfully!");
+            }
+        });
+
+    </script>
 
     <!-- Delete Button Functionality-- >
                     <script>

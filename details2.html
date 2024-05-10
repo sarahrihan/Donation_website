@@ -102,19 +102,25 @@
     <div class="container-fluid py-5 mt-5">
         <div class="container py-5">
             <div class="row g-4 mb-5">
+                <!-- Donation Details Box -->
                 <div class="col-lg-8 col-xl-9">
                     <div class="row g-4">
+                        <!-- Donation Details Image -->
                         <div class="col-lg-6">
                             <div class="border rounded">
                                 <img src="img/book1.png" class="img-fluid rounded" alt="Book Image">
                             </div>
                         </div>
+                        <!-- Donation Details Content -->
                         <div class="col-lg-6">
                             <h4 class="fw-bold mb-3">Grade 6 science books</h4>
+                            <!-- Donation Details Description -->
                             <p class="mb-3">Category: Books</p>
                             <p class="mb-4">Grade 6 'Selah el Telmeez' science books are needed for the start of the new school year for the distribution among grade 6 students of Lamset Amal</p>
                             <p class="mb-4">Books should not necessarily be new but are preferred to be in good condition.</p>
 
+                            <!-- Donation Details Data -->
+                            <!-- Donation Details Quantity -->
                             <div class="row bg-light align-items-center text-center justify-content-center py-2">
                                 <div class="col-6">
                                     <p class="mb-0">Amount requested</p>
@@ -123,6 +129,7 @@
                                     <p class="mb-0">200</p>
                                 </div>
                             </div>
+                            <!-- Donation Details Fulfilled -->
                             <div class="row text-center align-items-center justify-content-center py-2">
                                 <div class="col-6">
                                     <p class="mb-0">Amount Fulfilled </p>
@@ -131,6 +138,7 @@
                                     <p class="mb-0">67</p>
                                 </div>
                             </div>
+                            <!-- Donation Details Needed -->
                             <div class="row bg-light text-center align-items-center justify-content-center py-2">
                                 <div class="col-6">
                                     <p class="mb-0">Amount Needed</p>
@@ -139,6 +147,7 @@
                                     <p class="mb-0">133</p>
                                 </div>
                             </div>
+                            <!-- Donation Details Author -->
                             <div class="row text-center align-items-center justify-content-center py-2">
                                 <div class="col-6">
                                     <p class="mb-0">Author</p>
@@ -147,6 +156,7 @@
                                     <p class="mb-0">Selah el Telmeez</p>
                                 </div>
                             </div>
+                            <!-- Donation Details Book Name -->
                             <div class="row bg-light text-center align-items-center justify-content-center py-2">
                                 <div class="col-6">
                                     <p class="mb-0">Book Name</p>
@@ -155,154 +165,155 @@
                                     <p class="mb-0">Selah el Telmeez, Grade 6, Science</p>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
-            </div>
-
-        </div>
-        <div class="col-lg-12">
-            <nav>
-
-            </nav>
-            <div class="tab-content mb-5">
-                <div class="tab-pane active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-                    <div class="px-2">
-                        <div class="container">
-                            <div class="row justify-content-center mt-5">
-                                <div class="col-lg-6">
-                                    <div class="card">
-
-
-                                        <div class="card-body">
-
-                                            <form id="donationDetailsForm">
-                                                <h4 class="mb-5 fw-bold">Leave a Reply for Donation details</h4>
-                                                <div class="row g-4">
-                                                    <div class="col-lg-12">
-                                                        <div class="border-bottom rounded my-4">
-                                                            <textarea name="" id="donationDetails" class="form-control border-0" cols="30" rows="8" placeholder="Details of donation *" spellcheck="false"></textarea>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <p class="mb-3">choose quantity you would like to donate:</p>
-                                                        <div class="input-group quantity mb-5" style="width: 100px;">
-
-                                                            <div class="input-group-btn">
-                                                                <button class="btn btn-sm btn-minus rounded-circle bg-light border">
-                                                                    <i class="fa fa-minus"></i>
-                                                                </button>
-                                                            </div>
-
-                                                            <input type="text" class="form-control form-control-sm text-center border-0" id="quantity" value="1">
-                                                            <div class="input-group-btn">
-                                                                <button class="btn btn-sm btn-plus rounded-circle bg-light border">
-                                                                    <i class="fa fa-plus"></i>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                        <p id="error-message" class="mb-3"></p>
-                                                        <div class="text-center">
-
-                                                            <button type="submit" class="btn btn-primary">Submit donation information</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <script>
-                    const minusButton = document.querySelector('.btn-minus');
-                    const plusButton = document.querySelector('.btn-plus');
-                    var errorMessage = document.getElementById("error-message");
-
-                    minusButton.addEventListener('click', (event) => {
-                        // Update input field value here (if needed)
-                        event.preventDefault(); // Prevent form submission
-                    });
-
-                    plusButton.addEventListener('click', (event) => {
-                        // Update input field value here (if needed)
-                        event.preventDefault(); // Prevent form submission
-                    });
-                    document.getElementById("donationDetailsForm").addEventListener("submit", function (event) {
-                        event.preventDefault();
-                        var donationDetails = document.getElementById('donationDetails');
-                        var quantity = document.getElementById('quantity');
-
-                        // Check if donation details field is empty
-                        if (donationDetails.value.trim() === '') {
-                            errorMessage.innerText = "Please fill in the donation details.";
-                            errorMessage.style.color = "red";
-                            return; // Exit the function if field is empty
-                        }
-
-                        document.getElementById("donationDetailsForm").reset();
-                        errorMessage.innerText = "Donation details successfully entered. You will be contacted shortly by the courier.";
-                        errorMessage.style.color = "green";
-                        window.location.href = "completeDonation.html";
-
-                    });
-                </script>
                 <div class="col-lg-4 col-xl-3">
-
+                    <div class="border rounded p-4">
+                        <!-- Update and Delete Buttons -->
+                        <div class="text-center">
+                            <button id="updateButton" class="btn btn-primary mb-3">Update Donation</button>
+                            <button id="deleteButton" class="btn btn-danger">Delete Donation</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
+
     </div>
+
+
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
         <div class="container py-5">
-            <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5);">
+            <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5) ;">
                 <div class="row g-4">
-                    <div class="col-lg-6">
+                    <div class="col-lg-3">
                         <a href="#">
                             <h1 class="text-secondary mb-0">Generous Hearts</h1>
                             <p class="text-secondary mb-0">Give Hope. Give Today.</p>
                         </a>
                     </div>
-                    <div class="col-lg-6 text-lg-end">
+                    <div class="col-lg-6">
                         <div class="position-relative mx-auto">
+                            <input class="form-control border-0 w-100 py-3 px-4 rounded-pill" type="number" placeholder="Your Email">
+                            <button type="submit" class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Subscribe Now</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="d-flex justify-content-end pt-3">
+                            <a class="btn  btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-secondary btn-md-square rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row g-5">
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <div class="footer-item">
                         <h4 class="text-light mb-3">Why People Like us!</h4>
                         <p class="mb-4">
                             Unite with passionate volunteers! Find your cause and empower others with your kindness.
                         </p>
-
+                        <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Read More</a>
                     </div>
                 </div>
-
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex flex-column text-start footer-item">
+                        <h4 class="text-light mb-3">Shop Info</h4>
+                        <a class="btn-link" href="">About Us</a>
+                        <a class="btn-link" href="">Contact Us</a>
+                        <a class="btn-link" href="">Privacy Policy</a>
+                        <a class="btn-link" href="">Terms & Condition</a>
+                        <a class="btn-link" href="">Return Policy</a>
+                        <a class="btn-link" href="">FAQs & Help</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex flex-column text-start footer-item">
+                        <h4 class="text-light mb-3">Account</h4>
+                        <a class="btn-link" href="">My Account</a>
+                        <a class="btn-link" href="">Shop details</a>
+                        <a class="btn-link" href="">Shopping Cart</a>
+                        <a class="btn-link" href="">Wishlist</a>
+                        <a class="btn-link" href="">Order History</a>
+                        <a class="btn-link" href="">International Orders</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
                     <div class="footer-item">
                         <h4 class="text-light mb-3">Contact</h4>
                         <p>Address: 1429 Netus Rd, NY 48247</p>
                         <p>Email: Example@gmail.com</p>
                         <p>Phone: +0123 4567 8910</p>
+                        <p>Payment Accepted</p>
+                        <img src="img/payment.png" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Footer End -->
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+                </div>
+                <div class="col-md-6 my-auto text-center text-md-end text-white">
+                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateModalLabel">Update Donation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="updateAmountRequested" class="form-label">Amount Requested</label>
+                        <input type="number" class="form-control updateInput" id="updateAmountRequested" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateAmountFulfilled" class="form-label">Amount Fulfilled</label>
+                        <input type="number" class="form-control updateInput" id="updateAmountFulfilled" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateAmountNeeded" class="form-label">Amount Needed</label>
+                        <input type="number" class="form-control updateInput" id="updateAmountNeeded" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateAuthor" class="form-label">Author</label>
+                        <input type="text" class="form-control updateInput" id="updateAuthor">
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateBName" class="form-label">Book Name</label>
+                        <input type="text" class="form-control updateInput" id="updateBName">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveChangesBtn">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -314,6 +325,64 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Disable the Save Changes button by default
+            document.getElementById("saveChangesBtn").disabled = true;
+
+            // Add event listeners to input fields in the update modal
+            document.querySelectorAll('.updateInput').forEach(item => {
+                item.addEventListener('input', function () {
+                    // Enable the Save Changes button if any input field has a value
+                    var saveChangesBtn = document.getElementById("saveChangesBtn");
+                    var anyInput = Array.from(document.querySelectorAll('.updateInput')).some(input => input.value.trim() !== '');
+                    saveChangesBtn.disabled = !anyInput;
+                });
+            });
+
+            // Update Button Functionality
+            document.getElementById("updateButton").addEventListener("click", function () {
+                // Show the update modal
+                $('#updateModal').modal('show');
+
+                // Get the current details
+                var amountRequested = document.getElementById("amountRequested").textContent;
+                var amountFulfilled = document.getElementById("amountFulfilled").textContent;
+                var amountNeeded = document.getElementById("amountNeeded").textContent;
+                var author = document.getElementById("author").textContent;
+                var bookName = document.getElementById("bookName").textContent;
+
+                // Set the current details in the modal inputs
+                document.getElementById("updateAmountRequested").value = amountRequested;
+                document.getElementById("updateAmountFulfilled").value = amountFulfilled;
+                document.getElementById("updateAmountNeeded").value = amountNeeded;
+                document.getElementById("updateAuthor").value = author;
+                document.getElementById("updateBName").value = bookName;
+            });
+
+            // Save Changes button functionality
+            document.getElementById("saveChangesBtn").addEventListener("click", function () {
+                // Perform the update operation here
+                // For demonstration, alert a success message, close the modal, and redirect to another page
+                alert("Changes saved successfully!");
+                $('#updateModal').modal('hide');
+                window.location.href = "redirectDetails2Org.html";
+            });
+
+            // Delete Button Functionality
+            document.getElementById("deleteButton").addEventListener("click", function () {
+                var confirmation = confirm("Are you sure you want to delete this donation post?");
+                if (confirmation) {
+                    alert("Donation post deleted successfully!");
+                }
+            });
+        });
+    </script>
+
+
+
+
 </body>
 
 </html>
