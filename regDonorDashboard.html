@@ -90,183 +90,166 @@
     </div>
     <div class="container">
         <div class="row">
-            <!-- View Requested Donation Items -->
-            <div class="col-lg-6">
-                <div class="card mb-4">
-                    <div class="card-header bg-primary text-white">
-                        1. View Requested Donation Items
-                    </div>
-                    <div class="card-body">
-                        <a href="view_requested_donation_items.html" class="btn btn-primary">View Donation Items</a>
-                    </div>
+             <!-- Donor Homepage Section Start -->
+    <section id="donor-homepage" class="mt-5">
+        <div class="container">
+            <!-- Title -->
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <h2>Registered Organizations</h2>
                 </div>
             </div>
-            <!-- Search Donation Items by Category -->
-            <div class="col-lg-6">
-                <div class="card mb-4">
-                    <div class="card-header bg-primary text-white">
-                        2. Search Donation Items by Category
-                    </div>
-                    <div class="card-body">
-                        <form action="search_donation_items.php" method="GET">
-                            <div class="mb-3">
-                                <label for="category">Select Category:</label>
-                                <select id="category" name="category" class="form-select">
-                                    <option value="clothes">Clothes</option>
-                                    <option value="toys">Toys</option>
-                                    <option value="food">Food</option>
-                                    <!-- Add more options for other categories -->
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Search</button>
-                        </form>
+            <!-- Search and Filter Section -->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="search-input" placeholder="Search organizations..." aria-label="Search organizations" aria-describedby="search-button">
+                        <button class="btn btn-primary" type="button" id="search-button">Search</button>
                     </div>
                 </div>
-            </div>
-            <!-- Category Selection for Donation -->
-            <div class="col-lg-6">
-                <div class="card mb-4">
-                    <div class="card-header bg-primary text-white">
-                        3. Category Selection for Donation
-                    </div>
-                    <div class="card-body">
-                        <form id="categoryForm">
-                            <div class="mb-3">
-                                <label for="category">Select Category:</label>
-                                <select id="category" name="category" class="form-select">
-                                    <option value="clothes">Clothes</option>
-                                    <option value="school_supplies">School Supplies</option>
-                                    <option value="toys">Toys</option>
-                                    <option value="food_donations">Food Donations</option>
-                                    <option value="medical_supplies">Medical Supplies</option>
-                                    <option value="blood_donations">Blood Donations</option>
-                                    <option value="probono_services">Probono Services</option>
-                                    <!-- Add more options for other categories -->
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Select Category</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
 
-            <!-- View Registered Organizations -->
-            <div class="col-lg-6">
-                <div class="card mb-4">
-                    <div class="card-header bg-primary text-white">
-                        4. View Registered Organizations
-                    </div>
-                    <div class="card-body">
-                        <a href="NewRegisteredOrg.html" class="btn btn-primary">View Registered Organizations</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Search Registered Organizations -->
-            <div class="col-lg-6">
-                <div class="card mb-4">
-                    <div class="card-header bg-primary text-white">
-                        5. Search Registered Organizations
-                    </div>
-                    <div class="card-body">
-                        <form action="search_registered_organizations.php" method="GET">
-                            <div class="mb-3">
-                                <label for="organizationName">Search by Organization Name:</label>
-                                <input type="text" id="organizationName" name="organizationName" class="form-control" placeholder="Enter organization name">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Search</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- Filter Registered Organizations -->
-            <div class="col-lg-6">
-                <div class="card mb-4">
-                    <div class="card-header bg-primary text-white">
-                        6. Filter Registered Organizations
-                    </div>
-                    <div class="card-body">
-                        <form action="filter_registered_organizations.php" method="GET">
-                            <div class="mb-3">
-                                <label for="area">Area:</label>
-                                <select id="area" name="area" class="form-select">
-                                    <option value="nasrcity">Nasr City</option>
-                                    <option value="heliopolis">Heliopolis</option>
-                                    <option value="maadi">Maadi</option>
-                                    <option value="newcairo">New Cairo</option>
-                                    <option value="6october">6th of october</option>
-                                    <option value="sheikhzayed">Sheikh Zayed</option>
-                                    <option value="smouha">Smouha</option>
-                                    <option value="montaza">Montaza</option>
-                                    <!-- Add more options for areas -->
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="governorate">Governorate:</label>
-                                <select id="governorate" name="governorate" class="form-select">
-                                    <option value="cairo">Cairo</option>
-                                    <option value="alexandria">Alexandria</option>
-                                    <option value="giza">Giza</option>
-                                    <option value="suez">Suez</option>
-                                    <option value="aswan">Aswan</option>
-                                    <!-- Add more options for governorates -->
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="organizationType">Organization Type:</label>
-                                <select id="organizationType" name="organizationType" class="form-select">
-                                    <option value="charity">Charitable organizations</option>
-                                    <option value="foundations">Foundations</option>
-                                    <option value="ngos">Non-Governmental Organizations(NGOs)</option>
-                                    <!-- Add more options for organization types -->
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Filter</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+                <div id="error-message" class="error-message" style="display: none;"></div>
 
-            <!-- View Organization Details -->
-            <div class="col-lg-6">
-                <div class="card mb-4">
-                    <div class="card-header bg-primary text-white">
-                        7. View Organization Details
-                    </div>
-                    <div class="card-body">
-                        <a href="view_organization_details.html" class="btn btn-primary">View Organization Details</a>
-                    </div>
+
+                <div class="col-md-2">
+                    <select class="form-select" id="area-filter">
+                        <option value="" selected disabled>Filter by Area</option>
+                        <option value="area1">Cairo</option>
+                        <option value="area2">Alexandria</option>
+                        <!-- Add more area options here -->
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <select class="form-select" id="governorate-filter">
+                        <option value="" selected disabled>Filter by Governorate</option>
+                        <option value="governorate1">Governorate 1</option>
+                        <option value="governorate2">Governorate 2</option>
+                        <!-- Add more governorate options here -->
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <select class="form-select" id="organization-type-filter">
+                        <option value="" selected disabled>Filter by Organization Type</option>
+                        <option value="type1">Type 1</option>
+                        <option value="type2">Type 2</option>
+                        <!-- Add more organization type options here -->
+                    </select>
+                </div>
+                <div class="col-md-3 d-flex align-items-end">
+                    <button class="btn btn-primary w-50 me-2" id="apply-filters">Apply</button>
+                    <button id="reset-filters" class="btn btn-secondary w-50" type="button">Reset</button>
                 </div>
             </div>
-
-            <!-- Update Account Information Button -->
-            <div class="col-lg-6">
-                <div class="card mb-4">
-                    <div class="card-header bg-primary text-white">
-                        Update Account Information
+                <!-- Modal Search End -->
+              <div class="row g-4 text-center align-items-center justify-content-center pt-4">
+                <div class="col-md-6 col-lg-8">
+                                            <button id="viewAllPostsBtn" type="submit" class="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary" >View All Posts</button>
+                                        </div>
+              </div>
+              <div class="row g-4 text-center align-items-center justify-content-center pt-4">
+                <div class="col-md-6 col-lg-8">
+                    <button onclick="window.location.href='NewRegisteredOrg.html'" class="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary">View Organizations</button>                                        </div>
+              </div>
+        <div class="container-fluid fruite py-5">
+            <div class="container py-5">
+                <h1 class="mb-4">Search Donation Requests by Category</h1>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <a href="Clothes.html" style="text-decoration: none; color: inherit;">
+                        <div class="rounded position-relative fruite-item" style="height: 100%;">
+                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
+                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                <h4>Clothes</h4>
+                                <p>Your gently used clothing items can provide warmth, comfort, and a sense of dignity to individuals and families facing difficult circumstances.</p>
+                                <div class="d-flex justify-content-between flex-lg-wrap">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                     </div>
-                    <div class="card-body">
-                        <button id="updateBtn" class="btn btn-primary">Update</button>
+                    
+                    
+                        <div class="col-md-6 col-lg-4">
+                            <a href="Toys.html" style="text-decoration: none; color: inherit;">
+                            <div class="rounded position-relative fruite-item" style="height: 100%;">    
+                                  <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
+                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                <h4>Toys</h4>
+                                <p>Your donated toys can bring joy, laughter, and endless playtime to children in need of a little extra happiness. Every toy becomes a comfort that ignites smiles and lights up their world. </p>
+                                <div class="d-flex justify-content-between flex-lg-wrap">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                            </a>
                     </div>
+                    <div class="col-md-6 col-lg-4">
+                        <a href="Food.html" style="text-decoration: none; color: inherit;">
+                        <div class="rounded position-relative fruite-item" style="height: 100%;">
+                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
+                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                <h4>Food</h4>
+                                <p>Your donated food items can nourish hungry stomachs, provide sustenance, and offer a comforting meal to those facing food insecurity and struggling to make ends meet.</p>
+                                <div class="d-flex justify-content-between flex-lg-wrap">
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <a href="Medical Supplies.html" style="text-decoration: none; color: inherit;">
+                        <div class="rounded position-relative fruite-item" style="height: 100%;">
+                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
+                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                <h4>Medical Supplies</h4>
+                                <p>Your donated medical supplies can offer relief, healing, and essential care to individuals in underserved communities with limited access to healthcare resources.</p>
+                                <div class="d-flex justify-content-between flex-lg-wrap">
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <a href="SchoolSupplies.html" style="text-decoration: none; color: inherit;">
+                        <div class="rounded position-relative fruite-item" style="height: 100%;">
+                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
+                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                <h4>School Supplies</h4>
+                                <p>Your donated school supplies can empower young minds, support education, and equip students with the tools they need to succeed in their academic journey.</p>
+                                <div class="d-flex justify-content-between flex-lg-wrap">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <a href="BloodDonation.html" style="text-decoration: none; color: inherit;">
+                        <div class="rounded position-relative fruite-item" style="height: 100%;">
+                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
+                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                <h4>Blood Donations</h4>
+                                <p>Your donated blood can save lives, offer hope, and provide critical support to patients undergoing medical treatment or facing emergencies.</p>
+                                <div class="d-flex justify-content-between flex-lg-wrap">
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
                 </div>
+                
             </div>
-
-            <!-- Delete Account Option -->
-            <div class="col-lg-6">
-                <div class="card mb-4">
-                    <div class="card-header bg-danger text-white">
-                        Delete Account
-                    </div>
-                    <div class="card-body">
-                        <p>Are you sure you want to delete your account?</p>
-                        <button id="deleteBtn" class="btn btn-danger">Delete Account</button>
-                    </div>
-                </div>
             </div>
-
         </div>
-    </div>
-    <!-- Donor Dashboard Section End -->
-    
+        
+                                              
+                           
+                                   
+        <!-- Modal Search End -->
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
         <div class="container py-5">
@@ -326,66 +309,94 @@
 
     <!-- JavaScript for category selection and redirection -->
     <script>
-        // Wait for the DOM to be fully loaded
-        document.addEventListener("DOMContentLoaded", function () {
-            // Function to handle category selection and redirection
-            function redirectToSelectedCategory() {
-                // Get the selected category value
-                var selectedCategory = document.getElementById("category").value;
-                // Redirect based on the selected category
-                switch (selectedCategory) {
-                    case "clothes":
-                        window.location.href = "donorClothes.html";
-                        break;
-                    case "school_supplies":
-                        window.location.href = "donorSchoolSup.html";
-                        break;
-                    case "toys":
-                        window.location.href = "donorToy.html";
-                        break;
-                    case "food_donations":
-                        window.location.href = "donorFood.html";
-                        break;
-                    case "medical_supplies":
-                        window.location.href = "donorMedicalSup.html";
-                        break;
-                    case "blood_donations":
-                        window.location.href = "donorBloodDon.html";
-                        break;
-                    case "probono_services":
-                        window.location.href = "DonorProbono.html";
-                        break;
-                    // Add cases for other categories as needed
-                    default:
-                        // Handle default case (if no category selected)
-                        alert("Please select a category");
-                }
-            }
+        $(document).ready(function () {
+            // Search button functionality
+            $('#search-button').click(function () {
+                var searchText = $('#search-input').val().toLowerCase();
 
-            // Add event listener to the form for category selection
-            document.getElementById("categoryForm").addEventListener("submit", function (event) {
-                // Prevent the default form submission behavior
-                event.preventDefault();
-                // Call the function to handle category selection and redirection
-                redirectToSelectedCategory();
-            });
-        });
-    </script>
+                // Loop through each table row
+                $('tbody tr').each(function () {
+                    var organizationName = $(this).find('td:first').text().toLowerCase();
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
+                    // Check if organization name contains the search text
+                    if (organizationName.includes(searchText)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
 
-            // Delete Account Option
-            document.getElementById("deleteBtn").addEventListener("click", function () {
-                var confirmDelete = confirm("Are you sure you want to delete your account?");
-                if (confirmDelete) {
-                    // Send a request to the server to delete the account
-                    // Delete the account from the database
-                    alert("Your account has been deleted.");
-                    // Redirect to a logout page or homepage
+                // Check if any rows are visible after filtering
+                if ($('tbody tr:visible').length === 0) {
+                    $('#error-message').text('No results found.');
+                    $('#error-message').show();
+                } else {
+                    $('#error-message').hide();
                 }
             });
+
+            // Reset button functionality
+            $('#reset-filters').click(function () {
+                // Show all table rows
+                $('tbody tr').show();
+                // Clear search input
+                $('#search-input').val('');
+                // Reset filter dropdowns
+                $('#area-filter').val('');
+                $('#governorate-filter').val('');
+                $('#organization-type-filter').val('');
+                // Hide error message
+                $('#error-message').hide();
+            });
+
+            // Apply filters button functionality
+            $('#apply-filters').click(function () {
+                var areaFilter = $('#area-filter').val();
+                var governorateFilter = $('#governorate-filter').val();
+                var organizationTypeFilter = $('#organization-type-filter').val();
+
+                // Loop through each table row
+                $('tbody tr').each(function () {
+                    var organizationArea = $(this).find('.organization-area').text().trim().toLowerCase();
+                    var organizationGovernorate = $(this).find('.organization-governorate').text().trim().toLowerCase();
+                    var organizationType = $(this).find('.organization-type').text().trim().toLowerCase();
+
+                    // Check if organization matches filter criteria
+                    var showRow = true;
+
+                    // Apply area filter
+                    if (areaFilter && organizationArea !== areaFilter) {
+                        showRow = false;
+                    }
+
+                    // Apply governorate filter
+                    if (governorateFilter && organizationGovernorate !== governorateFilter) {
+                        showRow = false;
+                    }
+
+                    // Apply organization type filter
+                    if (organizationTypeFilter && organizationType !== organizationTypeFilter) {
+                        showRow = false;
+                    }
+
+                    // Show or hide the row based on filter criteria
+                    if (showRow) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+
+                // Check if any rows are visible after filtering
+                if ($('tbody tr:visible').length === 0) {
+                    $('#error-message').text('No results found.');
+                    $('#error-message').show();
+                } else {
+                    $('#error-message').hide();
+                }
+            });
         });
+
     </script>
 </body>
 
