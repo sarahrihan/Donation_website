@@ -163,63 +163,98 @@
             <nav>
 
             </nav>
-            <div class="tab-content mb-5">
-                <div class="tab-pane active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-                    <div class="px-2">
-                        <div class="container">
-                            <div class="row justify-content-center mt-5">
-                                <div class="col-lg-6">
-                                    <div class="card">
+            <div class="tab-pane active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+                <div class="px-2">
+                    <div class="container">
+                        <div class="row justify-content-center mt-5">
+                            <div class="col-lg-6">
+                                <div class="card">
 
-                                        <div class="card-body">
 
-                                            <form action="#">
-                                                <h4 class="mb-5 fw-bold">Leave a Reply for Donation details</h4>
-                                                <div class="row g-4">
-                                                    <div class="col-lg-12">
-                                                        <div class="border-bottom rounded my-4">
-                                                            <textarea name="" id="" class="form-control border-0" cols="30" rows="8" placeholder="Details of donation *" spellcheck="false"></textarea>
+                                    <div class="card-body">
+
+                                        <form id="donationDetailsForm">
+                                            <h4 class="mb-5 fw-bold">Leave a Reply for Donation details</h4>
+                                            <div class="row g-4">
+                                                <div class="col-lg-12">
+                                                    <div class="border-bottom rounded my-4">
+                                                        <textarea name="" id="donationDetails" class="form-control border-0" cols="30" rows="8" placeholder="Details of donation *" spellcheck="false"></textarea>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <p class="mb-3">choose quantity you would like to donate:</p>
+                                                    <div class="input-group quantity mb-5" style="width: 100px;">
+
+                                                        <div class="input-group-btn">
+                                                            <button class="btn btn-sm btn-minus rounded-circle bg-light border">
+                                                                <i class="fa fa-minus"></i>
+                                                            </button>
                                                         </div>
 
+                                                        <input type="text" class="form-control form-control-sm text-center border-0" id="quantity" value="1">
+                                                        <div class="input-group-btn">
+                                                            <button class="btn btn-sm btn-plus rounded-circle bg-light border">
+                                                                <i class="fa fa-plus"></i>
+                                                            </button>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-lg-12">
+                                                    <p id="error-message" class="mb-3"></p>
+                                                    <div class="text-center">
 
+                                                        <button type="submit" class="btn btn-primary">Submit donation information</button>
                                                     </div>
-                                                </div>
-                                            </form>
-                                            <p class="mb-3">choose quantity you would like to donate:</p>
-                                            <div class="input-group quantity mb-5" style="width: 100px;">
-
-                                                <div class="input-group-btn">
-                                                    <button class="btn btn-sm btn-minus rounded-circle bg-light border">
-                                                        <i class="fa fa-minus"></i>
-                                                    </button>
-                                                </div>
-
-                                                <input type="text" class="form-control form-control-sm text-center border-0" value="1">
-                                                <div class="input-group-btn">
-                                                    <button class="btn btn-sm btn-plus rounded-circle bg-light border">
-                                                        <i class="fa fa-plus"></i>
-                                                    </button>
                                                 </div>
                                             </div>
-                                            <div class="text-center">
-                                                <a href="#" class="btn border border-secondary text-primary rounded-pill px-4 py-3">Submit donation information</a>
-                                            </div>
-                                        </div>
+                                        </form>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
-                </div>
-                <div class="col-lg-4 col-xl-3">
 
                 </div>
             </div>
+            <script>
+                const minusButton = document.querySelector('.btn-minus');
+                const plusButton = document.querySelector('.btn-plus');
+                var errorMessage = document.getElementById("error-message");
 
+                minusButton.addEventListener('click', (event) => {
+                    // Update input field value here (if needed)
+                    event.preventDefault(); // Prevent form submission
+                });
+
+                plusButton.addEventListener('click', (event) => {
+                    // Update input field value here (if needed)
+                    event.preventDefault(); // Prevent form submission
+                });
+                document.getElementById("donationDetailsForm").addEventListener("submit", function (event) {
+                    event.preventDefault();
+                    var donationDetails = document.getElementById('donationDetails');
+                    var quantity = document.getElementById('quantity');
+
+                    // Check if donation details field is empty
+                    if (donationDetails.value.trim() === '') {
+                        errorMessage.innerText = "Please fill in the donation details.";
+                        errorMessage.style.color = "red";
+                        return; // Exit the function if field is empty
+                    }      
+
+                    document.getElementById("donationDetailsForm").reset();
+                    errorMessage.innerText = "Donation details successfully entered. You will be contacted shortly by the courier.";
+                    errorMessage.style.color = "green";
+                    window.location.href = "completeDonation.html";
+
+                });
+            </script>
+            <div class="col-lg-4 col-xl-3">
+
+            </div>
         </div>
+
+    </div>
     </div>
     <!-- Single Product End -->
     <!-- Footer Start -->
@@ -262,7 +297,6 @@
         </div>
     </div>
     <!-- Footer End -->
-   
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
