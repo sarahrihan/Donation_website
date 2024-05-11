@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -138,48 +138,47 @@
         }
     </style>
     <!-- Modal Search Start -->
-<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content rounded-0">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body d-flex align-items-center">
-                
-                <div class="input-group w-75 mx-auto d-flex">
-
-                    <input type="search" class="form-control p-3" placeholder="Write search keyword and press enter to search" aria-describedby="search-icon-1" id="searchInput">
-                    <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                            
+                <div class="modal-body d-flex align-items-center">
 
+                    <div class="input-group w-75 mx-auto d-flex">
+
+                        <input type="search" class="form-control p-3" placeholder="Write search keyword and press enter to search" aria-describedby="search-icon-1" id="searchInput">
+                        <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                    </div>
+
+
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Modal Search End -->
-
-<!-- Error Modal Start -->
-<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="errorModalLabel">Error</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="errorMessageBody">
-                <!-- Error message will be displayed here -->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+    <!-- Modal Search End -->
+    <!-- Error Modal Start -->
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="errorMessageBody">
+                    <!-- Error message will be displayed here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Error Modal End -->
+    <!-- Error Modal End -->
 
-<script>
+    <script>
     // Function to handle search functionality
     document.getElementById('searchInput').addEventListener('input', function () {
         var searchQuery = this.value.trim().toLowerCase();
@@ -239,7 +238,7 @@
         var errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
         errorModal.show();
     }
-</script>
+    </script>
 
 
 
@@ -373,14 +372,14 @@
                                         { name: 'Thermometer', category: 'Medical Supplies', image: 'img/Thermometer.jpg', details: 'otherdevices.html' },
                                         { name: 'Stethoscope', category: 'Medical Supplies', image: 'img/Stethoscope.jpg', details: 'otherdevices.html' },
                                         { name: 'Medicine', category: 'Medical Supplies', image: 'img/Medicine.jpg', details: 'Medicine.html' },
-                                    
+
 
                                         // School Supplies requests
-                                        { name: 'Pen', category: 'School Supplies', image: 'img/pen2.png', details: 'details1.html' },
+                                        { name: 'Pen', category: 'School Supplies', image: 'img/pen2.png', details: 'details1Org.html' },
                                         { name: 'Notebook', category: 'School Supplies', image: 'img/notebook.jpg', details: 'details3.html' },
-                                        { name: 'Grade 6 Science Book', category: 'School Supplies', image: 'img/book1.png', details: 'details2.html' },
+                                        { name: 'Grade 6 Science Book', category: 'School Supplies', image: 'img/book1.png', details: 'details2Org.html' },
                                         { name: 'Grade 8 English Book', category: 'School Supplies', image: 'img/Book2.png', details: 'details4.html' },
-                                   
+
 
                                         // Food requests
                                         { name: 'Apples',  image: 'img/apples.jpg', details: 'FoodApplesDetails.html', category: 'Food' },
@@ -394,8 +393,8 @@
                                         { name: 'Chocolate Chip Cookies',  image: 'img/chocolate_chip_cookies.jpg', details: 'FoodChocolateChipCookiesDetails.html', category: 'Food' }
                                     ];
 
-                                        
-                                    
+
+
 
 
                                     // Function to display food
