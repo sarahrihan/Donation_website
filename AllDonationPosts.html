@@ -136,23 +136,111 @@
         }
     </style>
     <!-- Modal Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content rounded-0">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content rounded-0">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex align-items-center">
+                
+                <div class="input-group w-75 mx-auto d-flex">
+
+                    <input type="search" class="form-control p-3" placeholder="Write search keyword and press enter to search" aria-describedby="search-icon-1" id="searchInput">
+                    <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
                 </div>
-                <div class="modal-body d-flex align-items-center">
-                    <div class="input-group w-75 mx-auto d-flex">
-                        <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
-                        <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
-                    </div>
-                </div>
+                            
+
             </div>
         </div>
     </div>
-    <!-- Modal Search End -->
+</div>
+<!-- Modal Search End -->
+
+<!-- Error Modal Start -->
+<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="errorMessageBody">
+                <!-- Error message will be displayed here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Error Modal End -->
+
+<script>
+    // Function to handle search functionality
+    document.getElementById('searchInput').addEventListener('input', function () {
+        var searchQuery = this.value.trim().toLowerCase();
+
+        // Auto-suggestion logic
+        var suggestions = foodRequests.filter(function (item) {
+            return item.name.toLowerCase().startsWith(searchQuery);
+        }).map(function (item) {
+            return item.name;
+        });
+
+        // Display auto-suggestions
+        displayAutoSuggestions(suggestions);
+    });
+
+    function displayAutoSuggestions(suggestions) {
+        // Display auto-suggestions in a convenient location
+        // You can customize the display as per your UI requirements
+        console.log('Auto-suggestions:', suggestions);
+    }
+
+    // Function to handle search submission
+    document.getElementById('searchInput').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            var searchQuery = this.value.trim().toLowerCase();
+
+            // Validate search query
+            if (searchQuery === 'clothes' || searchQuery === 'food' || searchQuery === 'toys') {
+                // Valid category, proceed with search
+                console.log('Searching for', searchQuery);
+                // Filter food requests by category
+                var filteredFood = foodRequests.filter(function (item) {
+                    return item.category.toLowerCase() === searchQuery;
+                });
+                // Display search results
+                displayFood(filteredFood);
+            } else {
+                // Invalid category, display error message
+                console.error('Invalid category:', searchQuery);
+                displayError('Please enter a valid category ("clothes", "food", "toys") or use filter selection instead to see more category options.');
+            }
+        }
+    });
+
+    // Function to display food items
+    function displayFood(foodRequests) {
+        // Display food items based on search results
+        // You can implement your display logic here
+        console.log('Search results:', foodRequests);
+    }
+
+    // Function to display error message in modal
+    function displayError(errorMessage) {
+        // Set error message text
+        document.getElementById('errorMessageBody').innerText = errorMessage;
+        // Show error modal
+        var errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+        errorModal.show();
+    }
+</script>
+
+
+
     <!-- Single Page Header start -->
     <div class="container-fluid page-header py-5">
         <h1 class="text-center text-white display-6">Donate</h1>
@@ -166,7 +254,7 @@
     <!-- Fruits Shop Start-->
     <div class="container-fluid fruite py-5">
         <div class="container py-5">
-            <h1 class="mb-4">Food Requests</h1>
+            <h1 class="mb-4">All Donation Requests</h1>
             <div class="row g-4">
                 <div class="col-lg-12">
                     <div class="row g-4">
@@ -177,16 +265,18 @@
                                         <div id="filters">
                                             <h4>Filters</h4>
                                             <ul class="list-unstyled fruite-categorie">
-                                                <!-- Food Type filter -->
+                                                <!-- Category filter -->
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <label for="foodType">Food Type:</label>
-                                                        <select id="foodType">
+                                                        <label for="category">Select Category:</label>
+                                                        <select id="category">
                                                             <option value="">All</option>
-                                                            <option value="Fruits and Vegetables">Fruits and Vegetables</option>
-                                                            <option value="Canned Foods">Canned Foods</option>
-                                                            <option value="Fresh Meals">Fresh Meals</option>
-                                                            <option value="Baked Goods">Baked Goods</option>
+                                                            <option value="Toys">Toys</option>
+                                                            <option value="Clothes">Clothes</option>
+                                                            <option value="Medical Supplies">Medical Supplies</option>
+                                                            <option value="School Supplies">School Supplies</option>
+                                                            <option value="Food">Food</option>
+                                                            <option value="Blood Donations">Blood Donations</option>
                                                         </select>
                                                     </div>
                                                 </li>
@@ -208,7 +298,7 @@
                                                 document.getElementById('applyFiltersBtn').classList.add('shaded');
 
                                                 // Retrieve filter value
-                                                var foodType = document.getElementById('foodType').value;
+                                                var foodType = document.getElementById('category').value;
 
                                                 // Filter the food based on the selected criteria
                                                 var filteredFood = foodRequests.filter(function (food) {
@@ -229,7 +319,7 @@
                                                 document.getElementById('applyFiltersBtn2').classList.add('shaded');
 
                                                 // Reset filter dropdown to its default value
-                                                document.getElementById('foodType').selectedIndex = 0;
+                                                document.getElementById('category').selectedIndex = 0;
 
                                                 // Display all food (reset)
                                                 displayFood(foodRequests);
@@ -239,6 +329,7 @@
                                                     document.getElementById('applyFiltersBtn2').classList.remove('shaded');
                                                 }, 150);
                                             }
+
                                         </script>
 
                                     </div>
@@ -251,16 +342,60 @@
                             <div class="row g-4 justify-content-center">
                                 <script>
                                     var foodRequests = [
-                                        { name: 'Apples', category: 'Fruits and Vegetables', image: 'img/apples.jpg', details: 'FoodApplesDetails.html' },
-                                        { name: 'Bananas', category: 'Fruits and Vegetables', image: 'img/bananas.jpg', details: 'FoodBananasDetails.html' },
-                                        { name: 'Carrots', category: 'Fruits and Vegetables', image: 'img/carrots.jpg', details: 'FoodCarrotsDetails.html' },
-                                        { name: 'Canned Soup', category: 'Canned Foods', image: 'img/canned_soup.jpg', details: 'FoodCannedSoupDetails.html' },
-                                        { name: 'Pasta Sauce', category: 'Canned Foods', image: 'img/pasta_sauce.png', details: 'FoodPastaSauceDetails.html' },
-                                        { name: 'Fresh Salad', category: 'Fresh Meals', image: 'img/fresh_salad.jpg', details: 'FoodFreshSaladDetails.html' },
-                                        { name: 'Grilled Chicken', category: 'Fresh Meals', image: 'img/grilled_chicken.jpeg', details: 'FoodGrilledChickenDetails.html' },
-                                        { name: 'Baguette', category: 'Baked Goods', image: 'img/baguette.png', details: 'FoodBaguetteDetails.html' },
-                                        { name: 'Chocolate Chip Cookies', category: 'Baked Goods', image: 'img/chocolate_chip_cookies.jpg', details: 'FoodChocolateChipCookiesDetails.html' }
+                                        // Clothes requests
+                                        { name: 'Fall Hoodie', age: '17+', gender: 'both', season: 'fall', image: 'img/fall_hoodie.jpg', details: 'ClothesFallHoodieDetails.html', category: 'Clothes' },
+                                        { name: 'Fall Sweater', age: '12+', gender: 'both', season: 'fall', image: 'img/fall_sweater.jpg', details: 'ClothesFallSweaterDetails.html', category: 'Clothes' },
+                                        { name: 'Spring Skirt', age: '7-12', gender: 'female', season: 'spring', image: 'img/spring_skirt.jpg', details: 'ClothesSpringSkirtDetails.html', category: 'Clothes' },
+                                        { name: 'Summer Dress', age: '4-6', gender: 'female', season: 'summer', image: 'img/summer_dress.jpg', details: 'ClothesSummerDressDetails.html', category: 'Clothes' },
+                                        { name: 'Swimsuit', age: '4-6', gender: 'female', season: 'summer', image: 'img/swimsuit.jpg', details: 'ClothesSwimsuitDetails.html', category: 'Clothes' },
+                                        { name: 'Winter Boots', age: '12+', gender: 'both', season: 'winter', image: 'img/winter_boots.jpg', details: 'ClothesWinterBootsDetails.html', category: 'Clothes' },
+                                        { name: 'Winter Jacket', age: '12+', gender: 'both', season: 'winter', image: 'img/winter_jacket.jpg', details: 'ClothesWinterJacketDetails.html', category: 'Clothes' },
+
+                                        // Toy requests
+                                        { name: 'Teddy Bear', age: 'All', gender: 'both', category: 'stuffed toys', image: 'img/teddy_bear.jpg', details: 'ToyTeddydetails.html', category: 'Toys' },
+                                        { name: 'Barbie Doll', age: '4-6', gender: 'female', category: 'dolls', image: 'img/barbie_doll.jpg', details: 'ToyBarbiedetails.html', category: 'Toys' },
+                                        { name: 'Soccer Ball', age: '7-12', gender: 'male', category: 'sports', image: 'img/soccer_ball.jpg', details: 'ToyBalldetails.html', category: 'Toys' },
+                                        { name: 'Remote Control Car', age: '12+', gender: 'male', category: 'cars', image: 'img/remote_control_car.jpg', details: 'ToyRemCardetails.html', category: 'Toys' },
+                                        { name: 'Board Game', age: '7-12', gender: 'female', category: 'board games', image: 'img/board_game.jpg', details: 'ToyBoardGdetails.html', category: 'Toys' },
+                                        { name: 'Jump Rope', age: '7-12', gender: 'both', category: 'outdoor', image: 'img/jump_rope.jpg', details: 'ToyRopedetails.html', category: 'Toys' },
+
+                                        // Blood requests
+                                        { name: 'A positive (A+)', Hospital: ['Dar Al Fouad Hospital', '57357'], Governrate: 'Cairo', Area: ['6th Of October', 'El Saida Zainab'], image: 'img/A.jpg', details: 'A_BT.html', category: 'Blood Donations' },
+                                        { name: 'AB positive (AB+)', Hospital: ['Dar Al Fouad Hospital', '57357'], Governrate: 'Cairo', Area: ['El Saida Zainab', '6th Of October'], image: 'img/AB.jpg', details: 'AB_BT.html', category: 'Blood Donations' },
+                                        { name: 'AB negative (AB-)', Hospital: ['57357', 'Ahl Misr Hospital'], Governrate: 'Cairo', Area: ['New Cairo', 'El Saida Zainab'], image: 'img/ABB.jpg', details: 'ABB_BT.html', category: 'Blood Donations' },
+                                        { name: 'O negative (O-)', Hospital: ['Ahl Misr Hospital', '57357'], Governrate: 'Cairo', Area: ['New Cairo', 'El Saida Zainab'], image: 'img/OO.jpg', details: 'O_BT.html', category: 'Blood Donations' },
+
+                                        // Medical supplies requests
+                                        { name: 'Blood Pressure Monitor', category: 'Medical Supplies', image: 'img/bloodPressureMonitor.jpg', details: 'BloodPressure.html' },
+                                        { name: 'Diabetes Monitor', category: 'Medical Supplies', image: 'img/Diabetes.jpg', details: 'DiabetesMonitor.html' },
+                                        { name: 'Nebulizer', category: 'Medical Supplies', image: 'img/Nebulizer.jpg', details: 'otherdevices.html' },
+                                        { name: 'Thermometer', category: 'Medical Supplies', image: 'img/Thermometer.jpg', details: 'otherdevices.html' },
+                                        { name: 'Stethoscope', category: 'Medical Supplies', image: 'img/Stethoscope.jpg', details: 'otherdevices.html' },
+                                        { name: 'Medicine', category: 'Medical Supplies', image: 'img/Medicine.jpg', details: 'Medicine.html' },
+                                    
+
+                                        // School Supplies requests
+                                        { name: 'Pen', category: 'School Supplies', image: 'img/pen2.png', details: 'details1.html' },
+                                        { name: 'Notebook', category: 'School Supplies', image: 'img/notebook.jpg', details: 'details3.html' },
+                                        { name: 'Grade 6 Science Book', category: 'School Supplies', image: 'img/book1.png', details: 'details2.html' },
+                                        { name: 'Grade 8 English Book', category: 'School Supplies', image: 'img/Book2.png', details: 'details4.html' },
+                                   
+
+                                        // Food requests
+                                        { name: 'Apples',  image: 'img/apples.jpg', details: 'FoodApplesDetails.html', category: 'Food' },
+                                        { name: 'Bananas',  image: 'img/bananas.jpg', details: 'FoodBananasDetails.html', category: 'Food' },
+                                        { name: 'Carrots', image: 'img/carrots.jpg', details: 'FoodCarrotsDetails.html', category: 'Food' },
+                                        { name: 'Canned Soup',  image: 'img/canned_soup.jpg', details: 'FoodCannedSoupDetails.html', category: 'Food' },
+                                        { name: 'Pasta Sauce',  image: 'img/pasta_sauce.png', details: 'FoodPastaSauceDetails.html', category: 'Food' },
+                                        { name: 'Fresh Salad',  image: 'img/fresh_salad.jpg', details: 'FoodFreshSaladDetails.html', category: 'Food' },
+                                        { name: 'Grilled Chicken',  image: 'img/grilled_chicken.jpeg', details: 'FoodGrilledChickenDetails.html', category: 'Food' },
+                                        { name: 'Baguette', image: 'img/baguette.png', details: 'FoodBaguetteDetails.html', category: 'Food' },
+                                        { name: 'Chocolate Chip Cookies',  image: 'img/chocolate_chip_cookies.jpg', details: 'FoodChocolateChipCookiesDetails.html', category: 'Food' }
                                     ];
+
+                                        
+                                    
+
 
                                     // Function to display food
 
