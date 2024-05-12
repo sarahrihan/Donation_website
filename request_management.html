@@ -92,8 +92,6 @@
     <!-- Navbar End -->
     <style>
         /* Add your CSS styles here */
-        /* Add your CSS styles here */
-        /* Add your CSS styles here */
         .error-message {
             color: red;
             text-align: center;
@@ -104,7 +102,7 @@
             pointer-events: none;
         }
 
-        .filters label {
+        filters label {
             display: block;
             margin-bottom: 5px;
         }
@@ -138,16 +136,6 @@
             margin: 4px 2px;
             cursor: pointer;
         }
-
-        /* Add space above the "Pending Requests" section */
-        .card-body {
-            padding-top: 20px;
-        }
-
-        /* Add space above the "Back to Admin Dashboard" button */
-        .text-center {
-            margin-top: 30px;
-        }
     </style>
     <!-- Modal Search Start -->
     <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -169,29 +157,53 @@
     <!-- Modal Search End -->
     <!-- Single Page Header start -->
     <div class="container-fluid page-header py-5">
-        <h1 class="text-center text-white display-6">Request Management</h1>
+        <h1 class="text-center text-white display-6">Donate</h1>
         <ol class="breadcrumb justify-content-center mb-0">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
             <li class="breadcrumb-item"><a href="#">Pages</a></li>
             <li class="breadcrumb-item active text-white">Shop</li>
         </ol>
     </div>
-    <!-- Single Page Header End -->
     <!-- Request Management Section -->
-    <div class="container">
-        <!-- Pending Requests Card -->
-        <div class="card">
-            <div class="card-header">
-                Pending Requests
-            </div>
-            <div class="card-body">
-                <ul>
-                    <li>Request 1 - <a href="#">Accept</a> / <a href="#">Reject</a></li>
-                    <li>Request 2 - <a href="#">Accept</a> / <a href="#">Reject</a></li>
-                    <!-- Add more pending requests as needed -->
-                </ul>
-            </div>
-        </div>
+    <div class="container mt-5">
+        <h2>Pending requests</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Will Smith</td>
+                    <td>will.smith@gmail.com</td>
+                    <td>Probono Doctor</td>
+                    <td><a href="submission_indi.html" class="btn btn-primary">View Submission</a></td>
+                    <td>
+                        <button class="btn btn-success" onclick="acceptRequest('Underconstruction.html')">Accept</button>
+                        <button class="btn btn-danger" onclick="rejectRequest('Underconstruction.html')">Reject</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Jana Mahmoud</td>
+                    <td>jana.mahmoud@gmail.com</td>
+                    <td>Probono Teacher</td>
+                    <td><a href="submissionTeacher.html" class="btn btn-primary">View Submission</a></td>
+                    <td>
+                        <button class="btn btn-success" onclick="acceptRequest('Underconstruction.html')">Accept</button>
+                        <button class="btn btn-danger" onclick="rejectRequest('RejectJana.html')">Reject</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Rana</td>
+                    <td>rana.hellal@gmail.com</td>
+                    <td>Organization</td>
+                    <td><a href="submission_orgind.html" class="btn btn-primary">View Submission</a></td>
+                    <td>
+                        <button class="btn btn-success" onclick="acceptRequest('AcceptRana.html')">Accept</button>
+                        <button class="btn btn-danger" onclick="rejectRequest('Underconstruction.html')">Reject</button>
+                    </td>
+                </tr>
+                
+
+            </tbody>
+        </table>
+    </div>
 
         <!-- Button to Redirect to Request Management Page -->
         <div class="text-center">
@@ -250,6 +262,28 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <script>
+     <!-- Function to handle "Accept" button click with parameterized URL -->
+function acceptRequest(redirectUrl) {
+    // Ask for confirmation
+    var confirmation = confirm("Are you sure you want to accept this request?");
+    if (confirmation) {
+        // Redirect to the specified URL
+        window.location.href = redirectUrl;
+    }
+}
+
+function rejectRequest(redirectUrl) {
+    // Ask for confirmation
+    var confirmation = confirm("Are you sure you want to reject this request?");
+    if (confirmation) {
+        // Redirect to the specified URL
+        window.location.href = redirectUrl;
+    }
+}
+
+    </script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

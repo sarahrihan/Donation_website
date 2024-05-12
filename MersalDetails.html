@@ -27,6 +27,8 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
 </head>
 
 <body>
@@ -165,154 +167,69 @@
         </ol>
     </div>
     <!-- Single Page Header End -->
+   <!-- Organization Rep Details Card -->
+   <div class="container py-5">
 
-    <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="messageModalLabel">Message</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="messageBody">
-                    <!-- Message content will be displayed here -->
-                </div>
-            </div>
+   <div class="card">
+    <div class="card-header">
+        Organization Representitive Details
+    </div>
+    <div class="card-body">
+        <p><strong>Name:</strong> Sara Rihan</p>
+        <p><strong>Email:</strong> sara.rihan@gmail.com</p>
+        <p><strong>Contact Number:</strong> 010012345678</p>
+        <!-- Add more organization details as needed -->
+    </div>
+    <!-- Organization Details Card -->
+    <div class="card">
+        <div class="card-header">
+            Organization Details
+        </div>
+        <div class="card-body">
+            <p><strong>Name:</strong> Mersal</p>
+            <p><strong>Type:</strong> General Nonprofit</p>
+            <p><strong>Short Description:</strong> Mersal does good things.<br>They give food and clothes and education to those in need all over Egypt.</p>
+            <p><strong>Address:</strong> Horeya Street </p>
+            <p><strong>Area:</strong> Downtown Cairo</p>
+            <p><strong>Governorate:</strong> Giza</p>
+            <div id="map" style="height: 300px;"></div>
+
         </div>
     </div>
+    </div>
 
-
-
-   <!-- Organization Details Section -->
-   <div class="container py-5">
-    <!-- Organization A -->
-    <div class="container">
-        <div class="card">
+        <!-- Submitted Documents Section -->
+        <div class="card mt-5">
             <div class="card-header">
-                Organization A Details
+                Submitted Documents
             </div>
             <div class="card-body">
-                <div class="Charity representative ">
-                    <p><strong>Name:</strong> Rana Helal</p>
-                    <p><strong>Email:</strong>rana.helal@gmail.com</p>
-                    <p><strong>Orgnization Name:</strong> Resala</p>
-                    <p><strong>Type :</strong> Non-Profit</p>
-                    <!-- Submitted Documents Section -->
-                    <div class="card mb-3">
-                        <div class="card-header">
-                            Submitted Documents
+                <ul class="list-unstyled">
+                    <li class="d-flex justify-content-between align-items-center">
+                        <span class="fw-bold me-3">Document:</span>
+                        <div class="d-flex align-items-center">
+                            <a href="Resala Authenticity Document.pdf" target="_blank" download>Mersal Authenticity Document.pdf</a>
                         </div>
-                        <div class="card-body">
-                            <ul class="list-unstyled">
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span class="fw-bold me-3">Document:</span>
-                                    <div class="d-flex align-items-center">
-                                        <a href="Resala Authenticity Document.pdf" target="_blank" download>Resala Authenticity Document.pdf</a>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <!-- Added ms-auto class for margin-left:auto to push buttons to the right -->
-                                        <button id="acceptBtn" class="btn btn-success mr-2">Accept</button>
-                                        <button id="rejectBtn" class="btn btn-danger">Reject</button>
-                                    </div>
-                                </li>
-                                <!-- Add more document links as needed -->
-                            </ul>
+                        <div class="ms-auto">
+                            <!-- Added ms-auto class for margin-left:auto to push buttons to the right -->
+                            
                         </div>
-                </div>
+                    </li>
+                    <!-- Add more document links as needed -->
+                </ul>
             </div>
         </div>
-    </div>
 
-   <!-- Organization B -->
-<div class="container py-5">
-    <div class="card">
-        <div class="card-header">
-            Probono Doctor
-        </div>
-        <div class="card-body">
-            <div class="organization">
-                <p><strong>Name:</strong> Will Smith</p>
-                <p><strong>Email:</strong> will.smith@gmail.com</p>
-                <p><strong>Speciality:</strong> OB/GYN</p>
-                <!-- Submitted Documents Section -->
-                <div class="card mb-3">
-                    <div class="card-header">
-                        Submitted Documents
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled">
-                            <li class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold me-3">Document:</span>
-                                <div class="d-flex align-items-center">
-                                    <a href="Medical Authenticity Document.pdf" target="_blank" download>Resala Authenticity Document.pdf</a>
-                                </div>
-                                <div class="ms-auto">
-                                    <!-- Added ms-auto class for margin-left:auto to push buttons to the right -->
-                                    <button class="btn btn-success mr-2">Accept</button>
-                                    <button class="btn btn-danger">Reject</button>
-                                </div>
-                            </li>
-                            <!-- Add more document links as needed -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
+
+
+
+
+
+        <!-- Button to Redirect to Request Management Page -->
+        <div class="text-center mt-3">
+            <a href="NewRegisteredOrg.html" class="btn btn-primary">Go to Request Management</a>
         </div>
     </div>
-</div>
-
-<!-- Organization C -->
-<div class="container py-5">
-    <div class="card">
-        <div class="card-header">
-            Probono Teacher
-        </div>
-        <div class="card-body">
-            <div class="organization">
-                <p><strong>Name:</strong> Jana Mahmoud</p>
-                <p><strong>Email:</strong> jana.mahmoud@gmail.com</p>
-                <p><strong>Subject(s):</strong> English, Math, Science</p>
-                <!-- Submitted Documents Section -->
-                <div class="card mb-3">
-                    <div class="card-header">
-                        Submitted Documents
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled">
-                            <li class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold me-3">Document:</span>
-                                <div class="d-flex align-items-center">
-                                    <a href="Teaching Authenticity Document.pdf" target="_blank" download>Teaching Authenticity Document.pdf</a>
-                                </div>
-                                <div class="ms-auto">
-                                    <!-- Added ms-auto class for margin-left:auto to push buttons to the right -->
-                                    <button class="btn btn-success mr-2">Accept</button>
-                                    <button class="btn btn-danger">Reject</button>
-                                </div>
-                            </li>
-                            <!-- Add more document links as needed -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-                    <!-- End Accept and Reject Buttons -->
-                </div>
-                <!-- End of loop -->
-            </div>
-        </div>
-    </div>
-    <div id="messageContainer"></div>
-
-    <!-- Button to Redirect to Request Management Page -->
-    <div class="container text-center mt-3">
-        <a href="request_management.html" class="btn btn-primary">Go to Request Management</a>
-    </div>
-
-
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
         <div class="container py-5">
@@ -357,6 +274,11 @@
     <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
 
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -364,60 +286,24 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 
     <script>
-        function showSuccessMessage() {
-            var messageBody = document.getElementById("messageBody");
-            messageBody.innerHTML = "<div class='alert alert-success' role='alert'>Successfully accepted!</div>";
-            $('#messageModal').modal('show'); // Show the modal
-        }
 
-        function showRejectionMessage() {
-            var messageBody = document.getElementById("messageBody");
-            messageBody.innerHTML = "<div class='alert alert-danger' role='alert'>Rejected!</div>";
-            $('#messageModal').modal('show'); // Show the modal
-        }
+var map = L.map('map').setView([30.0444, 31.2357], 13); // Set the coordinates and zoom level
 
-        // Add click event listeners to the Accept and Reject buttons
-        document.getElementById("acceptBtn").addEventListener("click", function () {
-            showSuccessMessage();
-        });
+// Add the OpenStreetMap layer
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
 
-        document.getElementById("rejectBtn").addEventListener("click", function () {
-            showRejectionMessage();
-        });
-
-        // Add click event listener to the container of all Accept and Reject buttons
-document.addEventListener("click", function (event) {
-    // Check if the clicked element is an Accept or Reject button
-    if (event.target.matches(".btn-success")) {
-        // Show success message
-        showSuccessMessage();
-    } else if (event.target.matches(".btn-danger")) {
-        // Show rejection message
-        showRejectionMessage();
-    }
-});
-
-// Function to show success message
-function showSuccessMessage() {
-    var messageBody = document.getElementById("messageBody");
-    messageBody.innerHTML = "<div class='alert alert-success' role='alert'>Successfully accepted!</div>";
-    $('#messageModal').modal('show'); // Show the modal
-}
-
-// Function to show rejection message
-function showRejectionMessage() {
-    var messageBody = document.getElementById("messageBody");
-    messageBody.innerHTML = "<div class='alert alert-danger' role='alert'>Rejected!</div>";
-    $('#messageModal').modal('show'); // Show the modal
-}
+// Add a marker to the map
+var marker = L.marker([30.0444, 31.2357]).addTo(map); // Specify the coordinates of the marker
+marker.bindPopup("<b>Resala</b><br>12 Fake Address-Fake Street, Downtown Cairo, Giza").openPopup(); // Add a popup with organization details
 
     </script>
-
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
 
 </body>
 

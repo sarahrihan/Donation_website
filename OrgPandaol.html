@@ -27,6 +27,75 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        /* Adjust dropdown menu layout */
+.schedule-dropdown label,
+.schedule-dropdown select {
+    display: inline-block;
+    width: auto;
+    margin-right: 10px; /* Adjust as needed for spacing */
+}
+
+/* Adjust spacing between label and dropdown */
+.schedule-dropdown .form-label {
+    margin-bottom: 0;
+}
+
+.schedule-dropdown label {
+        display: inline-block;
+        width: 200px; /* Adjust width as needed */
+        margin-right: 10px;
+        text-align: right; /* Align labels to the right */
+    }
+
+    /* Adjust schedule button position */
+    .schedule-dropdown button {
+        margin-top: 10px; /* Add margin to lower the button */
+    }
+
+    /* Add this CSS inside the <style> tag in the head section */
+
+
+/* Center the success message */
+
+
+/* CSS code */
+
+
+#closeSuccessMessage {
+    position: absolute;
+    top: 5px; /* Adjust as needed */
+    right: 5px; /* Adjust as needed */
+    z-index: 2; /* Increase z-index to ensure the button is above the message */
+}
+
+#closeSuccessMessage button {
+    padding: 0;
+    width: 30px; /* Adjust width as needed */
+    height: 30px; /* Adjust height as needed */
+    font-size: 20px; /* Adjust font size as needed */
+}
+
+
+
+/* CSS code */
+#successMessage {
+    max-width: 300px; /* Adjust as needed */
+    position: relative; /* Make sure it's relative for absolute positioning */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px; /* Adjust the width as needed */
+    height: 200px; /* Adjust the height as needed */
+    display: none;
+    padding: 20px; /* Adjust padding as needed */
+    font-size: 18px; /* Adjust font size as needed */
+}
+
+
+
+    </style>
 </head>
 
 <body>
@@ -47,7 +116,7 @@
                 <div class="top-link pe-2">
                     <a href="#" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
                     <a href="#" class="text-white"><small class="text-white mx-2">Terms of Use</small></a>
-                    <!-- <a href="#" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>-->
+
                 </div>
             </div>
         </div>
@@ -62,8 +131,8 @@
                 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
                         <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="shop.html" class="nav-item nav-link active">Shop</a>
-                        <a href="shop-detail.html" class="nav-item nav-link">Shop Detail</a>
+                        <a href="shop.html" class="nav-item nav-link">Shop</a>
+                        <a href="shop-detail.html" class="nav-item nav-link active">Shop Detail</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0 bg-secondary rounded-0">
@@ -90,53 +159,6 @@
         </div>
     </div>
     <!-- Navbar End -->
-    <style>
-        /* Add your CSS styles here */
-        .error-message {
-            color: red;
-            text-align: center;
-        }
-
-        .shaded {
-            background-color: rgba(128, 128, 128, 0.5); /* Darker gray with some transparency */
-            pointer-events: none;
-        }
-
-        filters label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .toy-item {
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-        }
-
-            .toy-item img {
-                max-width: 100px;
-                margin-right: 20px;
-            }
-
-        .toy-details {
-            flex-grow: 1;
-        }
-
-        .view-details {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-    </style>
     <!-- Modal Search Start -->
     <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
@@ -159,74 +181,118 @@
     <div class="container-fluid page-header py-5">
         <h1 class="text-center text-white display-6">Donate</h1>
         <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-            <li class="breadcrumb-item active text-white">Shop</li>
+            <li class="breadcrumb-item"><a href="regDonorDashboard.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="Medical Supplies.html">Medical Supplies</a></li>
+            <li class="breadcrumb-item"><a href="Medicine.html">Medicine</a></li>
+            <li class="breadcrumb-item active text-white">Donate</li>
         </ol>
     </div>
     <!-- Single Page Header End -->
-   <!-- Organization Rep Details Card -->
-   <div class="container py-5">
-
-   <div class="card">
-    <div class="card-header">
-        Organization Representitive Details
-    </div>
-    <div class="card-body">
-        <p><strong>Name:</strong> Rana Hellal</p>
-        <p><strong>Email:</strong> rana.hellal@gmail.com</p>
-        <p><strong>Contact Number:</strong> 010012345678</p>
-        <!-- Add more organization details as needed -->
-    </div>
-    <!-- Organization Details Card -->
-    <div class="card">
-        <div class="card-header">
-            Organization Details
-        </div>
-        <div class="card-body">
-            <p><strong>Name:</strong> Resala</p>
-            <p><strong>Type:</strong> General Nonprofit</p>
-            <p><strong>Short Description:</strong> Resala does good things.<br>They give food and clothes and education to those in need all over Egypt.</p>
-            <p><strong>Address:</strong> 12 Fake Address-Fake Street</p>
-            <p><strong>Area:</strong> Downtown Cairo</p>
-            <p><strong>Governorate:</strong> Giza</p>
-        </div>
-    </div>
-    </div>
-
-        <!-- Submitted Documents Section -->
-        <div class="card mt-5">
-            <div class="card-header">
-                Submitted Documents
-            </div>
-            <div class="card-body">
-                <ul class="list-unstyled">
-                    <li class="d-flex justify-content-between align-items-center">
-                        <span class="fw-bold me-3">Document:</span>
-                        <div class="d-flex align-items-center">
-                            <a href="Resala Authenticity Document.pdf" target="_blank" download>Resala Authenticity Document.pdf</a>
-                        </div>
-                        <div class="ms-auto">
-                            <!-- Added ms-auto class for margin-left:auto to push buttons to the right -->
-                            <button type="button" class="btn btn-success ms-2" onclick="acceptSubmission()">Accept</button>
-                            <button type="button" class="btn btn-danger ms-2" onclick="rejectSubmission()">Reject</button>
-                        </div>
-                    </li>
-                    <!-- Add more document links as needed -->
-                </ul>
+    <!-- Single Product Start -->
+<!-- Existing content -->
+ <!-- Single Product Start -->
+<!-- Single Product Start -->
+<!-- Single Product Start -->
+<div class="container mt-5">
+    <div class="row">
+        <!-- Panadol Details and Image -->
+        <div class="col-lg-6">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <!-- Panadol Image -->
+                    <div class="border rounded">
+                        <a href="#">
+                            <img src="img/Panadol.jpeg" class="img-fluid rounded" alt="Panadol Image">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- Panadol Details -->
+                    <h4 class="fw-bold mb-3">Panadol</h4>
+                    <p class="mb-3">Category: Analgesic and Fever control</p>
+                    <p class="mb-4">
+                        Panadol is a brand name for a medication containing paracetamol, commonly used to manage pain and fever.
+                    </p>
+                    <p class="mb-4">We appreciate donations! To ensure better control over their health, we kindly request new or gently used medicine. Your donation will certainly make a difference.</p>
+                    <!-- Description above the Amount Requested section -->
+                    <p class="mb-3">Description: This is the amount of Panadol requested for donation.</p>
+                    <!-- Number of Donations -->
+                </div>
             </div>
         </div>
-
-
-
-
-
-
-        <!-- Button to Redirect to Request Management Page -->
-        <div class="text-center mt-3">
-            <a href="request_management.html" class="btn btn-primary">Go to Request Management</a>
+        <!-- Request Details Section -->
+        <div class="col-lg-6">
+            <!-- Title for the Request Details Section -->
+            <h2 class="text-center mb-4">Request Details</h2>
+            <div class="row bg-light align-items-center text-center justify-content-center py-2">
+                <div class="col-6">
+                    <p class="mb-0">Amount requested</p>
+                </div>
+                <div class="col-6">
+                    <p class="mb-0">10</p>
+                </div>
+            </div>
+            <div class="row text-center align-items-center justify-content-center py-2">
+                <div class="col-6">
+                    <p class="mb-0">Amount Fulfilled </p>
+                </div>
+                <div class="col-6">
+                    <p class="mb-0">15</p>
+                </div>
+            </div>
+            <div class="row text-center align-items-center justify-content-center py-2">
+                <div class="col-6">
+                    <p class="mb-0">Number of items to be donated </p>
+                </div>
+                <div class="col-6">
+                    <p class="mb-0">4</p>
+                </div>
+            </div>
+            <div class="row text-center align-items-center justify-content-center py-2">
+                <div class="col-12">
+                    <div id="successMessage" class="position-fixed top-50 start-50 translate-middle text-center bg-white p-4 rounded shadow" style="display: none;">
+                        <button id="closeSuccessMessage" type="button" class="btn-close position-absolute top-0 end-0 translate-middle" aria-label="Close" style="z-index: 1;"></button>
+                        <div class="message-frame p-3">
+                            <p id="successText" class="mb-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Form for scheduling -->
+            <form id="scheduleForm" class="text-center">
+                <div class="mb-3 d-flex align-items-center justify-content-between schedule-dropdown">
+                    <label for="dropOffTime" class="form-label me-2">Select Drop-off Time:</label>
+                    <select class="form-select" id="dropOffTime" required>
+                        <option value="">Select Time Slot</option>
+                        <option value="morning">Morning (9:00 AM - 12:00 PM)</option>
+                        <option value="afternoon">Afternoon (12:00 PM - 3:00 PM)</option>
+                        <option value="evening">Evening (3:00 PM - 6:00 PM)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Schedule</button>
+            </form>
+            <!-- Modal for scheduling success -->
+            <div class="modal fade" id="scheduleModal" tabindex="-1" aria-labelledby="scheduleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="scheduleModalLabel">Successfully Scheduled!</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Your drop-off time has been scheduled.
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+<!-- Single Product End -->
+
+
+
+    <!-- Single Product End -->
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
         <div class="container py-5">
@@ -271,11 +337,6 @@
     <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
 
-
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -283,45 +344,30 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
     <script>
-        function acceptSubmission() {
-            if (confirm("Are you sure you want to accept this submission?")) {
-                alert("Submission accepted successfully.");
-                // Perform further actions here, such as updating the database or UI
-            }
-        }
-
-        function rejectSubmission() {
-            if (confirm("Are you sure you want to reject this submission?")) {
-                alert("Submission rejected successfully.");
-                // Perform further actions here, such as updating the database or UI
-            }
-        }
-
-        function downloadFile(url) {
-            // Create a temporary anchor element
-            var anchorElement = document.createElement('a');
-
-            // Set the href attribute to the file URL
-            anchorElement.href = url;
-
-            // Add the download attribute to force download
-            anchorElement.download = '';
-
-            // Append the anchor element to the document body
-            document.body.appendChild(anchorElement);
-
-            // Click the anchor element to trigger the download
-            anchorElement.click();
-
-            // Remove the anchor element from the document body
-            document.body.removeChild(anchorElement);
-        }
-
+        $(document).ready(function () {
+            // Form submission handler
+            $('#scheduleForm').submit(function (event) {
+                event.preventDefault(); // Prevent default form submission
+                // Get selected time slot
+                var selectedTime = $('#dropOffTime').val();
+                // Process the selected time (you can perform further actions here)
+                console.log('Selected Drop-off Time:', selectedTime);
+                // Show the modal dialog
+                $('#scheduleModal').modal('show');
+            });
+    
+            // Close success message when the close button is clicked
+            $('#closeSuccessMessage').click(function () {
+                $('#successMessage').fadeOut(); // Hide the success message
+            });
+        });
     </script>
-    <script src="js/main.js"></script>
+    
 
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -164,154 +164,43 @@
             <li class="breadcrumb-item active text-white">Shop</li>
         </ol>
     </div>
-    <!-- Single Page Header End -->
+    <!-- Request Management Section -->
+    <div class="container mt-5">
+        <h2>Pending requests</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Will Smith</td>
+                    <td>will.smith@gmail.com</td>
+                    <td>Probono Doctor</td>
+                    <td><a href="submission_indi.html" class="btn btn-primary">View Submission</a></td>
+                    <td>
+                        <button class="btn btn-success" onclick="acceptRequest('Underconstruction.html')">Accept</button>
+                        <button class="btn btn-danger" onclick="rejectRequest('Underconstruction.html')">Reject</button>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Rana</td>
+                    <td>rana.hellal@gmail.com</td>
+                    <td>Organization</td>
+                    <td><a href="submission_orgind.html" class="btn btn-primary">View Submission</a></td>
+                    <td>
+                        <button class="btn btn-success" onclick="acceptRequest('AcceptRana.html')">Accept</button>
+                        <button class="btn btn-danger" onclick="rejectRequest('Underconstruction.html')">Reject</button>
+                    </td>
+                </tr>
+                
 
-    <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="messageModalLabel">Message</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="messageBody">
-                    <!-- Message content will be displayed here -->
-                </div>
-            </div>
-        </div>
+            </tbody>
+        </table>
     </div>
 
-
-
-   <!-- Organization Details Section -->
-   <div class="container py-5">
-    <!-- Organization A -->
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                Organization A Details
-            </div>
-            <div class="card-body">
-                <div class="Charity representative ">
-                    <p><strong>Name:</strong> Rana Helal</p>
-                    <p><strong>Email:</strong>rana.helal@gmail.com</p>
-                    <p><strong>Orgnization Name:</strong> Resala</p>
-                    <p><strong>Type :</strong> Non-Profit</p>
-                    <!-- Submitted Documents Section -->
-                    <div class="card mb-3">
-                        <div class="card-header">
-                            Submitted Documents
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-unstyled">
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span class="fw-bold me-3">Document:</span>
-                                    <div class="d-flex align-items-center">
-                                        <a href="Resala Authenticity Document.pdf" target="_blank" download>Resala Authenticity Document.pdf</a>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <!-- Added ms-auto class for margin-left:auto to push buttons to the right -->
-                                        <button id="acceptBtn" class="btn btn-success mr-2">Accept</button>
-                                        <button id="rejectBtn" class="btn btn-danger">Reject</button>
-                                    </div>
-                                </li>
-                                <!-- Add more document links as needed -->
-                            </ul>
-                        </div>
-                </div>
-            </div>
+        <!-- Button to Redirect to Request Management Page -->
+        <div class="text-center">
+            <a href="AdminDashboard.html" class="btn btn-primary">Back to Admin Dashboard</a>
         </div>
     </div>
-
-   <!-- Organization B -->
-<div class="container py-5">
-    <div class="card">
-        <div class="card-header">
-            Probono Doctor
-        </div>
-        <div class="card-body">
-            <div class="organization">
-                <p><strong>Name:</strong> Will Smith</p>
-                <p><strong>Email:</strong> will.smith@gmail.com</p>
-                <p><strong>Speciality:</strong> OB/GYN</p>
-                <!-- Submitted Documents Section -->
-                <div class="card mb-3">
-                    <div class="card-header">
-                        Submitted Documents
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled">
-                            <li class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold me-3">Document:</span>
-                                <div class="d-flex align-items-center">
-                                    <a href="Medical Authenticity Document.pdf" target="_blank" download>Resala Authenticity Document.pdf</a>
-                                </div>
-                                <div class="ms-auto">
-                                    <!-- Added ms-auto class for margin-left:auto to push buttons to the right -->
-                                    <button class="btn btn-success mr-2">Accept</button>
-                                    <button class="btn btn-danger">Reject</button>
-                                </div>
-                            </li>
-                            <!-- Add more document links as needed -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Organization C -->
-<div class="container py-5">
-    <div class="card">
-        <div class="card-header">
-            Probono Teacher
-        </div>
-        <div class="card-body">
-            <div class="organization">
-                <p><strong>Name:</strong> Jana Mahmoud</p>
-                <p><strong>Email:</strong> jana.mahmoud@gmail.com</p>
-                <p><strong>Subject(s):</strong> English, Math, Science</p>
-                <!-- Submitted Documents Section -->
-                <div class="card mb-3">
-                    <div class="card-header">
-                        Submitted Documents
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled">
-                            <li class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold me-3">Document:</span>
-                                <div class="d-flex align-items-center">
-                                    <a href="Teaching Authenticity Document.pdf" target="_blank" download>Teaching Authenticity Document.pdf</a>
-                                </div>
-                                <div class="ms-auto">
-                                    <!-- Added ms-auto class for margin-left:auto to push buttons to the right -->
-                                    <button class="btn btn-success mr-2">Accept</button>
-                                    <button class="btn btn-danger">Reject</button>
-                                </div>
-                            </li>
-                            <!-- Add more document links as needed -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-                    <!-- End Accept and Reject Buttons -->
-                </div>
-                <!-- End of loop -->
-            </div>
-        </div>
-    </div>
-    <div id="messageContainer"></div>
-
-    <!-- Button to Redirect to Request Management Page -->
-    <div class="container text-center mt-3">
-        <a href="request_management.html" class="btn btn-primary">Go to Request Management</a>
-    </div>
-
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
@@ -366,59 +255,29 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
     <script>
-        function showSuccessMessage() {
-            var messageBody = document.getElementById("messageBody");
-            messageBody.innerHTML = "<div class='alert alert-success' role='alert'>Successfully accepted!</div>";
-            $('#messageModal').modal('show'); // Show the modal
-        }
-
-        function showRejectionMessage() {
-            var messageBody = document.getElementById("messageBody");
-            messageBody.innerHTML = "<div class='alert alert-danger' role='alert'>Rejected!</div>";
-            $('#messageModal').modal('show'); // Show the modal
-        }
-
-        // Add click event listeners to the Accept and Reject buttons
-        document.getElementById("acceptBtn").addEventListener("click", function () {
-            showSuccessMessage();
-        });
-
-        document.getElementById("rejectBtn").addEventListener("click", function () {
-            showRejectionMessage();
-        });
-
-        // Add click event listener to the container of all Accept and Reject buttons
-document.addEventListener("click", function (event) {
-    // Check if the clicked element is an Accept or Reject button
-    if (event.target.matches(".btn-success")) {
-        // Show success message
-        showSuccessMessage();
-    } else if (event.target.matches(".btn-danger")) {
-        // Show rejection message
-        showRejectionMessage();
+     <!-- Function to handle "Accept" button click with parameterized URL -->
+function acceptRequest(redirectUrl) {
+    // Ask for confirmation
+    var confirmation = confirm("Are you sure you want to accept this request?");
+    if (confirmation) {
+        // Redirect to the specified URL
+        window.location.href = redirectUrl;
     }
-});
-
-// Function to show success message
-function showSuccessMessage() {
-    var messageBody = document.getElementById("messageBody");
-    messageBody.innerHTML = "<div class='alert alert-success' role='alert'>Successfully accepted!</div>";
-    $('#messageModal').modal('show'); // Show the modal
 }
 
-// Function to show rejection message
-function showRejectionMessage() {
-    var messageBody = document.getElementById("messageBody");
-    messageBody.innerHTML = "<div class='alert alert-danger' role='alert'>Rejected!</div>";
-    $('#messageModal').modal('show'); // Show the modal
+function rejectRequest(redirectUrl) {
+    // Ask for confirmation
+    var confirmation = confirm("Are you sure you want to reject this request?");
+    if (confirmation) {
+        // Redirect to the specified URL
+        window.location.href = redirectUrl;
+    }
 }
 
     </script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
-
 </body>
 
 </html>

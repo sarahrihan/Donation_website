@@ -123,20 +123,17 @@
 }
 
 .view-details {
-    background-color: red; /* Set background color to red */
-    color: red; /* Set text color to white */
-    border: none; /* Remove border */
-    padding: 5px 10px; /* Add padding */
-    border-radius: 5px; /* Add border-radius for rounded corners */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    display: block; /* Make the button a block element */
-    margin: 0 auto; /* Center the button horizontally */
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
-
-.view-details:hover {
-    background-color: darkred; /* Change background color on hover */
-}
-
 
 /* Style for filter buttons */
 .input-group button.btn-primary {
@@ -161,7 +158,6 @@
 .input-group-append button:last-child {
     border-radius: 0.5rem 0 0 0.5rem;
 }
-
 
 </style>
     <!-- Modal Search Start -->
@@ -200,7 +196,7 @@
         <!-- Title -->
         <div class="row mb-3">
             <div class="col-md-12">
-                <h2>Registered Accounts</h2>
+                <h2>Registered Organizations</h2>
             </div>
         </div>
         <!-- Search and Filter Section -->
@@ -208,14 +204,41 @@
     <!-- Search input -->
     <div class="col-md-3">
         <div class="input-group">
-        
+            <input type="text" class="form-control" id="search-input" placeholder="Search organizations..." aria-label="Search organizations" aria-describedby="search-button">
+            <button class="btn btn-primary" type="button" id="search-button"onclick="Search()">Search</button>
             
         </div>
     </div>
     
     <!-- Filter dropdowns and buttons -->
     <div class="col-md-9">
-       
+        <div class="input-group">
+            <select id="organization-type-filter" class="form-select">
+                <option value="">filter by Orgnization Type</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Education">Education</option>
+                <option value="ALL">ALL</option>
+
+            </select>
+            <select id="governorate-filter" class="form-select">
+                <option value="">Filter by governorate</option>
+                <option value="Cairo">Cairo</option>
+                <option value="Alexandria">Alexandria</option>
+                <option value="Giza">Giza</option>
+
+            </select>
+            <select id="area-filter" class="form-select">
+                <option value="">Filter by Area</option>
+                <option value="El-Saida Zenab">El-Saida Zenab</option>
+                <option value="Montaza">Montaza</option>
+                <option value="Haram">Haram</option>
+
+            </select>
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button" onclick="filterToys()">Apply</button>
+                <button class="btn btn-secondary" type="button" onclick="resetFilters()">Reset</button>
+            </div>
+        </div>
     </div>
     <div id="error-message" class="error-message" style="display: none;"></div>
 </div>
@@ -227,9 +250,10 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th> Type</th>
-                    <th>email</th>
-                    <th>Delete</th>
+                    <th>Organization Type</th>
+                    <th>Governorate</th>
+                    <th>Area</th>
+                    <th>Details</th>
                 </tr>
             </thead>
             <tbody id="toy-table-body">
@@ -321,72 +345,105 @@
 
   <script>
     // Function to populate table with toy data
-    function displayToys(toyRequests) {
-        var toyTableBody = document.getElementById('toy-table-body');
-        toyTableBody.innerHTML = ''; // Clear previous rows
-        var errorMessage = document.getElementById('error-message');
-        errorMessage.style.display = 'none'; // Hide error message initially
+      function displayToys(toyRequests) {
+          var toyTableBody = document.getElementById('toy-table-body');
+          toyTableBody.innerHTML = ''; // Clear previous rows
+          var errorMessage = document.getElementById('error-message');
+          errorMessage.style.display = 'none'; // Hide error message initially
 
-        if (toyRequests.length === 0) {
-            // If there are no results, display the error message
-            errorMessage.textContent = 'No registered organizations match the selected filters, please click on reset and reselect filters.';
-            errorMessage.style.display = 'block'; // Show error message
-        }
-        toyRequests.forEach(function (toy) {
-            var row = document.createElement('tr');
+          if (toyRequests.length === 0) {
+              // If there are no results, display the error message
+              errorMessage.textContent = 'No registered organizations match the selected filters, please click on reset and reselect filters.';
+              errorMessage.style.display = 'block'; // Show error message
+              
+          }
+          toyRequests.forEach(function (toy) {
+              var row = document.createElement('tr');
 
-            var nameCell = document.createElement('td');
-            nameCell.textContent = toy.name;
-            row.appendChild(nameCell);
+              var nameCell = document.createElement('td');
+              nameCell.textContent = toy.name;
+              row.appendChild(nameCell);
 
-            var typeCell = document.createElement('td');
-            typeCell.textContent = toy.type;
-            row.appendChild(typeCell);
+              var typeCell = document.createElement('td');
+              typeCell.textContent = toy.type;
+              row.appendChild(typeCell);
 
-            var governorateCell = document.createElement('td');
-            governorateCell.textContent = toy.Governorate;
-            row.appendChild(governorateCell);
+              var governorateCell = document.createElement('td');
+              governorateCell.textContent = toy.Governorate;
+              row.appendChild(governorateCell);
 
-            var areaCell = document.createElement('td');
-            areaCell.textContent = toy.area;
-            row.appendChild(areaCell);
+              var areaCell = document.createElement('td');
+              areaCell.textContent = toy.area;
+              row.appendChild(areaCell);
 
-            var detailsCell = document.createElement('td');
-            var viewDetailsBtn = document.createElement('button');
-            viewDetailsBtn.textContent = 'Delete';
-            viewDetailsBtn.classList.add('btn', 'btn-primary');
-            viewDetailsBtn.onclick = function () {
-                // Ask for confirmation before redirecting
-                var confirmed = confirm("Are you sure you want to delete this account?");
-                if (confirmed) {
-                    window.location.href = toy.details;
-                }
-            };
-            detailsCell.appendChild(viewDetailsBtn);
-            row.appendChild(detailsCell);
+              var detailsCell = document.createElement('td');
+              var viewDetailsBtn = document.createElement('a');
+              viewDetailsBtn.href = toy.details;
+              viewDetailsBtn.textContent = 'View Details';
+              viewDetailsBtn.classList.add('btn', 'btn-primary');
+              detailsCell.appendChild(viewDetailsBtn);
+              row.appendChild(detailsCell);
 
-            toyTableBody.appendChild(row);
-        });
-    }
+              toyTableBody.appendChild(row);
+          });
+      }
 
-    // Toy data array
-    var toyRequests = [
-          { name: 'Will Smith', type: 'Probono Doctor', Governorate: 'will.smith@gmail.com', details: 'DeleteWill.html' },
-          { name: 'Yara Easa', type: 'Probono Teacher ', Governorate: 'yara.easa@gmail.com',  details: 'YaraDetails.html' },
-          { name: 'Julia Roberts', type: 'Regular', Governorate: 'julia.roberts@gmail.com',  details: 'Orgdetails2.html' },
-          { name: 'Rokaya Elkomy', type: 'Regular', Governorate: 'rokaya.elkomy@gmail.com',  details: 'Orgdetails2.html' },
-          { name: 'Tom Cruise', type: 'Probono Teacher', Governorate: 'Tom.cruise@gmail.com', details: 'Orgdetails2.html' },
-          { name: '57357', type: 'NGO', Governorate: '57357@gmail.com', details: 'Orgdetails1.html' },
-          { name: 'Mersal', type: 'Charity Orgnization', Governorate: 'mersal@gmail.com', details: 'Orgdetails2.html' },
-
-
-
+      // Toy data array
+      var toyRequests = [
+      { name: 'Resala', type: 'ALL', Governorate: 'Cairo', area: 'Maadi', details: 'ResalaDetails.html' },
+          { name: '57357', type: 'Healthcare', Governorate: 'Cairo', area: 'El-Saida Zenab', details: 'Underconstruction.html' },
+          { name: 'Mersal', type: 'ALL', Governorate: 'Giza', area: 'Haram', details: 'Underconstruction.html' },
           // Add more toys as needed
       ];
-    // Call the displayToys function with toy data array
-    displayToys(toyRequests);
-</script>
 
+      // Call the displayToys function with toy data array
+      displayToys(toyRequests);
+
+      function filterToys() {
+          var nameFilter = document.getElementById('search-input').value.toLowerCase();
+          var typeFilter = document.getElementById('organization-type-filter').value;
+          var governorateFilter = document.getElementById('governorate-filter').value;
+          var areaFilter = document.getElementById('area-filter').value;
+
+          var filteredToys = toyRequests.filter(function (toy) {
+              return (nameFilter === '' || toy.name.toLowerCase().includes(nameFilter)) &&
+                  (typeFilter === '' || toy.type === typeFilter) &&
+                  (governorateFilter === '' || toy.Governorate === governorateFilter) &&
+                  (areaFilter === '' || toy.area === areaFilter);
+          });
+
+          displayToys(filteredToys);
+      }
+      function Search() {
+          var nameFilter = document.getElementById('search-input').value.toLowerCase();
+          
+
+          var filteredToys = toyRequests.filter(function (toy) {
+              return (nameFilter === '' || toy.name.toLowerCase().includes(nameFilter));
+                 
+          });
+
+          displayToys(filteredToys);
+      }
+      // Function to reset filters and display all toys
+      function resetFilters() {
+          
+          document.getElementById('organization-type-filter').value = '';
+          document.getElementById('governorate-filter').value = '';
+          document.getElementById('area-filter').value = '';
+
+          displayToys(toyRequests);
+      }
+
+// Call the filterToys function when the "Apply Filters" button is clicked
+document.getElementById('applyFiltersBtn').addEventListener('click', filterToys);
+
+// Call the resetFilters function when the "Reset Filters" button is clicked
+document.getElementById('applyFiltersBtn2').addEventListener('click', resetFilters);
+
+      document.getElementById('search-input').addEventListener('keydown', filterToys);
+
+  </script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

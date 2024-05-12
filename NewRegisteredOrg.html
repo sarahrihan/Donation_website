@@ -214,19 +214,25 @@
     <div class="col-md-9">
         <div class="input-group">
             <select id="organization-type-filter" class="form-select">
-                <option value="">All</option>
+                <option value="">filter by Orgnization Type</option>
                 <option value="Healthcare">Healthcare</option>
                 <option value="Education">Education</option>
+                <option value="ALL">ALL</option>
+
             </select>
             <select id="governorate-filter" class="form-select">
-                <option value="">All</option>
+                <option value="">Filter by governorate</option>
                 <option value="Cairo">Cairo</option>
                 <option value="Alexandria">Alexandria</option>
+                <option value="Giza">Giza</option>
+
             </select>
             <select id="area-filter" class="form-select">
-                <option value="">All</option>
+                <option value="">Filter by Area</option>
                 <option value="El-Saida Zenab">El-Saida Zenab</option>
                 <option value="Montaza">Montaza</option>
+                <option value="Haram">Haram</option>
+
             </select>
             <div class="input-group-append">
                 <button class="btn btn-primary" type="button" onclick="filterToys()">Apply</button>
@@ -384,8 +390,8 @@
 
       // Toy data array
       var toyRequests = [
-          { name: '57357', type: 'Healthcare', Governorate: 'Cairo', area: 'El-Saida Zenab', details: 'Orgdetails1.html' },
-          { name: 'Nonprofit B', type: 'Education', Governorate: 'Alexandria', area: 'Montaza', details: 'Orgdetails2.html' },
+          { name: '57357', type: 'Healthcare', Governorate: 'Cairo', area: 'El-Saida Zenab', details: 'Underconstruction.html' },
+          { name: 'Mersal', type: 'ALL', Governorate: 'Giza', area: 'Haram', details: 'MersalDetails.html' },
           // Add more toys as needed
       ];
 
