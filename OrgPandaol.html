@@ -92,7 +92,9 @@
     padding: 20px; /* Adjust padding as needed */
     font-size: 18px; /* Adjust font size as needed */
 }
-
+.button-container {
+    margin-top: 120px; /* Adjust the margin as needed */
+}
 
 
     </style>
@@ -179,7 +181,7 @@
     <!-- Modal Search End -->
     <!-- Single Page Header start -->
     <div class="container-fluid page-header py-5">
-        <h1 class="text-center text-white display-6">Donate</h1>
+        <h1 class="text-center text-white display-6">Donation Post</h1>
         <ol class="breadcrumb justify-content-center mb-0">
             <li class="breadcrumb-item"><a href="regDonorDashboard.html">Home</a></li>
             <li class="breadcrumb-item"><a href="Medical Supplies.html">Medical Supplies</a></li>
@@ -260,17 +262,20 @@
             </div>
             <!-- Form for scheduling -->
             <form id="scheduleForm" class="text-center">
-                <div class="mb-3 d-flex align-items-center justify-content-between schedule-dropdown">
-                    <label for="dropOffTime" class="form-label me-2">Select Drop-off Time:</label>
-                    <select class="form-select" id="dropOffTime" required>
-                        <option value="">Select Time Slot</option>
-                        <option value="morning">Morning (9:00 AM - 12:00 PM)</option>
-                        <option value="afternoon">Afternoon (12:00 PM - 3:00 PM)</option>
-                        <option value="evening">Evening (3:00 PM - 6:00 PM)</option>
-                    </select>
-                </div>
+            <div class="mb-3 d-flex align-items-center justify-content-between schedule-dropdown">
+                <label for="dropOffTime" class="form-label me-2">Select Drop-off Time:</label>
+                <select class="form-select" id="dropOffTime" required>
+                    <option value="">Select Time Slot</option>
+                    <option value="morning">Morning (9:00 AM - 12:00 PM)</option>
+                    <option value="afternoon">Afternoon (12:00 PM - 3:00 PM)</option>
+                    <option value="evening">Evening (3:00 PM - 6:00 PM)</option>
+                </select>
+            </div>
+            <div class="button-container">
                 <button type="submit" class="btn btn-primary">Schedule</button>
-            </form>
+                <a href="FulfilledMainList.html" class="btn btn-primary">Manage Fulfilled Posts</a>
+            </div>
+        </form>
             <!-- Modal for scheduling success -->
             <div class="modal fade" id="scheduleModal" tabindex="-1" aria-labelledby="scheduleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">

@@ -28,6 +28,11 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        .button-container {
+    margin-top: 20px; /* Adjust the margin as needed */
+}
+    </style>
 
 </head>
 
@@ -108,6 +113,11 @@
 <!-- Single Product Start -->
 <div class="container mt-5">
     <div class="row">
+        <!-- Map Section -->
+        <div class="col-lg-6">
+            <!-- Google Map -->
+            <div id="map" style="height: 400px; width: 100%;"></div>
+        </div>
         <!-- Donation Details Section -->
         <div class="col-lg-6">
             <!-- Title for the Donation Details Section -->
@@ -123,6 +133,7 @@
                     <p class="mb-0">20</p>
                 </div>
             </div>
+            <!-- Other donation details -->
             <div class="row text-center align-items-center justify-content-center py-2">
                 <div class="col-6">
                     <p class="mb-0"> Address</p>
@@ -131,7 +142,7 @@
                     <p class="mb-0">123 Street, New York </p>
                 </div>
             </div>
-            <div class="row text-center align-items-center justify-content-center py-2">
+            <div class="row bg-light align-items-center text-center justify-content-center py-2">
                 <div class="col-6">
                     <p class="mb-0"> Category</p>
                 </div>
@@ -139,7 +150,6 @@
                     <p class="mb-0">Probono Teaching</p>
                 </div>
             </div>
-
             <div class="row text-center align-items-center justify-content-center py-2">
                 <div class="col-6">
                     <p class="mb-0"> Subject</p>
@@ -148,8 +158,7 @@
                     <p class="mb-0">Math</p>
                 </div>
             </div>
-
-            <div class="row text-center align-items-center justify-content-center py-2">
+            <div class="row bg-light align-items-center text-center justify-content-center py-2">
                 <div class="col-6">
                     <p class="mb-0"> Status</p>
                 </div>
@@ -157,30 +166,20 @@
                     <p class="mb-0">Fulfiled </p>
                 </div>
             </div>
-
+            <!-- Action button -->
             <div class="row text-center align-items-center justify-content-center py-5">
-                <div class="col-6">
+                
                     <!-- Convert "Donate Now" into a clickable button -->
-                    <a href="TeacherYara.html" class="btn btn-primary">Donor Details</a>
-                </div>
+                   
+                    <div class="button-container">
+                 <a href="TeacherYara.html" class="btn btn-primary">Donor Details</a>
+                <a href="FulfilledMainList.html" class="btn btn-primary">Manage Fulfilled Posts</a>
+            </div>
+                
             </div>
         </div>
-        <!-- Map Section -->
-        <div class="col-lg-6">
-            <!-- Google Map -->
-            <div id="map" style="height: 400px; width: 100%;"></div>
-        </div>
     </div>
 </div>
-<!-- Single Product End -->
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-lg-6 text-center">
-            <a href="FulfilledMainList.html" class="btn btn-primary btn-lg">Manage Fulfilled Posts</a>
-        </div>
-    </div>
-</div>
-
 <!-- Single Product End -->
 
     <!-- Footer Start -->
