@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Generous Hearts</title>
+    <title>Generous Hearts - Vegetable Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -104,13 +104,13 @@
     <div class="container-fluid page-header py-5">
         <h1 class="text-center text-white display-6">Post Detail</h1>
         <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a href="regDonorDashboard.html" style="color:white">Home</a></li>
-            <li class="breadcrumb-item"><a href="ProbonoTeacher.html" style="color:white">Teaching Requests</a></li>
-            <li class="breadcrumb-item active text-secondary">Post Details</li>
+            <li class="breadcrumb-item"><a href="teacherDashboard.html" style="color:white">Home</a></li>
+            <li class="breadcrumb-item"><a href="TeacherProbono.html" style="color:white">Medical Cases</a></li>
+            <li class="breadcrumb-item active text-secondary"> Cases Details</li>
         </ol>
     </div>
     <!-- Single Page Header End -->
-
+    <!-- Modal for Registration -->
     <div id="registrationModal" class="modal fade" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content alert alert-danger">
@@ -119,63 +119,90 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>You need to register first before you can donate.</p>
+                    <p>You are registered as a teacher.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="regDonorDashboard.html" class="btn btn-primary">Go to Home Page</a>
+                    <a href="teacherDashboard.html" class="btn btn-primary">Go to Home Page</a>
                 </div>
             </div>
         </div>
     </div>
 
-    
-<!-- Single Product Start -->
+  <!-- Single Product Start -->
 <div class="container mt-5">
     <div class="row">
         <!-- Donation Details Section -->
         <div class="col-lg-6">
             <!-- Title for the Donation Details Section -->
-            <h2 class="text-center mb-4">Request Details</h2>
+            <h2 class="text-center mb-4">Medical Case Details</h2>
             <!-- Description of the teaching post -->
-            <p class="mb-4">A teaching post that requests a math teacher for 20 students</p>
             <!-- Number of Donations -->
-            <div class="row bg-light align-items-center text-center justify-content-center py-2">
+            <div class="row text-center align-items-center justify-content-center py-2">
                 <div class="col-6">
-                    <p class="mb-0">Number of Students</p>
+                    <p class="mb-0">Patient Name</p>
                 </div>
                 <div class="col-6">
-                    <p class="mb-0">20</p>
+                    <p class="mb-0">Balabiza Balabizo</p>
                 </div>
             </div>
             <div class="row text-center align-items-center justify-content-center py-2">
                 <div class="col-6">
-                    <p class="mb-0"> Address</p>
+                    <p class="mb-0">Address</p>
                 </div>
                 <div class="col-6">
-                    <p class="mb-0">123 Street, New York </p>
+                    <p class="mb-0">123 Street, New York</p>
                 </div>
             </div>
-            
+            <div class="row text-center align-items-center justify-content-center py-2">
+                <div class="col-6">
+                    <p class="mb-0">Age</p>
+                </div>
+                <div class="col-6">
+                    <p class="mb-0">40</p>
+                </div>
+            </div>
 
             <div class="row text-center align-items-center justify-content-center py-2">
                 <div class="col-6">
-                    <p class="mb-0"> Subject</p>
+                    <p class="mb-0">Weight</p>
                 </div>
                 <div class="col-6">
-                    <p class="mb-0">Math</p>
+                    <p class="mb-0">70 KG</p>
                 </div>
             </div>
-
             <div class="row text-center align-items-center justify-content-center py-2">
                 <div class="col-6">
-                    <p class="mb-0"> Status</p>
+                    <p class="mb-0">Gender</p>
                 </div>
                 <div class="col-6">
-                    <p class="mb-0">Fulfiled </p>
+                    <p class="mb-0">Male</p>
                 </div>
             </div>
-
+            <div class="row text-center align-items-center justify-content-center py-2">
+                <div class="col-6">
+                    <p class="mb-0">Orgnization Name</p>
+                </div>
+                <div class="col-6">
+                    <p class="mb-0">Mersal</p>
+                </div>
+            </div>
+            <div class="row text-center align-items-center justify-content-center py-2">
+                <div class="col-6">
+                    <p class="mb-0">Medical Specialty</p>
+                </div>
+                <div class="col-6">
+                    <p class="mb-0"> Cardiology</p>
+                </div>
+            </div>
+            <div class="row text-center align-items-center justify-content-center py-2">
+                <div class="col-6">
+                    <p class="mb-0">Case description</p>
+                </div>
+                <div class="col-6">
+                    <p class="mb-0">A 40 year old man who suffers from heart attacks</p>
+                </div>
+            </div>
             <div class="row text-center align-items-center justify-content-center py-5">
                 <div class="col-6">
                     <!-- Convert "Donate Now" into a clickable button -->
@@ -190,6 +217,7 @@
         </div>
     </div>
 </div>
+
 <!-- Success Message Modal -->
 <div class="modal fade" id="successMessageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -203,7 +231,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a href="teacherDashboard.html" class="btn btn-primary">Back to Homepage</a>
+                <a href="doctorDashboard.html" class="btn btn-primary">Back to Homepage</a>
             </div>
         </div>
     </div>
@@ -253,6 +281,7 @@
         </div>
     </div>
     <!-- Footer End -->
+
     <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -265,30 +294,14 @@
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <style>
-        .fullscreen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-        }
-        
-        .sidebar {
-            background-color: #f8f9fa; /* Light grey background */
-            padding: 20px;
-        }
-        
-        .map-container {
-            background-color: #f8f9fa; /* Light grey background */
-            padding: 20px;
-        }
-    </style>
-    
     <script>
-      
-    
+        function showMap() {
+            var mapContainer = document.getElementById('map');
+            mapContainer.classList.add('fullscreen');
+        }
+    </script>
+
+    <script>
         var map = L.map('map').setView([30.0444, 31.2357], 10); // Set the view to Cairo
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -296,8 +309,7 @@
         L.marker([30.0444, 31.2357]).addTo(map) // Add marker at Cairo
             .bindPopup('Cairo, Egypt') // Set popup text to "Cairo, Egypt"
             .openPopup();
-    
-        // JavaScript function to handle the click event of the "Donate Now" button
+
         // JavaScript function to handle the click event of the "Donate Now" button
         function showRegistrationPopup() {
             $('#registrationModal').modal('show');
@@ -310,6 +322,7 @@
         }
 
     </script>
+
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
