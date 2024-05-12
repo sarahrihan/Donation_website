@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Generous Hearts - Vegetable Website Template</title>
+    <title>Generous Hearts</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -66,7 +66,7 @@
 
                     </div>
                     <div class="d-flex m-3 me-0">
-                        <a href="DisplayTeacherInfo.html" class="my-auto" alt="Account settings">
+                        <a href="account_setting.html" class="my-auto" alt="Account settings">
                             <i class="fas fa-user fa-2x"></i>
                         </a>
                     </div>
@@ -185,41 +185,56 @@
     <!-- Modal Search End -->
     <!-- Single Page Header start -->
     <div class="container-fluid page-header py-5">
-        <h1 class="text-center text-white display-6">Donate</h1>Teacherprobono,Teacherprobonodoc
+        <h1 class="text-center text-white display-6">Donate</h1>
         <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-            <li class="breadcrumb-item active text-white">Shop</li>
+            <li class="breadcrumb-item"><a href="teacherDashboard.html" style="color: white">Home</a></li>
+            <li class="breadcrumb-item active text-secondary">Select service</li>
         </ol>
     </div>
-    <!-- Single Page Header End -->
     <!-- Add space between Single Page Header and Category Section -->
     <div class="container-fluid my-5"></div>
 
-    <!-- Category Section Start -->
-    <div class="container-fluid category-container">
-        <div class="row justify-content-center mb-4">
-            <div class="col-md-6 text-center">
-                <h2 class="mb-4">Select the Probono Service</h2>
-            </div>
-        </div>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-lg-3 col-md-4">
-                <div class="category-box text-center p-4 mb-4" onclick="window.location.href='TeacherProbono.html'">
-                    <img src="img/stethoscope.jpeg" alt="stethoscope" class="img-fluid mb-3">
-                    <h4>Medical cases</h4>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <div class="category-box text-center p-4 mb-4" onclick="window.location.href='TeacherProbonoDoctor.html'">
-                    <img src="img/teaching.jpeg" alt="Teacher" class="img-fluid mb-3">
-                    <h4>Teaching cases</h4>
-                </div>
-            </div>
-            <!-- Add more category boxes here as needed -->
+<!-- Category Section Start -->
+<div class="container-fluid category-container">
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-6 text-center">
+            <h2 class="mb-4">Select the Probono Service</h2>
         </div>
     </div>
-    <!-- Category Section End -->
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-8">
+            <!-- Main Container -->
+            <div class="container">
+                <div class="row justify-content-center">
+                    <!-- Medical cases container -->
+                    <div class="col-md-6">
+                        <div class="container border border-secondary rounded p-3" style="height: 100%;">
+                            <div class="category-box text-center p-4 mb-4">
+                                <a href="TeacherProbono.html">
+                                    <img src="img/stethoscope.jpeg" alt="stethoscope" class="img-fluid mb-3" style="max-width: none;">
+                                    <h4>Medical cases</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Teaching cases container -->
+                    <div class="col-md-6">
+                        <div class="container border border-secondary rounded p-3" style="height: 100%;">
+                            <div class="category-box text-center p-4 mb-4">
+                                <a href="TeacherProbonoDoctor.html">
+                                    <img src="img/teaching.jpeg" alt="Teacher" class="img-fluid mb-3" style="max-width: none;">
+                                    <h4>Teaching cases</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add more category boxes here as needed -->
+    </div>
+</div>
+<!-- Category Section End -->
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
         <div class="container py-5">
