@@ -21,6 +21,7 @@
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
+
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -28,106 +29,46 @@
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
-    <style>
-        .fullscreen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-        }
-        
-        .sidebar {
-            background-color: #f8f9fa; /* Light grey background */
-            padding: 20px;
-        }
-        
-        .map-container {
-            background-color: #f8f9fa; /* Light grey background */
-            padding: 20px;
-        }
-    </style>
-
-    <script>
-        function toggleFullScreen() {
-            var elem = document.getElementById("map");
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.mozRequestFullScreen) { /* Firefox */
-                elem.mozRequestFullScreen();
-            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) { /* IE/Edge */
-                elem.msRequestFullscreen();
-            }
-        }
-
-        // Add an event listener to detect when full-screen mode is exited
-        document.addEventListener("fullscreenchange", function() {
-            if (!document.fullscreenElement) {
-                // Show the exit full-screen instruction message when exiting full screen
-                document.getElementById("exitFullScreenMsg").style.display = "block";
-            } else {
-                // Hide the exit full-screen instruction message when entering full screen
-                document.getElementById("exitFullScreenMsg").style.display = "none";
-            }
-        });
-    </script>
 </head>
 
 <body>
+
     <!-- Spinner Start -->
     <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" role="status"></div>
     </div>
-    <!-- Spinner end -->
+    <!-- Spinner End -->
     <!-- Navbar start -->
     <div class="container-fluid fixed-top">
         <div class="container topbar bg-primary d-none d-lg-block">
             <div class="d-flex justify-content-between">
                 <div class="top-info ps-2">
-                    <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">123 Street, New York</a></small>
-                    <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">Email@Example.com</a></small>
+                    <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">Fifth Settlement,Cairo</a></small>
+                    <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">GenerousHearts@gmail.com</a></small>
                 </div>
                 <div class="top-link pe-2">
-                    <a href="#" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
-                    <a href="#" class="text-white"><small class="text-white mx-2">Terms of Use</small></a>
-
+                    <!-- Updated Privacy Policy link to redirect to a separate page -->
+                    <a href="privacy_policy.html" class="text-white"><small class="text-white mx-2">Privacy Policy</small></a>/
+                    <!-- Updated Terms of Use link to redirect to a separate page -->
+                    <a href="terms_of_use.html" class="text-white"><small class="text-white mx-2">Terms of Use</small></a>
                 </div>
             </div>
         </div>
         <div class="container px-0">
             <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                <a href="index.html" class="navbar-brand ">
-                    <img src="img/Generous Hearts.png">
+                <a href="#" class="navbar-brand">
+                    <!-- Make the Generous Hearts image not clickable -->
+                    <img src="img/Generous Hearts.png" style="pointer-events: none;">
                 </a>
                 <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars text-primary"></span>
                 </button>
                 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="shop.html" class="nav-item nav-link">Shop</a>
-                        <a href="shop-detail.html" class="nav-item nav-link active">Shop Detail</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                <a href="cart.html" class="dropdown-item">Cart</a>
-                                <a href="chackout.html" class="dropdown-item">Chackout</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+
                     </div>
                     <div class="d-flex m-3 me-0">
-                        <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
-                        <a href="#" class="position-relative me-4 my-auto">
-                            <i class="fa fa-shopping-bag fa-2x"></i>
-                            <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
-                        </a>
-                        <a href="#" class="my-auto">
+                        <a href="account_setting.html" class="my-auto" alt="Account settings">
                             <i class="fas fa-user fa-2x"></i>
                         </a>
                     </div>
@@ -155,24 +96,22 @@
     </div>
     <!-- Modal Search End -->
     <!-- Single Page Header start -->
-    <div class="container-fluid page-header py-5 bg-secondary">
+    <div class="container-fluid page-header py-5">
         <h1 class="text-center text-white display-6">Shop Detail</h1>
         <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-            <li class="breadcrumb-item active text-white">Shop Detail</li>
+            <li class="breadcrumb-item"><a href="Orgnization homepage.html">Home</a></li>
+            <li class="breadcrumb-item active text-white">View Post</li>
         </ol>
     </div>
     <!-- Single Page Header End -->
-   
-    
+<!-- Single Product Start -->
 <!-- Single Product Start -->
 <div class="container mt-5">
     <div class="row">
         <!-- Donation Details Section -->
         <div class="col-lg-6">
             <!-- Title for the Donation Details Section -->
-            <h2 class="text-center mb-4">Request Details</h2>
+            <h2 class="text-center mb-4">Donation Details</h2>
             <!-- Description of the teaching post -->
             <p class="mb-4">A teaching post that requests a math teacher for 20 students</p>
             <!-- Number of Donations -->
@@ -222,7 +161,7 @@
             <div class="row text-center align-items-center justify-content-center py-5">
                 <div class="col-6">
                     <!-- Convert "Donate Now" into a clickable button -->
-                    <a href="#" class="btn btn-primary" onclick="fulfillDonation()">Fulfill Request</a>
+                    <a href="TeacherYara.html" class="btn btn-primary">Donor Details</a>
                 </div>
             </div>
         </div>
@@ -233,29 +172,17 @@
         </div>
     </div>
 </div>
-<!-- Success Message Modal -->
-<div class="modal fade" id="successMessageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Success!</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Successfully fulfilled.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a href="teacherDashboard.html" class="btn btn-primary">Back to Homepage</a>
-            </div>
+<!-- Single Product End -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+            <a href="FulfilledMainList.html" class="btn btn-primary btn-lg">Manage Fulfilled Posts</a>
         </div>
     </div>
 </div>
+
 <!-- Single Product End -->
 
-    <div id="exitFullScreenMsg" class="position-fixed top-0 start-50 translate-middle-x bg-dark p-2 rounded text-white" style="z-index: 999; display: none;">
-        Press Escape to exit full screen mode
-    </div>
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
         <div class="container py-5">
@@ -296,9 +223,9 @@
         </div>
     </div>
     <!-- Footer End -->
+    <!-- Back to Top -->
     <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -307,53 +234,13 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-    <style>
-        .fullscreen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-        }
-        
-        .sidebar {
-            background-color: #f8f9fa; /* Light grey background */
-            padding: 20px;
-        }
-        
-        .map-container {
-            background-color: #f8f9fa; /* Light grey background */
-            padding: 20px;
-        }
-    </style>
-    
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
     <script>
-        function toggleFullScreen() {
-            var elem = document.getElementById("map");
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.mozRequestFullScreen) { /* Firefox */
-                elem.mozRequestFullScreen();
-            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) { /* IE/Edge */
-                elem.msRequestFullscreen();
-            }
-        }
-    
-        // Add an event listener to detect when full-screen mode is exited
-        document.addEventListener("fullscreenchange", function() {
-            if (!document.fullscreenElement) {
-                // Show the exit full-screen instruction message when exiting full screen
-                document.getElementById("exitFullScreenMsg").style.display = "block";
-            } else {
-                // Hide the exit full-screen instruction message when entering full screen
-                document.getElementById("exitFullScreenMsg").style.display = "none";
-            }
-        });
-    
         var map = L.map('map').setView([30.0444, 31.2357], 10); // Set the view to Cairo
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -361,22 +248,8 @@
         L.marker([30.0444, 31.2357]).addTo(map) // Add marker at Cairo
             .bindPopup('Cairo, Egypt') // Set popup text to "Cairo, Egypt"
             .openPopup();
-    
-        // JavaScript function to handle the click event of the "Donate Now" button
-        function fulfillDonation() {
-            // Show the donation success modal
-            $('#donationSuccessModal').modal('show');
-        }
-        // JavaScript function to handle the click event of the "Fulfill" button
-// JavaScript function to handle the click event of the "Fulfill" button
-function fulfillDonation() {
-        // Show the donation success modal
-        $('#successMessageModal').modal('show');
-    }
-
     </script>
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+
 </body>
 
 </html>
