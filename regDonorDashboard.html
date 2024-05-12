@@ -22,9 +22,104 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Fix footer to bottom */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 80vh;
+        }
+
+        .footer {
+            margin-top: auto;
+        }
+        .hover-container {
+    position: relative;
+}
+
+        .hover-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1;
+    border-radius: 5px;
+    white-space: nowrap;
+    max-width: 150px; /* Adjust as needed */
+    left: -50%;
+    transform: translateX(-50%);
+    /* Set the max-height to limit the vertical length */
+    max-height: 40px; /* Adjust as needed */
+    overflow: hidden;
+}
+
+.account-settings-icon:hover + .hover-content {
+    display: block;
+}
+
+
+    </style>
+    <title>Pop Up Example</title>
+    <style>
+        #popup {
+            display: none; /* Hide the popup initially */
+            position: fixed; /* Stay in place when scrolling */
+            z-index: 1; /* Sit on top of other content */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgba(0,0,0,0.4); /* Transparent background */
+        }
+
+        #popup-content {
+            background-color: #59981A;
+            margin: 15% auto; /* Center the content */
+            padding: 20px;
+            border: 1px solid #888;
+            color: white;
+            width: 80%;
+            border-radius: 20px;
+        }
+
+        .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #fff;
+            font: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
+     <!--Popup start-->
+     <div id="popup">
+        <div id="popup-content">
+            <span class="closebtn">&times;</span>
+            <p>Your Driver Has Arrived! <br>Please Meet Them At The Door</p>
+           
+                <button type="button" class="btn btn-primary" onclick="closePopUp();">OK</button>
+        </div>
+    </div>
+
+
+    <script>
+        function showPopUp() {
+            document.getElementById("popup").style.display = "block";
+        }
+       
+        function closePopUp() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+
+        window.onload = setTimeout(showPopUp, 3000); // Call showPopUp after 5 seconds (5000 milliseconds)
+
+    </script>
     <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" role="status"></div>
     </div>
@@ -34,50 +129,40 @@
         <div class="container topbar bg-primary d-none d-lg-block">
             <div class="d-flex justify-content-between">
                 <div class="top-info ps-2">
-                    <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">123 Street, New York</a></small>
-                    <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">Email@Example.com</a></small>
+                    <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">Fifth Settlement,Cairo</a></small>
+                    <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">GenerousHearts@gmail.com</a></small>
                 </div>
                 <div class="top-link pe-2">
-                    <a href="#" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
-                    <a href="#" class="text-white"><small class="text-white mx-2">Terms of Use</small></a>
-                  
+                    <!-- Updated Privacy Policy link to redirect to a separate page -->
+                    <a href="privacy_policy.html" class="text-white"><small class="text-white mx-2">Privacy Policy</small></a>/
+                    <!-- Updated Terms of Use link to redirect to a separate page -->
+                    <a href="terms_of_use.html" class="text-white"><small class="text-white mx-2">Terms of Use</small></a>
                 </div>
             </div>
         </div>
         <div class="container px-0">
             <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                <a href="index.html" class="navbar-brand ">
-                    <img src="img/Generous Hearts.png">
+                <a href="#" class="navbar-brand">
+                    <!-- Make the Generous Hearts image not clickable -->
+                    <img src="img/Generous Hearts.png" style="pointer-events: none;">
                 </a>
-                <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars text-primary"></span>
-                </button>
+
                 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="shop.html" class="nav-item nav-link">Shop</a>
-                        <a href="shop-detail.html" class="nav-item nav-link">Shop Detail</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                <a href="cart.html" class="dropdown-item">Cart</a>
-                                <a href="chackout.html" class="dropdown-item">Chackout</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item active">404 Page</a>
+
+                    </div>
+                    <div class="d-flex m-3 me-0 align-items-center"> <!-- Updated this line -->
+                        <!-- <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-target="#searchModal" data-bs-toggle="modal">
+                            <i class="fas fa-search text-primary"></i>
+                        </button> -->
+                        <div class="hover-container">
+                            <a href="DisplayRegDonorInfo.html" class="my-auto account-settings-icon" alt="Account settings">
+                                <i class="fas fa-user fa-2x"></i>
+                            </a>
+                            <div class="hover-content">
+                                <p>Account Settings</p>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    </div>
-                    <div class="d-flex m-3 me-0">
-                        <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
-                        <a href="#" class="position-relative me-4 my-auto">
-                            <i class="fa fa-shopping-bag fa-2x"></i>
-                            <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
-                        </a>
-                        <a href="DisplayRegDonorInfo.html" class="my-auto">
-                            <i class="fas fa-user fa-2x"></i>
-                        </a>
-
                     </div>
                 </div>
             </nav>
@@ -228,8 +313,8 @@
                            
                                    
         <!-- Modal Search End -->
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
+     <!-- Footer Start -->
+     <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
         <div class="container py-5">
             <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5);">
                 <div class="row g-4">
@@ -268,6 +353,7 @@
         </div>
     </div>
     <!-- Footer End -->
+ 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 

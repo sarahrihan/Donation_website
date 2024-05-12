@@ -27,16 +27,99 @@
         body {
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            min-height: 80vh;
         }
 
         .footer {
             margin-top: auto;
         }
+        .hover-container {
+    position: relative;
+}
+
+        .hover-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1;
+    border-radius: 5px;
+    white-space: nowrap;
+    max-width: 150px; /* Adjust as needed */
+    left: -50%;
+    transform: translateX(-50%);
+    /* Set the max-height to limit the vertical length */
+    max-height: 40px; /* Adjust as needed */
+    overflow: hidden;
+}
+
+.account-settings-icon:hover + .hover-content {
+    display: block;
+}
+
+
     </style>
+     <title>Pop Up Example</title>
+     <style>
+         #popup {
+             display: none; /* Hide the popup initially */
+             position: fixed; /* Stay in place when scrolling */
+             z-index: 1; /* Sit on top of other content */
+             left: 0;
+             top: 0;
+             width: 100%; /* Full width */
+             height: 100%; /* Full height */
+             background-color: rgba(0,0,0,0.4); /* Transparent background */
+         }
+ 
+         #popup-content {
+             background-color: #59981A;
+             margin: 15% auto; /* Center the content */
+             padding: 20px;
+             border: 1px solid #888;
+             color: white;
+             width: 80%;
+             border-radius: 20px;
+         }
+ 
+         .closebtn {
+             position: absolute;
+             top: 10px;
+             right: 15px;
+             color: #fff;
+             font: bold;
+             font-size: 16px;
+             cursor: pointer;
+         }
+     </style>
 </head>
 
 <body>
+     <!--Popup start-->
+     <div id="popup">
+        <div id="popup-content">
+            <span class="closebtn">&times;</span>
+            <p>Your Driver Has Arrived! <br>Please Meet Them At The Door</p>
+           
+                <button type="button" class="btn btn-primary" onclick="closePopUp();">OK</button>
+        </div>
+    </div>
+
+
+    <script>
+        function showPopUp() {
+            document.getElementById("popup").style.display = "block";
+        }
+       
+        function closePopUp() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+
+        window.onload = setTimeout(showPopUp, 3000); // Call showPopUp after 5 seconds (5000 milliseconds)
+
+    </script>
     <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" role="status"></div>
     </div>
@@ -68,12 +151,18 @@
                     <div class="navbar-nav mx-auto">
 
                     </div>
-                    <div class="d-flex m-3 me-0">
-                        <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-target="#searchModal" data-bs-toggle="modal">
+                    <div class="d-flex m-3 me-0 align-items-center"> <!-- Updated this line -->
+                        <!-- <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-target="#searchModal" data-bs-toggle="modal">
                             <i class="fas fa-search text-primary"></i>
-                        </button>
-
-                        <a href="account_setting.html" class="my-auto" alt="Account settings"><i class="fas fa-user fa-2x"></i></a>
+                        </button> -->
+                        <div class="hover-container">
+                            <a href="DisplayTeacherInfo.html" class="my-auto account-settings-icon" alt="Account settings">
+                                <i class="fas fa-user fa-2x"></i>
+                            </a>
+                            <div class="hover-content">
+                                <p>Account Settings</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -207,7 +296,7 @@
                                             <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
                                             <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                                 <h4>Probono Services</h4>
-                                                <p>Your volunteered medical services can deliver lifesaving treatments, expert care, and compassionate support to individuals who may otherwise struggle to access healthcare.</p>
+                                                <p>Your volunteered medical services can deliver lifesaving treatments, expert care, and compassionate support to individuals who may otherwise struggle to access basic necessities.</p>
                                                 <div class="d-flex justify-content-between flex-lg-wrap">
 
                                                 </div>
@@ -374,6 +463,7 @@
         });
 
     </script>
+    
 </body>
 
 </html>

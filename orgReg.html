@@ -27,37 +27,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <style>
-        /* CSS code for hover effect */
-        .hover-container {
-            position: relative;
-        }
-
-        .hover-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 200px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .hover-container:hover .hover-content {
-            display: block;
-        }
-        /* Added CSS for footer */
-        .footer {
-            background-color: #343a40;
-            color: #ffffff;
-        }
-
-        .footer-item h4 {
-            color: #ffffff;
-        }
-    </style>
+   
 
 </head>
 
@@ -243,14 +213,9 @@
                                                     <input type="file" class="form-control-file" id="documentUpload" name="document">
                                                 </div>
                                                 <hr>
-                                                <div class="hover-container">
+                                                <div class="form-group">
                                                     <input type="checkbox" id="terms_conditions" name="terms_conditions" required>
-                                                    <label for="terms_conditions">I have read the terms and conditions.</label>
-                                                    <div class="hover-content">
-                                                        <p>
-                                                            By using this website, you agree to the following terms and conditions: Fake Terms & Conditions
-                                                        </p>
-                                                    </div>
+                                                    <label for="terms_conditions">I have read the <a href="terms_of_use.html">terms and conditions</a>.</label>
                                                 </div>
 
 
