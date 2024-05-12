@@ -59,6 +59,49 @@
 </head>
 
 <body>
+    <!-- Navbar start -->
+    <div class="container-fluid fixed-top">
+        <div class="container topbar bg-primary d-none d-lg-block">
+            <div class="d-flex justify-content-between">
+                <div class="top-info ps-2">
+                    <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">Fifth Settlement,Cairo</a></small>
+                    <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">GenerousHearts@gmail.com</a></small>
+                </div>
+                <div class="top-link pe-2">
+                    <!-- Updated Privacy Policy link to redirect to a separate page -->
+                    <a href="privacy_policy.html" class="text-white"><small class="text-white mx-2">Privacy Policy</small></a>/
+                    <!-- Updated Terms of Use link to redirect to a separate page -->
+                    <a href="terms_of_use.html" class="text-white"><small class="text-white mx-2">Terms of Use</small></a>
+                </div>
+            </div>
+        </div>
+        <div class="container px-0">
+            <nav class="navbar navbar-light bg-white navbar-expand-xl">
+                <a href="#" class="navbar-brand">
+                    <!-- Make the Generous Hearts image not clickable -->
+                    <img src="img/Generous Hearts.png" style="pointer-events: none;">
+                </a>
+                <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars text-primary"></span>
+                </button>
+                <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto">
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+    <!-- Single Page Header start -->
+    <div class="container-fluid page-header py-5">
+        <h1 class="text-center text-white display-6">Edit Doctor Details</h1>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="doctorDashboard.html" style="color:white">Home</a></li>
+            <li class="breadcrumb-item"><a href="DisplayDoctorInfo.html" style="color:white">Doctor Details</a></li>
+            <li class="breadcrumb-item active text-secondary">Edit Doctor Details</li>
+        </ol>
+    </div>
 
     <div class="container">
         <div class="row justify-content-center mt-5">
@@ -138,18 +181,18 @@
                                     <p class="mb-4">Swipe to move the pin on the map below and zoom-in on your location.
                                 </div>
                             </div>
-                                 <div class="col-lg-12">
+                            <div class="col-lg-12">
                                 <div class="h-100 rounded">
-                                    <iframe class="rounded w-100" 
-                                    style="height: 400px;" 
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1381512.0122505315!2d31.215635699999998!3d30.0444203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458387abc621333%3A0x7554dd21959b7aae!2sCairo%2C%20Egypt!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd" 
-                                    loading="lazy" 
-                                    referrerpolicy="no-referrer-when-downgrade">
-                                </iframe>
-                                </div>  
+                                    <iframe class="rounded w-100"
+                                            style="height: 400px;"
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1381512.0122505315!2d31.215635699999998!3d30.0444203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458387abc621333%3A0x7554dd21959b7aae!2sCairo%2C%20Egypt!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd"
+                                            loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade">
+                                    </iframe>
+                                </div>
                             </div>
-            
-        </div>
+
+                        </div>
                         <div class="container mt-5">
                             <div class="row justify-content-center">
                                 <div class="col-lg-12">
@@ -255,47 +298,47 @@
                                         case 'orgName':
                                         case 'orgDetails':
                                             fieldInputDiv.innerHTML = `
-                                                        <label for="${selectedField}">${selectedField.charAt(0).toUpperCase() + selectedField.slice(1)}:</label>
-                                                        <input type="text" id="${selectedField}" class="form-control" required onchange="setFormModified()">
-                                                    `;
+                                                                                                                <label for="${selectedField}">${selectedField.charAt(0).toUpperCase() + selectedField.slice(1)}:</label>
+                                                                                                                <input type="text" id="${selectedField}" class="form-control" required onchange="setFormModified()">
+                                                                                                            `;
                                             break;
                                         case 'gender':
                                             fieldInputDiv.innerHTML = `
-                                                        <label>Gender:</label><br>
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="gender" id="male" value="male" onchange="setFormModified()">
-                                                            <label class="form-check-label" for="male">Male</label>
-                                                        </div>
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="gender" id="female" value="female" onchange="setFormModified()">
-                                                            <label class="form-check-label" for="female">Female</label>
-                                                        </div>
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="gender" id="other" value="other" onchange="setFormModified()">
-                                                            <label class="form-check-label" for="other">Prefer not to specify</label>
-                                                        </div>
-                                                    `;
+                                                                                                                <label>Gender:</label><br>
+                                                                                                                <div class="form-check form-check-inline">
+                                                                                                                    <input class="form-check-input" type="radio" name="gender" id="male" value="male" onchange="setFormModified()">
+                                                                                                                    <label class="form-check-label" for="male">Male</label>
+                                                                                                                </div>
+                                                                                                                <div class="form-check form-check-inline">
+                                                                                                                    <input class="form-check-input" type="radio" name="gender" id="female" value="female" onchange="setFormModified()">
+                                                                                                                    <label class="form-check-label" for="female">Female</label>
+                                                                                                                </div>
+                                                                                                                <div class="form-check form-check-inline">
+                                                                                                                    <input class="form-check-input" type="radio" name="gender" id="other" value="other" onchange="setFormModified()">
+                                                                                                                    <label class="form-check-label" for="other">Prefer not to specify</label>
+                                                                                                                </div>
+                                                                                                            `;
                                             break;
 
                                         case 'orgType':
                                             fieldInputDiv.innerHTML = `
-                                                        <label for="orgType">Organization Type:</label>
-                                                        <select id="orgTypeDropdown" class="form-control" required onchange="setFormModified()">
-                                                            <option value="" disabled selected>Select Organization Type</option>
-                                                            <option value="hospital">Hospital</option>
-                                                            <option value="orphanage">Orphanage</option>
-                                                            <option value="mosque">Mosque</option>
-                                                            <option value="church">Church</option>
-                                                            <option value="publicSchool">Public School</option>
-                                                            <option value="generalNonprofit">General Nonprofit</option>
-                                                        </select>
-                                                    `;
+                                                                                                                <label for="orgType">Organization Type:</label>
+                                                                                                                <select id="orgTypeDropdown" class="form-control" required onchange="setFormModified()">
+                                                                                                                    <option value="" disabled selected>Select Organization Type</option>
+                                                                                                                    <option value="hospital">Hospital</option>
+                                                                                                                    <option value="orphanage">Orphanage</option>
+                                                                                                                    <option value="mosque">Mosque</option>
+                                                                                                                    <option value="church">Church</option>
+                                                                                                                    <option value="publicSchool">Public School</option>
+                                                                                                                    <option value="generalNonprofit">General Nonprofit</option>
+                                                                                                                </select>
+                                                                                                            `;
                                             break;
                                         case 'patientCapacity':
                                             fieldInputDiv.innerHTML = `
-                                        <label for="patientCapacity">Patient Capacity:</label>
-                                        <input type="number" id="studentCapacity" class="form-control" required onchange="setFormModified()">
-                                    `;
+                                                                                                <label for="patientCapacity">Patient Capacity:</label>
+                                                                                                <input type="number" id="studentCapacity" class="form-control" required onchange="setFormModified()">
+                                                                                            `;
                                             break;
                                         default:
                                             break;
@@ -371,8 +414,8 @@
                                         <div class="col-lg-6 col-md-6">
                                             <div class="footer-item">
                                                 <h4 class="text-light mb-3">Contact</h4>
-                                                <p>Address: 1429 Netus Rd, NY 48247</p>
-                                                <p>Email: Example@gmail.com</p>
+                                                <p>Address: 14 Gamal Abd ElNasser,Cairo,Egypt</p>
+                                                <p>Email: GenerousHearts@gmail.com</p>
                                                 <p>Phone: +0123 4567 8910</p>
                                             </div>
                                         </div>
