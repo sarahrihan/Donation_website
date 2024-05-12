@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Display Donor Account Info</title>
+    <title>Generous Hearts</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -25,20 +25,57 @@
 </head>
 
 <body>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Account Information</a>
+    <!-- Navbar start -->
+    <div class="container-fluid fixed-top">
+        <div class="container topbar bg-primary d-none d-lg-block">
+            <div class="d-flex justify-content-between">
+                <div class="top-info ps-2">
+                    <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">Fifth Settlement,Cairo</a></small>
+                    <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">GenerousHearts@gmail.com</a></small>
+                </div>
+                <div class="top-link pe-2">
+                    <!-- Updated Privacy Policy link to redirect to a separate page -->
+                    <a href="privacy_policy.html" class="text-white"><small class="text-white mx-2">Privacy Policy</small></a>/
+                    <!-- Updated Terms of Use link to redirect to a separate page -->
+                    <a href="terms_of_use.html" class="text-white"><small class="text-white mx-2">Terms of Use</small></a>
+                </div>
+            </div>
         </div>
-    </nav>
+        <div class="container px-0">
+            <nav class="navbar navbar-light bg-white navbar-expand-xl">
+                <a href="#" class="navbar-brand">
+                    <!-- Make the Generous Hearts image not clickable -->
+                    <img src="img/Generous Hearts.png" style="pointer-events: none;">
+                </a>
+                <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars text-primary"></span>
+                </button>
+                <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto">
 
+                    </div>
+                  
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+    <!-- Single Page Header start -->
+    <div class="container-fluid page-header py-5">
+        <h1 class="text-center text-white display-6">View Account details</h1>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="regDonorDashboard.html" style="color:white">Home</a></li>
+            <li class="breadcrumb-item active text-secondary">View Account details</li>
+        </ol>
+
+    </div>
+    <!-- Single Page Header End -->
     <!-- Donor Details Section -->
     <div class="container">
         <!-- Donor Details Card -->
         <div class="card">
             <div class="card-header">
-               Donor Details
+                Donor Details
             </div>
             <div class="card-body">
                 <p><strong>Name:</strong> Rokaya Elkomy</p>
@@ -48,12 +85,12 @@
                 <p><strong>Area:</strong>Mohandeseen</p>
                 <p><strong>Governorater:</strong> Giza</p>
             </div>
-            
-        
-            
+
+
+
         </div>
 
-       
+
 
         <!-- Button to Redirect to Login Page -->
         <!-- adjust this to farah's code -->
@@ -61,7 +98,7 @@
             <a href="EditDonorDetails.html" class="btn btn-primary">Edit Account Information</a>
         </div>
     </div>
-   
+
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -82,6 +119,47 @@
             }
         }
     </script>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
+        <div class="container py-5">
+            <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5);">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <a href="#">
+                            <h1 class="text-secondary mb-0">Generous Hearts</h1>
+                            <p class="text-secondary mb-0">Give Hope. Give Today.</p>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 text-lg-end">
+                        <div class="position-relative mx-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-6 col-md-6">
+                    <div class="footer-item">
+                        <h4 class="text-light mb-3">Why People Like us!</h4>
+                        <p class="mb-4">
+                            Unite with passionate volunteers! Find your cause and empower others with your kindness.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                    <div class="footer-item">
+                        <h4 class="text-light mb-3">Contact</h4>
+                        <p>Address: 14 Gamal Abd ElNasser,Cairo,Egypt</p>
+                        <p>Email: GenerousHearts@gmail.com</p>
+                        <p>Phone: +0123 4567 8910</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
 </body>
 
 </html>

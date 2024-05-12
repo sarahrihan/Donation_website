@@ -3,41 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Edit Donor Acct Details</title>
-    <title>Are You Sure?</title>
-    <title>Pop Up Example</title>
-    <style>
-        #popup {
-            display: none; /* Hide the popup initially */
-            position: fixed; /* Stay in place when scrolling */
-            z-index: 1; /* Sit on top of other content */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            background-color: rgba(0,0,0,0.4); /* Transparent background */
-        }
-
-        #popup-content {
-            background-color: #c42614;
-            margin: 15% auto; /* Center the content */
-            padding: 20px;
-            border: 1px solid #888;
-            color: white;
-            width: 80%;
-            border-radius: 20px;
-        }
-
-        .closebtn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            color: #fff;
-            font: bold;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
+    <title>Edit Donor Account Details</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -56,12 +22,95 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* Additional CSS for the popup */
+        #popup {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        #popup-content {
+            background-color: #c42614;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            color: white;
+            width: 80%;
+            border-radius: 20px;
+        }
+
+        .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #fff;
+            font: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Navbar start -->
+    <div class="container-fluid fixed-top">
+        <div class="container topbar bg-primary d-none d-lg-block">
+            <div class="d-flex justify-content-between">
+                <div class="top-info ps-2">
+                    <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">Fifth Settlement,Cairo</a></small>
+                    <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">GenerousHearts@gmail.com</a></small>
+                </div>
+                <div class="top-link pe-2">
+                    <!-- Updated Privacy Policy link to redirect to a separate page -->
+                    <a href="privacy_policy.html" class="text-white"><small class="text-white mx-2">Privacy Policy</small></a>/
+                    <!-- Updated Terms of Use link to redirect to a separate page -->
+                    <a href="terms_of_use.html" class="text-white"><small class="text-white mx-2">Terms of Use</small></a>
+                </div>
+            </div>
+        </div>
+        <div class="container px-0">
+            <nav class="navbar navbar-light bg-white navbar-expand-xl">
+                <a href="#" class="navbar-brand">
+                    <!-- Make the Generous Hearts image not clickable -->
+                    <img src="img/Generous Hearts.png" style="pointer-events: none;">
+                </a>
+                <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars text-primary"></span>
+                </button>
+                <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto">
 
-    <div class="container">
-        <div class="row justify-content-center mt-5">
+                    </div>
+                    <div class="d-flex m-3 me-0">
+                        <a href="account_setting.html" class="my-auto" alt="Account settings">
+                            <i class="fas fa-user fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+    <!-- Single Page Header start -->
+    <div class="container-fluid page-header py-5">
+        <h1 class="text-center text-white display-6">Edit Donor Details</h1>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="regDonorDashboard.html" style="color:white">Home</a></li>
+            <li class="breadcrumb-item"><a href="DisplayRegDonorInfo.html" style="color:white">Donor Details</a></li>
+            <li class="breadcrumb-item active text-secondary">Edit Donor Details</li>
+        </ol>
+    </div>
+    <!-- Single Page Header End -->
+    <!-- Main content Start -->
+    <div class="container mt-5">
+        <div class="row justify-content-center ">
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-header bg-primary text-light">
@@ -87,7 +136,7 @@
                                 <br>
                                 <button type="submit" class="btn btn-primary" id="saveChangesBtn" disabled>Save Changes</button>
                                 <br><br>
-                                <p> <a href="DonorDashboard.html">Return to Homepage</a></p>
+                                <p> <a href="regDonorDashboard.html">Return to Homepage</a></p>
 
                             </div>
 
@@ -221,41 +270,41 @@
                 case 'orgName':
                 case 'orgDetails':
                     fieldInputDiv.innerHTML = `
-                                <label for="${selectedField}">${selectedField.charAt(0).toUpperCase() + selectedField.slice(1)}:</label>
-                                <input type="text" id="${selectedField}" class="form-control" required onchange="setFormModified()">
-                            `;
+                                            <label for="${selectedField}">${selectedField.charAt(0).toUpperCase() + selectedField.slice(1)}:</label>
+                                            <input type="text" id="${selectedField}" class="form-control" required onchange="setFormModified()">
+                                        `;
                     break;
                 case 'gender':
                     fieldInputDiv.innerHTML = `
-                                <label>Gender:</label><br>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="male" value="male" onchange="setFormModified()">
-                                    <label class="form-check-label" for="male">Male</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="female" value="female" onchange="setFormModified()">
-                                    <label class="form-check-label" for="female">Female</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="other" value="other" onchange="setFormModified()">
-                                    <label class="form-check-label" for="other">Prefer not to specify</label>
-                                </div>
-                            `;
+                                            <label>Gender:</label><br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="gender" id="male" value="male" onchange="setFormModified()">
+                                                <label class="form-check-label" for="male">Male</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="gender" id="female" value="female" onchange="setFormModified()">
+                                                <label class="form-check-label" for="female">Female</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="gender" id="other" value="other" onchange="setFormModified()">
+                                                <label class="form-check-label" for="other">Prefer not to specify</label>
+                                            </div>
+                                        `;
                     break;
 
                 case 'orgType':
                     fieldInputDiv.innerHTML = `
-                                <label for="orgType">Organization Type:</label>
-                                <select id="orgTypeDropdown" class="form-control" required onchange="setFormModified()">
-                                    <option value="" disabled selected>Select Organization Type</option>
-                                    <option value="hospital">Hospital</option>
-                                    <option value="orphanage">Orphanage</option>
-                                    <option value="mosque">Mosque</option>
-                                    <option value="church">Church</option>
-                                    <option value="publicSchool">Public School</option>
-                                    <option value="generalNonprofit">General Nonprofit</option>
-                                </select>
-                            `;
+                                            <label for="orgType">Organization Type:</label>
+                                            <select id="orgTypeDropdown" class="form-control" required onchange="setFormModified()">
+                                                <option value="" disabled selected>Select Organization Type</option>
+                                                <option value="hospital">Hospital</option>
+                                                <option value="orphanage">Orphanage</option>
+                                                <option value="mosque">Mosque</option>
+                                                <option value="church">Church</option>
+                                                <option value="publicSchool">Public School</option>
+                                                <option value="generalNonprofit">General Nonprofit</option>
+                                            </select>
+                                        `;
                     break;
                 default:
                     break;
@@ -264,7 +313,7 @@
 
 
     </script>
-
+    <!--Main content End-->>
 
     <!--Popup start-->
     <div id="popup">
@@ -331,8 +380,8 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="footer-item">
                         <h4 class="text-light mb-3">Contact</h4>
-                        <p>Address: 1429 Netus Rd, NY 48247</p>
-                        <p>Email: Example@gmail.com</p>
+                        <p>Address: 14 Gamal Abd ElNasser,Cairo,Egypt</p>
+                        <p>Email: GenerousHearts@gmail.com</p>
                         <p>Phone: +0123 4567 8910</p>
                     </div>
                 </div>

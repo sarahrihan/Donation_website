@@ -1,43 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Request Sent Successfully (Org)</title>
-    <title>Pop Up Example</title>
-    <style>
-        #popup {
-            display: none; /* Hide the popup initially */
-            position: fixed; /* Stay in place when scrolling */
-            z-index: 1; /* Sit on top of other content */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            background-color: rgba(0,0,0,0.4); /* Transparent background */
-        }
-
-        #popup-content {
-            background-color: #59981A;
-            margin: 15% auto; /* Center the content */
-            padding: 20px;
-            border: 1px solid #888;
-            color: white;
-            width: 80%;
-            border-radius: 20px;
-        }
-
-        .closebtn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            color: #fff;
-            font: bold;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
-
+    <title>Generous Hearts - Vegetable Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -51,6 +17,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
+    <!-- Libraries Stylesheet -->
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -59,6 +30,7 @@
 </head>
 
 <body>
+
     <!-- Spinner Start -->
     <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" role="status"></div>
@@ -93,12 +65,63 @@
                     <div class="navbar-nav mx-auto">
 
                     </div>
-                    
+                    <div class="d-flex m-3 me-0">
+                        <a href="account_setting.html" class="my-auto" alt="Account settings">
+                            <i class="fas fa-user fa-2x"></i>
+                        </a>
+                    </div>
                 </div>
             </nav>
         </div>
     </div>
     <!-- Navbar End -->
+    <style>
+        /* Add your CSS styles here */
+        .error-message {
+            color: red;
+            text-align: center;
+        }
+
+        .shaded {
+            background-color: rgba(128, 128, 128, 0.5); /* Darker gray with some transparency */
+            pointer-events: none;
+        }
+
+        filters label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .toy-item {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+            .toy-item img {
+                max-width: 100px;
+                margin-right: 20px;
+            }
+
+        .toy-details {
+            flex-grow: 1;
+        }
+
+        .view-details {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
     <!-- Modal Search Start -->
     <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
@@ -119,59 +142,29 @@
     <!-- Modal Search End -->
     <!-- Single Page Header start -->
     <div class="container-fluid page-header py-5">
-        <h1 class="text-center text-white display-6">Organization Registration</h1>
+        <h1 class="text-center text-white display-6">Donor Submission</h1>
         <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a href="HomePage.html"style="color:white">Home</a></li>
-           
-            <li class="breadcrumb-item active text-secondary">Organization Pending Request</li>
+            <li class="breadcrumb-item"><a href="AdminDashboard.html" style="color: white">Admin Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="RequestedDonors.html" style="color: white">Requested Donors</a></li>
+            <li class="breadcrumb-item active text-white">Donor Submission</li>
         </ol>
     </div>
     <!-- Single Page Header End -->
-    <!--Popup start-->
-    <div id="popup">
-        <div id="popup-content">
-            <span class="closebtn">&times;</span>
-            <p>Your Account Request has been Accepted! Welcome to the Generous Hearts Family!</p>
-            <button type="button" class="btn btn-secondary" onclick="redirectToLoginPage();">Login Now</button>
-                <button type="button" class="btn btn-primary" onclick="closePopUp();">Close</button>
-        </div>
-    </div>
+    <!-- Organization Rep Details Card -->
+    <div class="container py-5">
 
-
-    <script>
-        function showPopUp() {
-            document.getElementById("popup").style.display = "block";
-        }
-        function redirectToLoginPage() {
-            window.location.href = "OrgLogin.html";
-        }
-        function closePopUp() {
-        document.getElementById("popup").style.display = "none";
-    }
-
-
-        window.onload = setTimeout(showPopUp, 3000); // Call showPopUp after 5 seconds (5000 milliseconds)
-
-    </script>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Request Sent Successfully!</a>
-        </div>
-    </nav>
-
-    <!-- Organization Details Section -->
-    <div class="container">
-        <!-- Organization Rep Details Card -->
         <div class="card">
             <div class="card-header">
-                Organization Representitive Details
+                Donor Details
             </div>
             <div class="card-body">
-                <p><strong>Name:</strong> Rana Hellal</p>
-                <p><strong>Email:</strong> rana.hellal@gmail.com</p>
+                <p><strong>Name:</strong> Will Smith</p>
+                <p><strong>Email:</strong> will.smith@gmail.com</p>
                 <p><strong>Contact Number:</strong> 010012345678</p>
+                <p><strong>Address:</strong> 44 Fake Address-Fake Street</p>
+                <p><strong>Area:</strong> New Cairo</p>
+                <p><strong>Governorate:</strong> Cairo</p>
+
                 <!-- Add more organization details as needed -->
             </div>
             <!-- Organization Details Card -->
@@ -180,41 +173,50 @@
                     Organization Details
                 </div>
                 <div class="card-body">
-                    <p><strong>Name:</strong> Resala</p>
-                    <p><strong>Type:</strong> General Nonprofit</p>
-                    <p><strong>Short Description:</strong> Resala does good things.<br>They give food and clothes and education to those in need all over Egypt.</p>
-                    <p><strong>Address:</strong> 12 Fake Address-Fake Street</p>
-                    <p><strong>Area:</strong> Downtown Cairo</p>
+                    <p><strong>Address:</strong> 66 Fake Address-Fake Street</p>
+                    <p><strong>Area:</strong> Zayed</p>
                     <p><strong>Governorate:</strong> Giza</p>
+                    <p><strong>Speciality:</strong> OB/GYN</p>
+                    <p><strong>Patient Capacity:</strong> 6</p>
                 </div>
-            </div>
-
-            <!-- Submitted Documents Section -->
-            <div class="card">
-                <div class="card-header">
-                    Submitted Documents
-                </div>
-                <div class="card-body">
-                    <ul>
-                        <li><a href="Resala Authenticity Document.pdf">Resala Authenticity Document</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="text-center mt-3">
-                <p>Registration Request Status: Pending</p>
-            </div>
-
-            <!-- Button to Redirect to Request Management Page -->
-            <div class="text-center mt-3">
-                <a href="OrgLogin.html" class="btn btn-primary">Login/Signup</a>
             </div>
         </div>
-    </div>
 
+        <!-- Submitted Documents Section -->
+        <div class="card mt-5">
+            <div class="card-header">
+                Submitted Documents
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li class="d-flex justify-content-between align-items-center">
+                        <span class="fw-bold me-3">Document:</span>
+                        <div class="d-flex align-items-center">
+                            <a href="Medical Authenticity Document.pdf" target="_blank" download>Resala Authenticity Document.pdf</a>
+                        </div>
+                        <div class="ms-auto">
+                            <!-- Added ms-auto class for margin-left:auto to push buttons to the right -->
+                            <button type="button" class="btn btn-success ms-2" onclick="acceptSubmission()">Accept</button>
+                            <button type="button" class="btn btn-danger ms-2" onclick="rejectSubmission()">Reject</button>
+                        </div>
+                    </li>
+                    <!-- Add more document links as needed -->
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- Button to Redirect to Request Management Page -->
+        <div class="text-center mt-3">
+            <a href="request_management.html" class="btn btn-primary">Go to Request Management</a>
+        </div>
+    </div>
     <!-- Footer Start -->
-    <footer class="bg-dark text-white-50 pt-5 mt-5">
+    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
         <div class="container py-5">
             <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5);">
                 <div class="row g-4">
@@ -244,19 +246,24 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="footer-item">
                         <h4 class="text-light mb-3">Contact</h4>
-                        <p>Address: 1429 Netus Rd, NY 48247</p>
-                        <p>Email: Example@gmail.com</p>
+                        <p>Address: 14 Gamal Abd ElNasser,Cairo,Egypt</p>
+                        <p>Email: GenerousHearts@gmail.com</p>
                         <p>Phone: +0123 4567 8910</p>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
     <!-- Footer End -->
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
 
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -265,8 +272,44 @@
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Template Javascript -->
+    <script>
+        function acceptSubmission() {
+            if (confirm("Are you sure you want to accept this submission?")) {
+                alert("Submission accepted successfully.");
+                // Perform further actions here, such as updating the database or UI
+            }
+        }
+
+        function rejectSubmission() {
+            if (confirm("Are you sure you want to reject this submission?")) {
+                alert("Submission rejected successfully.");
+                // Perform further actions here, such as updating the database or UI
+            }
+        }
+
+        function downloadFile(url) {
+            // Create a temporary anchor element
+            var anchorElement = document.createElement('a');
+
+            // Set the href attribute to the file URL
+            anchorElement.href = url;
+
+            // Add the download attribute to force download
+            anchorElement.download = '';
+
+            // Append the anchor element to the document body
+            document.body.appendChild(anchorElement);
+
+            // Click the anchor element to trigger the download
+            anchorElement.click();
+
+            // Remove the anchor element from the document body
+            document.body.removeChild(anchorElement);
+        }
+
+    </script>
     <script src="js/main.js"></script>
+
 </body>
 
 </html>
