@@ -41,47 +41,32 @@
         <div class="container topbar bg-primary d-none d-lg-block">
             <div class="d-flex justify-content-between">
                 <div class="top-info ps-2">
-                    <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">123 Street, New York</a></small>
-                    <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">Email@Example.com</a></small>
+                    <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">Fifth Settlement,Cairo</a></small>
+                    <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">GenerousHearts@gmail.com</a></small>
                 </div>
                 <div class="top-link pe-2">
-                    <a href="#" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
-                    <a href="#" class="text-white"><small class="text-white mx-2">Terms of Use</small></a>
-                    <!-- <a href="#" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>-->
+                    <!-- Updated Privacy Policy link to redirect to a separate page -->
+                    <a href="privacy_policy.html" class="text-white"><small class="text-white mx-2">Privacy Policy</small></a>/
+                    <!-- Updated Terms of Use link to redirect to a separate page -->
+                    <a href="terms_of_use.html" class="text-white"><small class="text-white mx-2">Terms of Use</small></a>
                 </div>
             </div>
         </div>
         <div class="container px-0">
             <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                <a href="index.html" class="navbar-brand ">
-                    <img src="img/Generous Hearts.png">
+                <a href="#" class="navbar-brand">
+                    <!-- Make the Generous Hearts image not clickable -->
+                    <img src="img/Generous Hearts.png" style="pointer-events: none;">
                 </a>
                 <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars text-primary"></span>
                 </button>
                 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="shop.html" class="nav-item nav-link active">Shop</a>
-                        <a href="shop-detail.html" class="nav-item nav-link">Shop Detail</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                <a href="cart.html" class="dropdown-item">Cart</a>
-                                <a href="chackout.html" class="dropdown-item">Chackout</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+
                     </div>
                     <div class="d-flex m-3 me-0">
-                        <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
-                        <a href="#" class="position-relative me-4 my-auto">
-                            <i class="fa fa-shopping-bag fa-2x"></i>
-                            <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
-                        </a>
-                        <a href="#" class="my-auto">
+                        <a href="account_setting.html" class="my-auto" alt="Account settings">
                             <i class="fas fa-user fa-2x"></i>
                         </a>
                     </div>
@@ -157,11 +142,11 @@
     <!-- Modal Search End -->
     <!-- Single Page Header start -->
     <div class="container-fluid page-header py-5">
-        <h1 class="text-center text-white display-6">Donate</h1>
+        <h1 class="text-center text-white display-6">Review Submissions</h1>
         <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-            <li class="breadcrumb-item active text-white">Shop</li>
+           
+            <li class="breadcrumb-item"><a href="AdminDashboard.html" style="color: white" >Admin Dashboard</a></li>
+            <li class="breadcrumb-item active text-white">Review Submissions</li>
         </ol>
     </div>
     <!-- Single Page Header End -->
@@ -182,128 +167,128 @@
 
 
 
-   <!-- Organization Details Section -->
-   <div class="container py-5">
-    <!-- Organization A -->
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                Organization A Details
-            </div>
-            <div class="card-body">
-                <div class="Charity representative ">
-                    <p><strong>Name:</strong> Rana Helal</p>
-                    <p><strong>Email:</strong>rana.helal@gmail.com</p>
-                    <p><strong>Orgnization Name:</strong> Resala</p>
-                    <p><strong>Type :</strong> Non-Profit</p>
-                    <!-- Submitted Documents Section -->
-                    <div class="card mb-3">
-                        <div class="card-header">
-                            Submitted Documents
+    <!-- Organization Details Section -->
+    <div class="container py-5">
+        <!-- Organization A -->
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    Organization A Details
+                </div>
+                <div class="card-body">
+                    <div class="Charity representative ">
+                        <p><strong>Name:</strong> Rana Helal</p>
+                        <p><strong>Email:</strong>rana.helal@gmail.com</p>
+                        <p><strong>Orgnization Name:</strong> Resala</p>
+                        <p><strong>Type :</strong> Non-Profit</p>
+                        <!-- Submitted Documents Section -->
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                Submitted Documents
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-unstyled">
+                                    <li class="d-flex justify-content-between align-items-center">
+                                        <span class="fw-bold me-3">Document:</span>
+                                        <div class="d-flex align-items-center">
+                                            <a href="Resala Authenticity Document.pdf" target="_blank" download>Resala Authenticity Document.pdf</a>
+                                        </div>
+                                        <div class="ms-auto">
+                                            <!-- Added ms-auto class for margin-left:auto to push buttons to the right -->
+                                            <button id="acceptBtn" class="btn btn-success mr-2">Accept</button>
+                                            <button id="rejectBtn" class="btn btn-danger">Reject</button>
+                                        </div>
+                                    </li>
+                                    <!-- Add more document links as needed -->
+                                </ul>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <ul class="list-unstyled">
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span class="fw-bold me-3">Document:</span>
-                                    <div class="d-flex align-items-center">
-                                        <a href="Resala Authenticity Document.pdf" target="_blank" download>Resala Authenticity Document.pdf</a>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <!-- Added ms-auto class for margin-left:auto to push buttons to the right -->
-                                        <button id="acceptBtn" class="btn btn-success mr-2">Accept</button>
-                                        <button id="rejectBtn" class="btn btn-danger">Reject</button>
-                                    </div>
-                                </li>
-                                <!-- Add more document links as needed -->
-                            </ul>
-                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-   <!-- Organization B -->
-<div class="container py-5">
-    <div class="card">
-        <div class="card-header">
-            Probono Doctor
-        </div>
-        <div class="card-body">
-            <div class="organization">
-                <p><strong>Name:</strong> Will Smith</p>
-                <p><strong>Email:</strong> will.smith@gmail.com</p>
-                <p><strong>Speciality:</strong> OB/GYN</p>
-                <!-- Submitted Documents Section -->
-                <div class="card mb-3">
+            <!-- Organization B -->
+            <div class="container py-5">
+                <div class="card">
                     <div class="card-header">
-                        Submitted Documents
+                        Probono Doctor
                     </div>
                     <div class="card-body">
-                        <ul class="list-unstyled">
-                            <li class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold me-3">Document:</span>
-                                <div class="d-flex align-items-center">
-                                    <a href="Medical Authenticity Document.pdf" target="_blank" download>Resala Authenticity Document.pdf</a>
+                        <div class="organization">
+                            <p><strong>Name:</strong> Will Smith</p>
+                            <p><strong>Email:</strong> will.smith@gmail.com</p>
+                            <p><strong>Speciality:</strong> OB/GYN</p>
+                            <!-- Submitted Documents Section -->
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    Submitted Documents
                                 </div>
-                                <div class="ms-auto">
-                                    <!-- Added ms-auto class for margin-left:auto to push buttons to the right -->
-                                    <button class="btn btn-success mr-2">Accept</button>
-                                    <button class="btn btn-danger">Reject</button>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li class="d-flex justify-content-between align-items-center">
+                                            <span class="fw-bold me-3">Document:</span>
+                                            <div class="d-flex align-items-center">
+                                                <a href="Medical Authenticity Document.pdf" target="_blank" download>Resala Authenticity Document.pdf</a>
+                                            </div>
+                                            <div class="ms-auto">
+                                                <!-- Added ms-auto class for margin-left:auto to push buttons to the right -->
+                                                <button class="btn btn-success mr-2">Accept</button>
+                                                <button class="btn btn-danger">Reject</button>
+                                            </div>
+                                        </li>
+                                        <!-- Add more document links as needed -->
+                                    </ul>
                                 </div>
-                            </li>
-                            <!-- Add more document links as needed -->
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
 
-<!-- Organization C -->
-<div class="container py-5">
-    <div class="card">
-        <div class="card-header">
-            Probono Teacher
-        </div>
-        <div class="card-body">
-            <div class="organization">
-                <p><strong>Name:</strong> Jana Mahmoud</p>
-                <p><strong>Email:</strong> jana.mahmoud@gmail.com</p>
-                <p><strong>Subject(s):</strong> English, Math, Science</p>
-                <!-- Submitted Documents Section -->
-                <div class="card mb-3">
+            <!-- Organization C -->
+            <div class="container py-5">
+                <div class="card">
                     <div class="card-header">
-                        Submitted Documents
+                        Probono Teacher
                     </div>
                     <div class="card-body">
-                        <ul class="list-unstyled">
-                            <li class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold me-3">Document:</span>
-                                <div class="d-flex align-items-center">
-                                    <a href="Teaching Authenticity Document.pdf" target="_blank" download>Teaching Authenticity Document.pdf</a>
+                        <div class="organization">
+                            <p><strong>Name:</strong> Jana Mahmoud</p>
+                            <p><strong>Email:</strong> jana.mahmoud@gmail.com</p>
+                            <p><strong>Subject(s):</strong> English, Math, Science</p>
+                            <!-- Submitted Documents Section -->
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    Submitted Documents
                                 </div>
-                                <div class="ms-auto">
-                                    <!-- Added ms-auto class for margin-left:auto to push buttons to the right -->
-                                    <button class="btn btn-success mr-2">Accept</button>
-                                    <button class="btn btn-danger">Reject</button>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li class="d-flex justify-content-between align-items-center">
+                                            <span class="fw-bold me-3">Document:</span>
+                                            <div class="d-flex align-items-center">
+                                                <a href="Teaching Authenticity Document.pdf" target="_blank" download>Teaching Authenticity Document.pdf</a>
+                                            </div>
+                                            <div class="ms-auto">
+                                                <!-- Added ms-auto class for margin-left:auto to push buttons to the right -->
+                                                <button class="btn btn-success mr-2">Accept</button>
+                                                <button class="btn btn-danger">Reject</button>
+                                            </div>
+                                        </li>
+                                        <!-- Add more document links as needed -->
+                                    </ul>
                                 </div>
-                            </li>
-                            <!-- Add more document links as needed -->
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+
+            <!-- End Accept and Reject Buttons -->
         </div>
+        <!-- End of loop -->
     </div>
-</div>
-
-
-                    <!-- End Accept and Reject Buttons -->
-                </div>
-                <!-- End of loop -->
-            </div>
-        </div>
+    </div>
     </div>
     <div id="messageContainer"></div>
 
@@ -344,8 +329,8 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="footer-item">
                         <h4 class="text-light mb-3">Contact</h4>
-                        <p>Address: 1429 Netus Rd, NY 48247</p>
-                        <p>Email: Example@gmail.com</p>
+                        <p>Address: 14 Gamal Abd ElNasser,Cairo,Egypt</p>
+                        <p>Email: GenerousHearts@gmail.com</p>
                         <p>Phone: +0123 4567 8910</p>
                     </div>
                 </div>
@@ -388,30 +373,30 @@
         });
 
         // Add click event listener to the container of all Accept and Reject buttons
-document.addEventListener("click", function (event) {
-    // Check if the clicked element is an Accept or Reject button
-    if (event.target.matches(".btn-success")) {
-        // Show success message
-        showSuccessMessage();
-    } else if (event.target.matches(".btn-danger")) {
-        // Show rejection message
-        showRejectionMessage();
-    }
-});
+        document.addEventListener("click", function (event) {
+            // Check if the clicked element is an Accept or Reject button
+            if (event.target.matches(".btn-success")) {
+                // Show success message
+                showSuccessMessage();
+            } else if (event.target.matches(".btn-danger")) {
+                // Show rejection message
+                showRejectionMessage();
+            }
+        });
 
-// Function to show success message
-function showSuccessMessage() {
-    var messageBody = document.getElementById("messageBody");
-    messageBody.innerHTML = "<div class='alert alert-success' role='alert'>Successfully accepted!</div>";
-    $('#messageModal').modal('show'); // Show the modal
-}
+        // Function to show success message
+        function showSuccessMessage() {
+            var messageBody = document.getElementById("messageBody");
+            messageBody.innerHTML = "<div class='alert alert-success' role='alert'>Successfully accepted!</div>";
+            $('#messageModal').modal('show'); // Show the modal
+        }
 
-// Function to show rejection message
-function showRejectionMessage() {
-    var messageBody = document.getElementById("messageBody");
-    messageBody.innerHTML = "<div class='alert alert-danger' role='alert'>Rejected!</div>";
-    $('#messageModal').modal('show'); // Show the modal
-}
+        // Function to show rejection message
+        function showRejectionMessage() {
+            var messageBody = document.getElementById("messageBody");
+            messageBody.innerHTML = "<div class='alert alert-danger' role='alert'>Rejected!</div>";
+            $('#messageModal').modal('show'); // Show the modal
+        }
 
     </script>
 
