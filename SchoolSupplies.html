@@ -89,6 +89,53 @@
         </div>
     </div>
     <!-- Navbar End -->
+    <style>
+        /* Add your CSS styles here */
+        .error-message {
+            color: red;
+            text-align: center;
+        }
+
+        .shaded {
+            background-color: rgba(128, 128, 128, 0.5); /* Darker gray with some transparency */
+            pointer-events: none;
+        }
+
+        filters label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .food-item {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+            .food-item img {
+                max-width: 100px;
+                margin-right: 20px;
+            }
+
+        .food-details {
+            flex-grow: 1;
+        }
+
+        .view-details {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
     <!-- Modal Search Start -->
     <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
@@ -128,93 +175,149 @@
                             <div class="row g-4">
                                 <div class="col-lg-12">
                                     <div class="mb-3">
-                                        <h4>Filter</h4>
-                                        <ul class="list-unstyled fruite-categorie">
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    <a href="stationery.html"><i class="fas fa-apple-alt me-2"></i>Stationary</a>
-                                                    <span>(2)</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    <a href="books.html"><i class="fas fa-apple-alt me-2"></i>Books</a>
-                                                    <span>(2)</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    <a href="SchoolSupplies.html" style="color:#59981A;"><i class="fas fa-apple-alt me-2"></i>No filter</a>
-                                                    <span style="color:#59981A;">✔ (4)</span>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                        <div id="filters">
+                                            <h4>Filters</h4>
+                                            <ul class="list-unstyled fruite-categorie">
+                                                <!-- Food Type filter -->
+                                                <li>
+                                                    <div class="d-flex justify-content-between fruite-name">
+                                                        <label for="foodType">Select Category:</label>
+                                                        <select id="foodType">
+                                                            <option value="">All</option>
+                                                            <option value="Stationary">Stationary</option>
+                                                            <option value="Books">Books</option>
+                                                        </select>
+                                                    </div>
+                                                </li>
+
+                                            </ul>
+
+                                            <!-- Apply Filters and Reset Filters buttons -->
+                                            <button id="applyFiltersBtn" onclick="filterFood()">Apply Filters</button>
+                                            <button id="applyFiltersBtn2" onclick="resetFilters()">Reset Filters</button>
+                                        </div>
+                                        <div id="foodList">
+                                            <!-- Cloth donation requests will be dynamically added here based on filters -->
+                                        </div>
+
+                                        <script>
+                                            // JavaScript functions for filtering and resetting filters
+                                            function filterFood() {
+                                                // Add shading to the Apply Filters button
+                                                document.getElementById('applyFiltersBtn').classList.add('shaded');
+
+                                                // Retrieve filter value
+                                                var foodType = document.getElementById('foodType').value;
+
+                                                // Filter the food based on the selected criteria
+                                                var filteredFood = foodRequests.filter(function (food) {
+                                                    return foodType === '' || food.category === foodType;
+                                                });
+
+                                                // Display the filtered food
+                                                displayFood(filteredFood);
+
+                                                // Remove shading from the Apply Filters button after a delay
+                                                setTimeout(function () {
+                                                    document.getElementById('applyFiltersBtn').classList.remove('shaded');
+                                                }, 150);
+                                            }
+
+                                            function resetFilters() {
+                                                // Add shading to the Reset Filters button
+                                                document.getElementById('applyFiltersBtn2').classList.add('shaded');
+
+                                                // Reset filter dropdown to its default value
+                                                document.getElementById('foodType').selectedIndex = 0;
+
+                                                // Display all food (reset)
+                                                displayFood(foodRequests);
+
+                                                // Remove shading from the Reset Filters button after a delay
+                                                setTimeout(function () {
+                                                    document.getElementById('applyFiltersBtn2').classList.remove('shaded');
+                                                }, 150);
+                                            }
+                                        </script>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-9">
+
+
                             <div class="row g-4 justify-content-center">
-                                <div class="col-md-6 col-lg-6 col-xl-4">
-                                    <div class="rounded position-relative fruite-item">
-                                        <div class="fruite-img">
-                                            <img src="img/pen2.png" class="img-fluid w-100 rounded-top" alt="">
-                                        </div>
-                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Stationary</div>
-                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Pen</h4>
-                                            <p>Pens needed for orphanages, and individuals</p>
-                                            <div class="d-flex justify-content-between flex-lg-wrap">
-                                                <a href="details1.html" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="text-primary"></i>More information</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-6 col-xl-4">
-                                    <div class="rounded position-relative fruite-item">
-                                        <div class="fruite-img">
-                                            <img src="img/book1.png" class="img-fluid w-100 rounded-top" alt="">
-                                        </div>
-                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Books</div>
-                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Grade 6 science book</h4>
-                                            <p>Book needed for orphanages, and individuals</p>
-                                            <div class="d-flex justify-content-between flex-lg-wrap">
-                                                <a href="details2.html" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="text-primary"></i>More information</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-6 col-xl-4">
-                                    <div class="rounded position-relative fruite-item">
-                                        <div class="fruite-img">
-                                            <img src="img/notebook.jpg" class="img-fluid w-100 rounded-top" alt="">
-                                        </div>
-                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Stationary</div>
-                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Notebook</h4>
-                                            <p>Notebook needed for orphanages, and individuals</p>
-                                            <div class="d-flex justify-content-between flex-lg-wrap">
-                                                <a href="details3.html" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="text-primary"></i>More information</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-6 col-xl-4">
-                                    <div class="rounded position-relative fruite-item">
-                                        <div class="fruite-img">
-                                            <img src="img/Book2.png" class="img-fluid w-100 rounded-top" alt="">
-                                        </div>
-                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Books</div>
-                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Grade 8 English book</h4>
-                                            <p>Book needed for orphanages, and individuals</p>
-                                            <div class="d-flex justify-content-between flex-lg-wrap">
-                                                <a href="details4.html" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="text-primary"></i>More information</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <script>
+                                    var foodRequests = [
+                                        { name: 'Pen', category: 'Stationary', image: 'img/pen2.png', details: 'details1.html' },
+                                        { name: 'Grade 6 Science Book', category: 'Books', image: 'img/book1.png', details: 'details2.html' },
+                                        { name: 'Grade 8 English Book', category: 'Books', image: 'img/book2.png', details: 'details4.html' },
+                                        { name: 'Notebook', category: 'Stationary', image: 'img/notebook.jpg', details: 'details3.html' }
+                                    ];
+
+                                    // Function to display food
+
+
+                                    function displayFood(foodRequests) {
+                                        var foodList = document.querySelector('.row.g-4.justify-content-center');
+                                        foodList.innerHTML = ''; // Clear previous results
+                                        if (foodRequests.length === 0) {
+                                            // If there are no results, display an error message
+                                            var errorMessage = document.createElement('div');
+                                            errorMessage.textContent = 'No food items match the selected filters.';
+                                            errorMessage.classList.add('error-message');
+                                            errorMessage.style.color = 'red'; // Set text color to red
+                                            errorMessage.style.textAlign = 'center'; // Align text to center
+                                            foodList.appendChild(errorMessage);
+                                        }
+
+                                        foodRequests.forEach(function (food) {
+                                            var foodColumn = document.createElement('div');
+                                            foodColumn.classList.add('col-md-6', 'col-lg-6', 'col-xl-4');
+
+                                            var foodItem = document.createElement('div');
+                                            foodItem.classList.add('rounded', 'position-relative', 'fruite-item');
+
+                                            var img = document.createElement('img');
+                                            img.src = food.image;
+                                            img.classList.add('img-fluid', 'w-100', 'rounded-top');
+                                            foodItem.appendChild(img);
+
+                                            var detailsDiv = document.createElement('div');
+                                            detailsDiv.classList.add('p-4', 'border', 'border-secondary', 'border-top-0', 'rounded-bottom');
+
+                                            var name = document.createElement('h4');
+                                            name.textContent = food.name;
+                                            detailsDiv.appendChild(name);
+
+                                            var description = document.createElement('p');
+                                            description.textContent = 'School supplies needed for donation.'; // Modify as needed
+                                            detailsDiv.appendChild(description);
+
+                                            var btnDiv = document.createElement('div');
+                                            btnDiv.classList.add('d-flex', 'justify-content-between', 'flex-lg-wrap');
+
+                                            var viewDetailsBtn = document.createElement('a');
+                                            viewDetailsBtn.href = food.details;
+                                            viewDetailsBtn.classList.add('btn', 'border', 'border-secondary', 'rounded-pill', 'px-3', 'text-primary');
+                                            viewDetailsBtn.textContent = 'More Information';
+                                            btnDiv.appendChild(viewDetailsBtn);
+
+                                            detailsDiv.appendChild(btnDiv);
+
+                                            foodItem.appendChild(detailsDiv);
+
+                                            foodColumn.appendChild(foodItem);
+
+                                            foodList.appendChild(foodColumn);
+                                        });
+                                    }
+
+                                    // Display initial food donation requests
+                                    displayFood(foodRequests);
+
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -223,6 +326,7 @@
         </div>
     </div>
     <!-- Fruits Shop End-->
+                                    
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
         <div class="container py-5">
