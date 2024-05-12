@@ -22,6 +22,18 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Fix footer to bottom */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .footer {
+            margin-top: auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,50 +46,34 @@
         <div class="container topbar bg-primary d-none d-lg-block">
             <div class="d-flex justify-content-between">
                 <div class="top-info ps-2">
-                    <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">123 Street, New York</a></small>
-                    <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">Email@Example.com</a></small>
+                    <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">Fifth Settlement,Cairo</a></small>
+                    <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">GenerousHearts@gmail.com</a></small>
                 </div>
                 <div class="top-link pe-2">
-                    <a href="#" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
-                    <a href="#" class="text-white"><small class="text-white mx-2">Terms of Use</small></a>
-                   
+                    <!-- Updated Privacy Policy link to redirect to a separate page -->
+                    <a href="privacy_policy.html" class="text-white"><small class="text-white mx-2">Privacy Policy</small></a>/
+                    <!-- Updated Terms of Use link to redirect to a separate page -->
+                    <a href="terms_of_use.html" class="text-white"><small class="text-white mx-2">Terms of Use</small></a>
                 </div>
             </div>
         </div>
         <div class="container px-0">
             <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                <a href="index.html" class="navbar-brand ">
-                    <img src="img/Generous Hearts.png">
+                <a href="#" class="navbar-brand">
+                    <!-- Make the Generous Hearts image not clickable -->
+                    <img src="img/Generous Hearts.png" style="pointer-events: none;">
                 </a>
-                <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars text-primary"></span>
-                </button>
+
                 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="shop.html" class="nav-item nav-link">Shop</a>
-                        <a href="shop-detail.html" class="nav-item nav-link">Shop Detail</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                <a href="cart.html" class="dropdown-item">Cart</a>
-                                <a href="chackout.html" class="dropdown-item">Chackout</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item active">404 Page</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+
                     </div>
                     <div class="d-flex m-3 me-0">
-                        <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
-                        <a href="#" class="position-relative me-4 my-auto">
-                            <i class="fa fa-shopping-bag fa-2x"></i>
-                            <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
-                        </a>
-                        <a href="DisplayTeacherInfo.html" class="my-auto">
-                            <i class="fas fa-user fa-2x"></i>
-                        </a>
+                        <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-target="#searchModal" data-bs-toggle="modal">
+                            <i class="fas fa-search text-primary"></i>
+                        </button>
 
+                        <a href="account_setting.html" class="my-auto" alt="Account settings"><i class="fas fa-user fa-2x"></i></a>
                     </div>
                 </div>
             </nav>
@@ -92,147 +88,148 @@
     </div>
     <div class="container">
         <div class="row">
-           <!-- Modal Search Start -->
-               
-                       
-                 <!-- Donor Homepage Section Start -->
-    <section id="donor-homepage" class="mt-5">
-        <div class="container">
-            <!-- Title -->
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <h2>You are Logged in As a Teacher</h2>
-                </div>
-            </div>
-            
-                <!-- Modal Search End -->
-              <div class="row g-4 text-center align-items-center justify-content-center pt-4">
-                <div class="col-md-6 col-lg-8">
-                    <a href="TeacherAllDonationPosts.html" class="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary">View All Posts</a>
-
+            <!-- Modal Search Start -->
+            <!-- Donor Homepage Section Start -->
+            <section id="donor-homepage" class="mt-5">
+                <div class="container">
+                    <!-- Title -->
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <h2>You are Logged in As a Teacher</h2>
+                        </div>
                     </div>
-              </div>
-              <div class="row g-4 text-center align-items-center justify-content-center pt-4">
-                <div class="col-md-6 col-lg-8">
-                    <button onclick="window.location.href='NewRegisteredOrg.html'" class="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary">View Organizations</button>                                        </div>
-              </div>
-       <div class="container-fluid fruite py-5">
-                <div class="container py-5">
-                    <h1 class="mb-4">Search Donation Requests by Category</h1>
-                    <div class="row g-4">
-                        <div class="col-md-6 col-lg-4">
-                            <a href="Clothes.html" style="text-decoration: none; color: inherit;">
-                                <div class="rounded position-relative fruite-item" style="height: 100%;">
-                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
-                                    <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                        <h4>Clothes</h4>
-                                        <p>Your gently used clothing items can provide warmth, comfort, and a sense of dignity to individuals and families facing difficult circumstances.</p>
-                                        <div class="d-flex justify-content-between flex-lg-wrap">
+
+                    <div class="row g-4 text-center align-items-center justify-content-center pt-4">
+                        <div class="col-md-6 col-lg-8">
+                            <a href="TeacherAllDonationPosts.html" class="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary">View All Posts</a>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 text-center align-items-center justify-content-center pt-4">
+                        <div class="col-md-6 col-lg-8">
+                            <button onclick="window.location.href='NewRegisteredOrg.html'" class="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary">View Organizations</button>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid fruite py-5">
+                        <div class="container py-5">
+                            <h1 class="mb-4">Search Donation Requests by Category</h1>
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-4">
+                                    <a href="Clothes.html" style="text-decoration: none; color: inherit;">
+                                        <div class="rounded position-relative fruite-item" style="height: 100%;">
+                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
+                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                <h4>Clothes</h4>
+                                                <p>Your gently used clothing items can provide warmth, comfort, and a sense of dignity to individuals and families facing difficult circumstances.</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-6 col-lg-4">
+                                    <a href="Toys.html" style="text-decoration: none; color: inherit;">
+                                        <div class="rounded position-relative fruite-item" style="height: 100%;">
+                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
+                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                <h4>Toys</h4>
+                                                <p>Your donated toys can bring joy, laughter, and endless playtime to children in need of a little extra happiness. Every toy becomes a comfort that ignites smiles and lights up their world. </p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <a href="Food.html" style="text-decoration: none; color: inherit;">
+                                        <div class="rounded position-relative fruite-item" style="height: 100%;">
+                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
+                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                <h4>Food</h4>
+                                                <p>Your donated food items can nourish hungry stomachs, provide sustenance, and offer a comforting meal to those facing food insecurity and struggling to make ends meet.</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <a href="Medical Supplies.html" style="text-decoration: none; color: inherit;">
+                                        <div class="rounded position-relative fruite-item" style="height: 100%;">
+                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
+                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                <h4>Medical Supplies</h4>
+                                                <p>Your donated medical supplies can offer relief, healing, and essential care to individuals in underserved communities with limited access to healthcare resources.</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <a href="SchoolSupplies.html" style="text-decoration: none; color: inherit;">
+                                        <div class="rounded position-relative fruite-item" style="height: 100%;">
+                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
+                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                <h4>School Supplies</h4>
+                                                <p>Your donated school supplies can empower young minds, support education, and equip students with the tools they need to succeed in their academic journey.</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <a href="BloodDonation.html" style="text-decoration: none; color: inherit;">
+                                        <div class="rounded position-relative fruite-item" style="height: 100%;">
+                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
+                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                <h4>Blood Donations</h4>
+                                                <p>Your donated blood can save lives, offer hope, and provide critical support to patients undergoing medical treatment or facing emergencies.</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <!-- Centering container -->
+                                    <a href="TeacherChooseProbono.html" style="text-decoration: none; color: inherit;">
+                                        <div class="rounded position-relative fruite-item" style="height: 100%;">
+                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
+                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                <h4>Probono Services</h4>
+                                                <p>Your volunteered medical services can deliver lifesaving treatments, expert care, and compassionate support to individuals who may otherwise struggle to access healthcare.</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap">
+
+                                                </div>
+                                            </div>
 
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
-                            </a>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4">
-                            <a href="Toys.html" style="text-decoration: none; color: inherit;">
-                                <div class="rounded position-relative fruite-item" style="height: 100%;">
-                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
-                                    <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                        <h4>Toys</h4>
-                                        <p>Your donated toys can bring joy, laughter, and endless playtime to children in need of a little extra happiness. Every toy becomes a comfort that ignites smiles and lights up their world. </p>
-                                        <div class="d-flex justify-content-between flex-lg-wrap">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <a href="Food.html" style="text-decoration: none; color: inherit;">
-                                <div class="rounded position-relative fruite-item" style="height: 100%;">
-                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
-                                    <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                        <h4>Food</h4>
-                                        <p>Your donated food items can nourish hungry stomachs, provide sustenance, and offer a comforting meal to those facing food insecurity and struggling to make ends meet.</p>
-                                        <div class="d-flex justify-content-between flex-lg-wrap">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <a href="Medical Supplies.html" style="text-decoration: none; color: inherit;">
-                                <div class="rounded position-relative fruite-item" style="height: 100%;">
-                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
-                                    <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                        <h4>Medical Supplies</h4>
-                                        <p>Your donated medical supplies can offer relief, healing, and essential care to individuals in underserved communities with limited access to healthcare resources.</p>
-                                        <div class="d-flex justify-content-between flex-lg-wrap">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <a href="SchoolSupplies.html" style="text-decoration: none; color: inherit;">
-                                <div class="rounded position-relative fruite-item" style="height: 100%;">
-                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
-                                    <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                        <h4>School Supplies</h4>
-                                        <p>Your donated school supplies can empower young minds, support education, and equip students with the tools they need to succeed in their academic journey.</p>
-                                        <div class="d-flex justify-content-between flex-lg-wrap">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <a href="BloodDonation.html" style="text-decoration: none; color: inherit;">
-                                <div class="rounded position-relative fruite-item" style="height: 100%;">
-                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
-                                    <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                        <h4>Blood Donations</h4>
-                                        <p>Your donated blood can save lives, offer hope, and provide critical support to patients undergoing medical treatment or facing emergencies.</p>
-                                        <div class="d-flex justify-content-between flex-lg-wrap">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <!-- Centering container -->
-                            <a href="TeacherChooseProbono.html" style="text-decoration: none; color: inherit;">
-                            <div class="rounded position-relative fruite-item" style="height: 100%;">
-                                <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"></div>
-                                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                    <h4>Probono Services</h4>
-                                    <p>Your volunteered medical services can deliver lifesaving treatments, expert care, and compassionate support to individuals who may otherwise struggle to access healthcare.</p>
-                                    <div class="d-flex justify-content-between flex-lg-wrap">
-
-                                    </div>
-                                </div>
-
                             </div>
-                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        </section>
-                                              
-                           
-                                   
-        <!-- Modal Search End -->
 
-   
+            </section>
+
+
+
+            <!-- Modal Search End -->
+            <!-- Donor Homepage Section End -->
+            <!-- Modal Search End -->
+        </div>
+    </div>
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
         <div class="container py-5">
@@ -257,27 +254,24 @@
                         <p class="mb-4">
                             Unite with passionate volunteers! Find your cause and empower others with your kindness.
                         </p>
-
                     </div>
                 </div>
 
                 <div class="col-lg-6 col-md-6">
                     <div class="footer-item">
-                        <h4 class="text-light mb-3">Contact</h4>
-                        <p>Address: 1429 Netus Rd, NY 48247</p>
-                        <p>Email: Example@gmail.com</p>
-                        <p>Phone: +0123 4567 8910</p>
+                        <div class="footer-item">
+                            <h4 class="text-light mb-3">Contact</h4>
+                            <p>Address: 14 Gamal Abd ElNasser,Cairo,Egypt</p>
+                            <p>Email: GenerousHearts@gmail.com</p>
+                            <p>Phone: +0123 4567 8910</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </div>
     <!-- Footer End -->
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
-
-
-
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
